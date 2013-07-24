@@ -1,0 +1,33 @@
+{
+  "name": "z720.net",
+  "version": "0.1.0",
+  "author": "z720 <blog@z720.net>",
+  "description": "Personnal Website and web playground",
+  "contributors": [ 
+    {
+      "name": "Marak Squires",
+      "email": "marak@nodejitsu.com"
+    } 
+  ],
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z720/z720.net.git"
+  },
+  "keywords": [
+    "z720",
+    "website"
+  ],
+  "analyze": true,
+  "dependencies" : {},
+  "devDependencies": {},
+  "bundledDependencies": [
+  ],  
+  "engines": {
+    "node": ">=0.6"
+  }
+}
