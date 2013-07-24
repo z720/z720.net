@@ -1,0 +1,7 @@
+name: z720.net
+pygments: true
+
+
+destination: public
+
+exclude: [node_modules]
