@@ -1,7 +1,9 @@
-# Wordpress exclude
-.htaccess
-wp/
-sitemap.xml
+
+#cloud 9 ide
+.c9revisions/
+
+# nodejs tools
+node_modules/
+
+# log
 *.log
-sitemap.xml
-sitemap.xml.gz
