@@ -10,7 +10,7 @@
     } 
   ],
   "scripts": {
-    "test": "vows --spec --isolate",
+    "test": "echo test command",
     "predeploy": "echo This will be run before deploying the app",
     "postdeploy": "echo This will be run after deploying the app"
   },
