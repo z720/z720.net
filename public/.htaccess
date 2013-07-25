@@ -3,7 +3,6 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^(/blog/archives/.*) ../wp.php [L]
+RewriteRule ^(blog/archives/.*) /v05.php [L,E=V05_RES:$1]
 #RewriteRule . /index.php [L]
 </IfModule>
