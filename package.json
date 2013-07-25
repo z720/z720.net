@@ -23,7 +23,10 @@
     "website"
   ],
   "analyze": true,
-  "dependencies" : {},
+  "dependencies" : {
+      "xml2js": "*",
+      "mkdirp": "> 0.3"
+  },
   "devDependencies": {},
   "bundledDependencies": [
   ],  
