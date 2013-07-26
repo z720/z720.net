@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "author": "z720 <blog@z720.net>",
   "description": "Personnal Website and web playground",
-  "contributors": [ 
-    {
-      "name": "Marak Squires",
-      "email": "marak@nodejitsu.com"
-    } 
-  ],
   "scripts": {
     "test": "echo test command",
     "predeploy": "echo This will be run before deploying the app",
