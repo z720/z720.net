@@ -30,9 +30,6 @@
 </head>
 
 <body class="single single-post single-format-standard singular one-column content">
-<!--
-<?php var_dump($resource); ?>
--->
     <div id="page" class="hfeed">
         <header id="branding" role="banner">
             <hgroup>
