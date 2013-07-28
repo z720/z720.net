@@ -27,14 +27,22 @@ var parseChannel = function(channel) {
 
 var parseItem = function(root, item) {
 	var folder = item.link[0].replace(root,'');
-    if(['publish','inherit'].indexOf(item['wp:status'][0]) > -1 ) {
-        if(folder.indexOf('?') == -1) {
+		for(prop in item){
+			if(item[prop] instanceof Array && item[prop].length == 1) {
+				item[prop] = item[prop][0];
+			}
+		}
+    if(['publish','inherit'].indexOf(item['wp:status']) > -1 ) {
+        if(folder.indexOf('?') == -1 
+        	&& (item['wp:post_type'] == 'post') ) {
             var dest = './archives/wp'+folder,
-                filename = '_'+item['wp:post_type'][0]+'.v05.json';
+                filename = '_'+item['wp:post_type']+'.v05.json';
             mkdirp(dest, function(err) {
                 if (err) {
                     console.error(err);
                 } else {
+                		item['template'] = 'v05/'+item['wp:post_type']+'.jade';
+                		item['filename'] = 'index.html';
                     var article = JSON.stringify(item);
                     fs.writeFile(dest+'/' + filename, article, function(err) {
                         if(err) {
@@ -45,25 +53,23 @@ var parseItem = function(root, item) {
                     });
                 }
             });
-        } else {
-            if(item['wp:post_type'][0] == 'attachment') {
+        } else if(item['wp:post_type'] == 'attachment3') {
                 // download
                 // put in the righ place
-                console.info('>> '+item['wp:attachment_url'][0]);
-                var dest = item['wp:attachment_url'][0].replace(root,'');
+                console.info('>> '+item['wp:attachment_url']);
+                var dest = item['wp:attachment_url'].replace(root,'');
                 mkdirp(path.dirname('./archives/wp'+dest), function(err) {
                     if(err) {
                         console.error('dl: '+err);
                     } else {
                         var file = fs.createWriteStream('./archives/wp'+dest);
-                        var request = http.get(item['wp:attachment_url'][0], function(response) {
+                        var request = http.get(item['wp:attachment_url'], function(response) {
                             response.pipe(file);
                         });
                     }
                 });
-            } else {
-                console.warn('WTF: '+item.title[0] + ' -> '+item.link[0]);    
-            }
+        } else {
+        	console.warn('xx: '+item.title + ' -> '+item.link);    
         }
     } else {
 	    //console.info('Ignored:' + item['wp:status'][0]+ " - " + folder);
