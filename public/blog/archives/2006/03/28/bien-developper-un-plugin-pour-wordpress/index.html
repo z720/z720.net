@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Bien développer un plugin pour WordPress - z720.net
+    </title>
+    <link rel="alternate" href="http://z720.net/feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Bien développer un plugin pour WordPress (archives)</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>WordPress est étonnant de simplicité lorsqu'il s'agit de développer de nouveaux plugins. Cependant, il convient de suivre un certains nombre de bonnes pratiques.</p>
+
+<h2>Quelques bonnes pratiques</h2>
+<ul>
+	<li>Encapsuler ses functions dans une classe afin de complètement isoler le fonctionnement du plugin de WordPress. Cela évite les conflits de variables, de nom de fonction, etc.</li>
+	<li>Penser à l'internationalisation du code en utilisant les fonctions <code>__()</code> et <code>_e()</code> et déclarer un domaine pour votre plugin.</li>
+	<li>Penser à documenter l'utilisation du plugin : rédiger une page de mode d'emploi que l'on affichera ensuite par le menu plugins &gt; aide plugin X</li>
+	<li>N'utilisez pas n'importe quel "hook", mais assurez-vous qu'il correspond bien à votre usage.</li>
+</ul>
+
+<!--more-->
+<h2>Un modèle de squelette de plugin</h2>
+<p>Dans le squelettes suivant, je vous propose un petit coup de pouce pour mettre en place vos plugins. Copiez ce code dans un nouveau fichier et créez votre plugin...</p>
+<p>Dans l'exemple proposé, le plugin va ajouté à la fin de chaque billet le nom du plugin. Cen'est pas très utile mais ça permet de faire un exemple.</p>
+<pre class="php">
+<code>
+/* 
+Plugin Name: Nom du Plugin
+Plugin URI: http://www.example.com/votre_plugin
+Description: Ce que fait votre plugin en quelques mots.
+Version: 1.0
+Author: Votre Nom
+Author URI:  http://www.example.com
+*/
+
+/*
+Squelete de plugin : Mode d'emploi
+
+1. Remplir le cartouche en début de fichier, ce sont les informations qui apparaissent dans la description du plugin dans WordPress
+2. Remplacer {{VotrePlugin}} par le nom de votre plugin composé de lettres (sans accents), chiffre, underscore (_)
+3. Ajouter vos fonctions dans la partie à éditer
+4. Gérer le contenu de la page d'aide de votre plugin (fonction AdminHelpPage)
+5. (facultatif) Gérer l'installation options de paramétrage, tables... (fonction install)
+
+*/
+
+class {{VotrePlugin}} {
+  var $domain = '';
+  var $version = '1.0'; //Changer pour correspondre à la version courante
+  var $option_ns = '';
+  var $options = array();
+  	
+// Raccourci interne pour ajouter des actions
+  function add_action($nom, $num = 0) {
+    $hook = $nom;
+    $fonction = $nom;
+    if(!$num) { $fonction .= $num; }
+    add_action($hook, array(&$this, 'action_'.$nom));
+  }
+	
+  function {{VotrePlugin}}() {
+// Initialisation des variables
+     if ($this->domain == '') $this->domain = get_class($this);
+     if ($this->option_ns == '') $this->option_ns = get_class($this);
+// Récupération des options
+		$this->options = get_option($this->option_ns);
+
+// Doit-on lancer l'installation ?
+    if(!isset($this->options['install']) or ($this->options['install'] != $this->version))
+    	$this->install();
+	
+//Charger les données de localisation
+    load_plugin_textdomain($this->domain); 
+	
+// gestion automatique des actions
+		foreach(get_class_methods(get_class($this)) as $methode) {
+			if(substr($methode, 0, 7) == 'action_') {
+				$this->add_action(substr($methode, 7));
+			}
+		}		
+		
+  }      
+	
+  function action_admin_menu() {
+    if (function_exists('add_submenu_page')) {
+      add_submenu_page('plugins.php',
+                       __('{{VotrePlugin}}', $this->domain),
+                       __('{{VotrePlugin}}', $this->domain),
+                       3,
+                       basename(__FILE__),
+                       array(&$this, 'AdminHelpPage'));
+    }
+  }
+  
+  function set($option, $value) {
+  	$this->options[$option] = $value;
+  }
+  
+  function get($option) {
+  	if (isset($this->options[$option])) {
+  		return $this->options[$option];
+  	} else {
+  		return false;
+  	}
+  }
+  
+  function update_options() {
+  	return update_option($this->option_ns, $this->options);
+  }
+	
+//---------------------------------------------
+// Editez à partir d'ici
+//---------------------------------------------
+
+  function install() {
+// Fonction permettant l'installation de votre plugin (création de tables, de paramètres...)
+		$this->set('install', $this->version);
+		$this->set('page', 0);
+		$this->update_options();
+  }
+	
+  function AdminHelpPage() {
+  	echo '<div class="wrap">Page d'admin de votre plugin</div>';    
+  }
+  	  
+  function action_wp_title($titre) {
+  	return $titre.' (on stéroïd)';    
+  }
+  
+
+  
+//---------------------------------------------
+// Fin de la partie d'édition
+//---------------------------------------------
+	
+}
+	
+$inst_{{VotrePlugin}} = new {{VotrePlugin}}();
+
+</code>
+</pre>
+
+<p>Dans la partie édition, il suffit de créer de nouvelles méthodes <code>action_</code>"nom du hook" pour que celles-ci soient automatiquement enregistrées et exécutées par WordPress. De plus il est facile de gérer les options de votre plugin parmi les options de WordPress en utilisant les méthodes <code>get</code>, <code>set</code> et <code>update_options</code></p>
+<p>N'hésitez pas à faire vos remarques dans les commentaires.</p>
+<p><a href="/FileSharing/WordPress/SquelettePlugin.txt">Télécharger le squelette</a></p>
+<h2>Ressources connexes</h2>
+<p>Pour vous aider à créer vos propres plugins, n'hésitez pas à consulter :
+<ul>
+	<li><a href="http://codex.wordpress.org/Writing_a_Plugin">Ecrire un plugin (en anglais)</a></li>
+	<li><a href="http://codex.wordpress.org/Plugin_API">Plugin API (en anglais)</a></li>
+	<li><a href="http://wphooks.flatearth.org/">Hook Database : documentation des points de branchement des plugins (en anglais)</a></li>
+</ul></p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <section class="copy">
+        <p>&copy; 1997-2013 z720 &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
