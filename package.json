@@ -16,17 +16,19 @@
     "website"
   ],
   "analyze": true,
-  "dependencies" : {
-      "xml2js": "*",
-      "mkdirp": ">= 0.3",
-    	"moment": "2.x",
-    	"underscore": "1.4.x",
-    	"typogr": "0.5.x",
-    	"wintersmith": ">= 2.0"
+  "dependencies": {
+    "xml2js": "*",
+    "mkdirp": ">= 0.3",
+    "moment": "2.x",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "wintersmith": ">= 2.0"
   },
-  "devDependencies": {},
-  "bundledDependencies": [
-  ],  
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9"
+  },
+  "bundledDependencies": [],
   "engines": {
     "node": ">=0.6"
   }
