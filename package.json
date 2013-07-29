@@ -5,7 +5,7 @@
   "description": "Personnal Website and web playground",
   "scripts": {
     "test": "echo test command",
-    "build": "node build.js"
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
