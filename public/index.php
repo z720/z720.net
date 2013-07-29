@@ -21,6 +21,7 @@
           <section class="content"><h2>Hello</h2>
 <p>Bienvenue sur <a href="http://z720.net/">z720.net</a>.</p>
 <p>Nothing yet… (It&#39;s still a beta) </p>
+<p><a href="https://drone.io/github.com/z720/z720.net/latest"><img src="https://drone.io/github.com/z720/z720.net/status.png" alt="Build Status"></a></p>
 </section>
         </article>
       </div>
