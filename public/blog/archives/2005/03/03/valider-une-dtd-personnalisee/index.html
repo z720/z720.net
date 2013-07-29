@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Valider une DTD personnalisée - z720.net
+    </title>
+    <link rel="alternate" href="http://z720.net/feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Valider une DTD personnalisée (archives)</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Comment valider des documents XHTML utilisant une DTD personnalisée.</p>
+<p>Traduction de l'article <a href="http://www.alistapart.com/articles/customdtd/">Validating a Custom DTD</a>. Translated with the permission of A List Apart Magazine (<a href="http://www.alistapart.com">http://alistapart.com</a>) and the author[s].</p><!--more--><p>
+Dans <a href="http://www.alistapart.com/articles/scripttriggers/">son article de cette même édition</a> (NDT : sur <a href="http://www.alistapart.com/issues/194/" >A List Apart - Edition NÂ°194</a>), Peter-Paul Koch propose l'ajout d'attributs personnalisés dans les éléments de formulaire pour déclencher des évènements spéciaux. Le valideur du W3C ne validera pas un document avec de tels attributs, parce qu&#8217;ils ne font pas partie des spécifications XHTML. </p><p>Cet article va vous permettre : </p>
+<ul>
+<li> de développer des DTD sur mesure afin de déclarer des attributs personnalisés</li>
+<li> de valider des documents utilisant ces attributs. </li>
+</ul>
+<p>Voici un exemple de balisage HTML personnalisé qui nous permettra : </p>
+<ul>
+<li> de spécifier la longueur maximale de la zone de texte </li>
+<li> de déterminer si un élément du formulaire est obligatoire ou non :</li>
+</ul>
+
+
+
+<pre>
+&lt;form action=&quot;http://example.com/cgi-bin/example.cgi&quot;&gt;
+&lt;p&gt;
+  Name:
+  &lt;input type=&quot;text&quot; name=&quot;yourName&quot; size=&quot;40&quot; /&gt;
+
+&lt;/p&gt;
+&lt;p&gt;
+  Email:
+  &lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;40&quot;
+  required=&quot;true&quot; /&gt;
+
+&lt;/p&gt;
+&lt;p&gt;
+  Comments:&lt;br /&gt;
+  &lt;textarea maxlength=&quot;300&quot; required=&quot;false&quot;
+  rows=&quot;7&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Send Data&quot; /&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+</pre>
+<h2> Qu'est ce qu'une DTD ? </h2>
+<p>
+La Définition du Type de Document (DTD) est un fichier qui spécifie quels éléments et attributs existent dans un langage balisé et comment ils apparaissent. Ainsi la DTD XHTML précise que &lt;p&gt; est un élément valide et qu'il peut apparaître dans une balise &lt;div&gt; mais pas dans &lt;b&gt;. L'adresse URL, à la fin de la déclaration DOCTYPE, pointe à l'endroit où l'on va trouver le fichier de DTD pour la version HTML que l'on va utiliser. Ni votre navigateur, ni le valideur du W3C ne parcourt le web pour récupérer la DTD - Ils ont une liste des DOCTYPEs valides en mémoire et utilisent l'URL pour les identifier uniquement. Comme nous le verrons plus loin, ce comportement change en cas de DTD personnalisée.
+</p>
+
+
+<h2> Spécifier les attributs </h2>
+<p>
+Ajouter des attributs dans une DTD existante est facile. Pour chaque attribut, vous devez spécifier à quel élément il est associé, quel est son nom, quel type de données il peut contenir et s'il est obligatoire ou facultatif. Ces informations sont spécifiées suivant le modèle :
+</p>
+<pre>
+&lt;!ATTLIST
+  elementName attributeName type optionalStatus
+&gt;
+</pre>
+<p>
+Pour ajouter l'attribut maxlength à l'élément &lt;textarea&gt;, il suffit d'écrire :</p>
+<pre>
+&lt;!ATTLIST textarea maxlength CDATA #IMPLIED&gt;
+</pre>
+<p>
+La spécification CDATA signifie que la valeur de l'attribut peut contenir n'importe quels caractères; ainsi maxlength="300" ou maxlength="ten" seront tous les deux valides. Pour les données "ouvertes", les DTD ne nous permettent pas d'être plus précis. La spécification #IMPLIED signifie que l'attribut est optionnel. Un attribut obligatoire serait spécifié par #REQUIRED.
+Quand un attribut peut contenir une liste de valeurs, vous pouvez les spécifier dans la DTD. C'est le cas pour notre attribut required, qui ne peut contenir que true ou false. Les valeurs sont sensibles à la casse; dans notre exemple seule les valeurs en minuscules sont spécifiées, donc la valeur TRUE ne sera pas considérée comme valide.
+</p>
+<pre>
+&lt;!ATTLIST textarea required (true|false) #IMPLIED&gt;
+</pre>
+<p>
+Attention à la confusion: l'attribut s'appelle "required" mais n'est pas obligatoire dans tous les éléments &lt;textarea&gt;, car c'est un attribut optionnel. Dans l'ensemble, les modifications des spécifications dans la DTD ressemblent à ceci :</p>
+<pre>
+&lt;!ATTLIST textarea maxlength CDATA #IMPLIED&gt;
+&lt;!ATTLIST textarea required (true|false) #IMPLIED&gt;
+&lt;!ATTLIST input required (true|false) #IMPLIED&gt;
+&lt;!ATTLIST select required (true|false) #IMPLIED&gt;
+</pre>
+
+<p class="note">
+Note: Ajouter de nouveaux attributs à des éléments existants est facile; ajouter de nouveaux éléments est plus compliqué et n'est pas le sujet de cet article.
+</p>
+<h2> Placer les attributs </h2>
+<p>
+Maintenant que vous avez défini des attributs personnalisés, comment les placer pour qu'ils soient pris en compte à la validation? La meilleure place serait comme un sous-ensemble directement dans votre document:</p>
+<pre>
+&lt;!DOCTYPE html PUBLIC
+&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;
+[
+  &lt;!ATTLIST textarea maxlength CDATA #IMPLIED&gt;
+  &lt;!ATTLIST textarea required (true|false) #IMPLIED&gt;
+  &lt;!ATTLIST input required (true|false) #IMPLIED&gt;
+  &lt;!ATTLIST select required (true|false) #IMPLIED&gt;
+]&gt;
+</pre>
+<p>
+Si vous passez un tel fichier au travers de la validation du W3C, il va valider merveilleusement bien. Si vous téléchargez les fichiers d'exemple pour cet article et validez le fichier internal.html, vous pourrez le voir par vous-même. Malheureusement, quand vous affichez ce fichier dans votre navigateur, les caractères <code>
+]&gt;</code> vont apparaitre à l'écran. Il n'y a aucun moyen de contourner ce bug, on peut donc abandonner directement cette méthode.
+</p>
+<h2> Modifier la DTD </h2>
+<p>Une autre méthode consiste à obtenir  la DTD de XHTML Transitional et d'ajouter les modifications directement dans ce fichier. La version originale de cette DTD est le fichier xhtml1-transitional.dtd dans le répertoire dtd des fichiers d'exemples accompagnant cet article. Vous y trouverez aussi 3 fichiers avec l'extension .ent. Ces fichiers définissent toutes les entités que vous utilisez en HTML, comme &amp;rsquo; et &amp;ntilde;. Vous devez garder tous ces fichiers ensemble dans le même dossier.</p>
+<p>Le fichier personnalisé, nommé xhtml1-custom.dtd est créé en ajoutant les nouveaux attributs à la fin du fichier xhtml1-transitional.dtd. Quand vous ajoutez des attributs, faites-le à la fin du fichier pour vous assurer que tout ce à quoi vous faites référence a déjà été défini.</p>
+<h2> Changer le DOCTYPE </h2>
+<p>Vous devez maintenant changer l'insrtuction &lt;!DOCTYPE &gt; de votre fichier HTML pour indiquer l'utilisation de votre "version" personnalisé de XHTML. Comme la nouvelle DTD ne fait pas partie des DTD public enregistrée, le DOCTYPE n'utilisera pas le spécificateur PUBLIC. Il sera remplacer par le mot-clé SYSTEM suivi de l'emplacement de la DTD personnalisée. Ce chemin peut être relatif ou absolu, il peut même être une URL si votre fichier DTD est sur un autre serveur. Le chemin doit pointer vers l'emplacement exact de votre fichier ! Le fichier custom.html dans les exemples de cet article utilise le chemin relatif: 
+</p>
+<pre>
+&lt;!DOCTYPE html SYSTEM &quot;dtd/xhtml1-custom.dtd&quot;&gt;
+</pre>
+<p>
+Quand vous essayez d'utiliser le valideur du W3C sur ce fichier, il rejette le document parce qu'il n'utilise que les DTD qu'il connait et ne va pas chercher les DTD personnalisées.</p>
+
+<h2> Utiliser un valideur différent </h2>
+<p>
+La solution consiste à utiliser un valideur différent qui utilisera bien l'URL spécifiée pour vérifier la validité du document. Comme il s'agit d'un document XHTML, il est possible d'utiliser n'importe quel analyseur XML qui fait de la validation. Dans cet article nous allons utiliser l'analyseur Xerces disponible sur <a href="http://xml.apache.org">xml.apache.org</a>. Cet analyseur est écrit en Java(tm), donc Java doit être installé sur votre système. La décompression de l'archive Xerces va créer un doccier xerces-2_6_2 (ou n'importe quelle autre version courante). Par la suite, nous supposerons que vous avez décompresser l'archive à la racine du disque C: sous Windows ou vers /usr/local sous Linux.
+</p><p>
+Le programme Counter fait partie des exemples fournis avec Xerces. Ce programme compte le nombre d'éléments, d'attributs, d'espace ignorables et de caractères apparaissants dans un document XML (ou dans notre cas XHTML). Ce programme permet d'activer une option de validation lors de l'analyse, le rendant parfait pour cette tache. Vous pouvez lancer le programme Counter (qui devient notre "valideur") à partir d'un fichier batch dans Windows ou à partir d'un script shell dans Linux. Voici le fichier batch, nommé validate.bat. Il n'y a qu'une ligne de commande, mais nous l'afficherons sur plusieurs lignes pour que cela tienne sur la page.
+Notez qu'il y a un espace avant le mot "dom" et après "-v".</p>
+
+<pre>
+java -cp c:\xerces-2_6_2\xercesImpl.jar; &raquo;
+c:\xerces-2_6_2\xmlParserAPIs.jar; &raquo;
+c:\xerces-2_6_2\xercesSamples.jar dom/Counter -v &raquo;
+%1 %2 %3 %4 %5 %6 %7 %8
+</pre>
+<p>
+Voici le script shell, nommé validate.sh.</p>
+<pre>
+java -cp /usr/local/xerces-2_6_2/xercesImpl.jar:\
+/usr/local/xerces-2_6_2/xmlParserAPIs.jar:\
+/usr/local/xerces-2_6_2/xercesSamples.jar \
+dom/Counter -v $1 $2 $3 $4 $5 $6 $7 $8
+</pre>
+
+<p>
+Bien sur si vous avez décompressé l'archive de Xerces à un autre endroit, vous devrez changer les noms de chemin. Une fois ceci mis en place, il vous suffit de taper la commande suivante sous l'invite de commande Windows pour valider le fichier custom.html :</p>
+<pre>
+validate custom.html
+</pre>
+<p>
+Ou celle-ci sous l'invite de commande Linux:</p>
+<pre>
+./validate.sh custom.html
+</pre>
+<p>
+Si le fichier est valide, vous recevrez un message donnant le nom du fichier et quelques statistiques à son propos, comme ceci:
+</p>
+
+<pre>
+custom.html: 543;50;0 ms
+  (15 elems, 20 attrs, 9 spaces, 43 chars)
+</pre>
+
+<p>
+Si le fichier n'est pas valide, vous obtiendrez des messages d'erreur. Par exemple, si vous essayer de valider un fichier badfile.html contenant ces erreurs:</p>
+<pre>
+&lt;p&gt;Email: &lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;40&quot;
+	required=&quot;yes&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Comments:&lt;br /&gt;
+&lt;textarea maxlength=&quot;300&quot; inquirer=&quot;false&quot;
+   rows=&quot;7&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+</pre>
+<p>
+Vous obtiendrez cette sortie de l'analyseur:</p>
+<pre>
+[Error] badfile.html:12:70: Attribute &quot;required&quot;
+  with value &quot;yes&quot; must have a value from the
+  list &quot;true false &quot;.
+[Error] badfile.html:14:63: Attribute &quot;inquirer&quot;
+  must be declared for element type &quot;textarea&quot;
+badfile.html:
+  611;82;0 ms (15 elems, 20 attrs, 9 spaces, 43 chars)
+</pre>
+
+<h2> Autre méthode de validation </h2> 
+<p>Si vous utilisez l'éditeur <a href="http://www.jEdit.org">jEdit</a>, vous pouvez télécharger le plugin XML. Si votre fichier porte l'extension xhtml, jEdit utilisera la DTD personnalisée pour la validation comme spécifié dans le DOCTYPE.</p>
+
+<h2> Conclusion </h2>
+<p>
+Il est facile de spécifier des attributs supplémentaires pour des éléments XHTML; avec un peu de travail, vous pourrez mettre en place un valideur pour vérifier vos fichiers avec votre version personnalisée HTML. <a href="http://www.alistapart.com/d/customdtd/custom_dtd_sample_files.zip">Télécharger tous les fichiers d'exemple de cet article</a> et c'est parti!
+</p>
+
+<h2>&Agrave; propos de l'auteur</h2>
+<p><a href="mailto:catcode@catcode.com">J. David Eisenberg</a> est programmeur et professeur habitant &agrave; San Jose, CA avec son chat, Marco Polo. La plupart de son travail porte sur XML, Java, JavaScript et Perl. Il est aussi l'auteur d'un livre sur <a href="http://oreilly.com/catalog/9780596002237/">le format d'images vectorielles SVG</a>. Plus d'information sur <a href="http://catcode.com/narrative.html">catcode.com/narrative.html</a>.
+</p></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <section class="copy">
+        <p>&copy; 1997-2013 z720 &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>

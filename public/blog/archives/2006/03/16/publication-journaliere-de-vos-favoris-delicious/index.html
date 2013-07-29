@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Publication journalière de vos favoris del.icio.us - z720.net
+    </title>
+    <link rel="alternate" href="http://z720.net/feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Publication journalière de vos favoris del.icio.us (archives)</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Comme vous l'avez probablement constater <a href="http://v05.z720.net/blog/categories/web/liens/" title="Voir les derniers liens">dans la rubrique lien</a>, j'ai testé pendant quelques jours un nouveau service <a href="http://del.icio.us" title="Social Bookmarking">del.icio.us</a> : le daily blog posting</p>
+<p>Cette option est assez simple : tous les jours del.icio.us se propose de créer un article sur votre blog contenant les favoris que vous avez créés depuis la veille.</p>
+<!--more-->
+<p>Il n'y a pas vraiment besoin de présenter les avantages de ce service, vous n'avez plus besoin de faire un article avec les liens intéressants du jour, on s'en charge pour vous.</p>
+<p>Comment ça marche ? Il suffit de s'identifier dans del.icio.us et d'aller dans le menu settings &raquo; daily blog posting. Ensuite il vous faut créer un nouveau "job" (add new thingy) auquel vous donnez un nom et vous renseignez :</p>
+<ul>
+	<li>le nom d'utilisateur pour se connecter au blog,</li>
+	<li>et son mot de passe</li>
+	<li>l'adresse du serveur XML-RPC de votre blog</li>
+	<li>l'heure de publication GMT (9 pour 9h GMT soit 10h en France)</li>
+	<li>l'ID du blog pour les systèmes multi-blog. Pour WordPress laissez vide ou mettez 1</li>
+	<li>l'ID de la catégorie dans laquelle le billet sera publié</li>
+</ul>
+
+<p>Pour votre blog WordPress cela devrait donner ceci:</p>
+<table summary="Exemple de paramétrage dle.icio.us daily blog posting">
+<thead><tr><th>Nom de la zone</th><th>Valeur d'exemple</th></tr></thead>
+<tbody><tr><td>job_name</td><td>Publication Blog</td></tr>
+<tr><td>out_name</td><td>admin</td></tr>
+<tr><td>out_pass</td><td>**votre mot de passe**</td></tr>
+<tr><td>out_url</td><td>http://adresse.de/votre/wordpress/xmlrpc.php</td></tr>
+<tr><td>out_time</td><td>8</td></tr>
+<tr><td>out_blog_id</td><td>1</td></tr>
+<tr><td>out_cat_id</td><td>Un numéro de catégorie</td></tr></tbody>
+</table>
+<p>Il y a cependant un certains nombre d'inconvénients : </p>
+<ul>
+	<li>Il n'est pas possible de filtrer les liens que vous voulez ajouter à votre article, del.icio.us publie tous vos favoris. La possibilité de filter sur un tag particulier serait un vrai plus.</li>
+	<li>L'article est rédigé en anglais. Il n'est pas possible de paramétrer le titre. C'est un moindre mal dans la mesure où le libellé et le descriptif est saisi par l'utilisateur.</li>
+	<li>Il n'est pas possible de choisir la fréquence : daily, c'est tous les jours. Cependant s'il n'y a pas de nouveaux favoris, aucun article n'est publié.</li>
+</ul>
+<p><strong>Conclusion</strong> j'ai désactivé cette option pour le moment. Je pense que <abbr title="Yet Another Daily Delicious">yadd</abbr> peut être une bonne base pour un futur plugin sur ce thème. Autre piste à explorer :  <a href="http://frenchfragfactory.net/ozh/archives/2004/10/05/tagalicious-a-way-to-integrate-delicious/">taga.licio.us</a> </p>
+<p><a href="http://www.nozell.com/blog/index.php?s=yadd" title="Site de l'auteur de yadd : Yet Another Daily Deliocious">En savoir plus sur yadd (en anglais)</a></p>
+
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <section class="copy">
+        <p>&copy; 1997-2013 z720 &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>

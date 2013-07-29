@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Plug-In DotClear - z720.net
+    </title>
+    <link rel="alternate" href="http://z720.net/feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Plug-In DotClear (archives)</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Je me suis encore lanc&eacute; dans une sorte de d&eacute;fi technologique. Pourquoi ne pourrais-je pas poster sur ce weblog de n'importe o&ugrave;? Et surtout, profiter de mon t&eacute;l&eacute;phone appreil photo pour envoyer r&eacute;guli&egrave;rement des photos du jours plus insolites...</p><!--more--> <h3>Le besoin</h3>
+
+
+<p>Je n'ai pas acc&egrave;s &agrave; Internet depuis mon bureau ou alors exceptionnellement, le navigateur de mon t&eacute;l&eacute;phone portable n'est pas top. Comment puis-je poster depuis mon boulot ou depuis la rue, le train &agrave; partir de mon t&eacute;l&eacute;phone&nbsp;?</p>
+
+
+<p>Tout simplement en utilisant une boite mail. Tout le monde peut envoyer des mails de n'importe o&ugrave;&nbsp;: du boulot par Lotus Notes, du t&eacute;l&eacute;phone par <acronym>MMS</acronym>...</p>
+
+
+<h3>Comment &ccedil;a marche&nbsp;?</h3>
+
+
+<p>&Eacute;tendre <a href="http://www.dotclear.net" hreflang="fr">dotClear</a> pour lire une boite mail, filtrer les mails et cr&eacute;er un post par mail valide.</p>
+<ol>
+<li>Cr&eacute;er un script qui puisse lire une boite <acronym>IMAP</acronym>, filtrer les mails et cr&eacute;er des postes.</li>
+<li>Cr&eacute;er un plugin permettant de g&eacute;rer la configuration de ce script (serveur, cl&eacute; de validation,</li>
+<li>Programmer un job cron r&eacute;guli&egrave;rement sur le premier script pour cr&eacute;er lire la boite aux lettres</li>
+</ol>
+<p>Pour la programmation, il est possible d'utiliser <a href="http://www.webcron.org/click.php?ref=z720" hreflang="fr">webcron</a>, si vous ne pouvez pas acc&eacute;der &agrave; cron sur le serveur.</p>
+
+
+<h3>Pourquoi r&eacute;inventer la poudre&nbsp;?</h3>
+
+
+<p>Je me suis aussi pench&eacute; sur les solutions existantes, mais il faut avouer que cela &agrave; moins de charme.
+J'ai trouv&eacute; 2 solutions utilisables&nbsp;:</p>
+<ol>
+<li>Utiliser le service ext&eacute;rieur <a href="http://www.flickr.com" hreflang="en">Flickr</a>. Le principal probl&egrave;me, c'est que ce service n'est du tout fait pour cela&nbsp;: il permet de g&eacute;rer des galeries de photos.
+<ul>
+<li>L'int&eacute;r&ecirc;t venant de ces 2 fonctionnalit&eacute;s&nbsp;:
+<ol>
+<li>Possibilit&eacute; de mettre &agrave; jour ses galeries par mail</li>
+<li>Possibilit&eacute; de cr&eacute;er une entr&eacute;e sur votre weblog lors de la mise &agrave; jour de vos galeries</li>
+</ol></li>
+<li>Le probl&egrave;me  venant du mode de fonctionnement&nbsp;: lorsque plusieurs images sont envoy&eacute;es dans le m&ecirc;me mail, autant d'entr&eacute;es sont cr&eacute;es dans le weblog.</li>
+</ul></li>
+<li>Utiliser un PlugIn existant&nbsp;: moblogging par Rn&otilde;
+<ul>
+<li>Idem le mode de fonctionnement n'est pas satisfaisant&nbsp;: la lecture de la boite aux lettres se fait &agrave; partir du th&egrave;me dotClear, donc &agrave; chaque visite il peut y avoir interrogation de la boite mail.</li>
+<li>Conclusion il peut y avoir un ralentissement lors de l'affichage des pages qui n'est pas acceptable. L'action de consultation doit &ecirc;tre s&eacute;par&eacute;e de l'action de mise &agrave; jour. (En tout cas, pour moi)</li>
+</ul></li>
+</ol>
+
+<h3>Les probl&egrave;mes</h3>
+
+
+<p>&Eacute;videmment sur le papier c'est tr&egrave;s simple. Seulement &ccedil;a ne marche pas... En effet j'ai un peu de mal &agrave; r&eacute;cup&eacute;rer proprement le contenu des mails car l'utilisation des fonctions <acronym>IMAP</acronym> n'est pas facile.</p>
+
+
+<p>Notamment, la structure des mails (fonction <acronym>php</acronym> imap_fetchstructure) qui n'est vraiment pas facile mettre en parall&egrave;le avec le contenu. Surtout lorsque les mails sont envoy&eacute;s au format <acronym title="HyperText Markup Language">HTML</acronym> avec des fichiers attach&eacute;s, bref d&egrave;s que la structure est plus complexe que de texte brut avec des fichiers &agrave;  c&ocirc;t&eacute;s...</p></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <section class="copy">
+        <p>&copy; 1997-2013 z720 &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
