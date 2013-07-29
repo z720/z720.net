@@ -5,8 +5,7 @@
   "description": "Personnal Website and web playground",
   "scripts": {
     "test": "echo test command",
-    "predeploy": "echo This will be run before deploying the app",
-    "postdeploy": "echo This will be run after deploying the app"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
