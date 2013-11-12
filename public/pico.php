@@ -1,12 +1,6 @@
 <?php
 
-// TODO: include in Pico
 date_default_timezone_set('Europe/Paris');
-
-// TODO: fill issue
-if(!is_defined(__DIR__)) {
-	define('__DIR__',  dirname(__FILE__));
-}
 
 define('ROOT_DIR', realpath(dirname(__FILE__)) .'/');
 define('CONTENT_DIR', ROOT_DIR .'content/');
