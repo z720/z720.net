@@ -2,11 +2,6 @@
 RewriteEngine On
 RewriteBase /
 
-# If file doesn't exists and request match pattern for archives
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule ^(--blog/archives/.*) /v05.php [L,E=V05_RES:$1]
-
 # If file doesn't exists process with pico
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
