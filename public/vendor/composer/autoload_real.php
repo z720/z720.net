@@ -9,7 +9,7 @@ class ComposerAutoloaderInit68d29614b81b64051229769b084d96b6
     public static function loadClassLoader($class)
     {
         if ('Composer\Autoload\ClassLoader' === $class) {
-            requrie dirname(__FILE__) . '/ClassLoader.php';
+            require __DIR__ . '/ClassLoader.php';
         }
     }
 
@@ -23,15 +23,15 @@ class ComposerAutoloaderInit68d29614b81b64051229769b084d96b6
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
         spl_autoload_unregister(array('ComposerAutoloaderInit68d29614b81b64051229769b084d96b6', 'loadClassLoader'));
 
-        $vendorDir = dirname(dirname(__FILE__));
+        $vendorDir = dirname(__DIR__);
         $baseDir = dirname($vendorDir);
 
-        $map = require dirname(__FILE__) . '/autoload_namespaces.php';
+        $map = require __DIR__ . '/autoload_namespaces.php';
         foreach ($map as $namespace => $path) {
             $loader->set($namespace, $path);
         }
 
-        $classMap = require dirname(__FILE__) . '/autoload_classmap.php';
+        $classMap = require __DIR__ . '/autoload_classmap.php';
         if ($classMap) {
             $loader->addClassMap($classMap);
         }
