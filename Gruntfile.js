@@ -1,33 +1,33 @@
 module.exports = function(grunt) {
+	
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		less: {
+			// Compile all targeted LESS files individually
+			default_theme: {
+				options: {
+					concat: false
+					/*require: ["src/mixins.less", "bootstrap/variables.less"]*/
+				},
+				src: 'public/themes/default/*.less',
+				dest: 'public/themes/default/style.css'
+			}
+		},
+		uglify: {
+			default_theme: {
+				files: {
+					'public/themes/default/script.min.js': ['public/themes/default/scripts/modernizr-2.6.1.min.js']
+				}
+			}
+		}
+	});
 
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    wintersmith: {
-      config: "./config.json"
-    }
-  });
 
-  grunt.registerTask('wintersmith', 'Wintersmith build task', function() {
-    done();
-    /*
-    grunt.config.requires('wintersmith.config');
-    var done = this.async();
-    var wintersmith = require('wintersmith');
-    var gen = wintersmith(grunt.config('wintersmith.config'));
-    gen.build(function(err) {
-      if(err) { 
-        grunt.log.error("Wintersmith Step: error: "+err);
-        done(false);
-      }
-      grunt.log.writeln('Wintersmith Step: done!');
-      done();
-    });
-    /**/
-  });
-
-  // Default task(s).
-  grunt.registerTask('build', ['wintersmith']);
-  grunt.registerTask('default', ['build']);
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	// Default task(s).
+	grunt.registerTask('build', ['less', 'uglify']);
+	grunt.registerTask('default', ['build']);
 
 };
