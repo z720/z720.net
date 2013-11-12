@@ -9,6 +9,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('wintersmith', 'Wintersmith build task', function() {
+    done();
+    /*
     grunt.config.requires('wintersmith.config');
     var done = this.async();
     var wintersmith = require('wintersmith');
@@ -21,6 +23,7 @@ module.exports = function(grunt) {
       grunt.log.writeln('Wintersmith Step: done!');
       done();
     });
+    /**/
   });
 
   // Default task(s).
