@@ -1,11 +1,11 @@
 /*
  Title: Ce blog n'est pas mort
- Type: post
- Date: 13/11/2013
+ Template: post
+ Date: 2013/11/13
 */
 
 Tel le phoenix
-==============
+--------------
 
 Finalement, ce site ne peut pas se résoudre à mourrir. Après plusieurs mois sans activité, j'ai cherché à le faire revivre. Mais avec moins de contraintes techniques.
 [WordPress](http://wordpress.org) est très bien, mais ça de vient vite une usine à gaz. En plus je voulais m'affranchir du "passé" du blog, ce qui devient compliqué sans créer une nouvelle instance...

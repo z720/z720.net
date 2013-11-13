@@ -9,7 +9,7 @@
  */
 class Pico_Page_Extension {
 
-	private $metas = 'menu,type';
+	private $metas = 'template';
 
 	public function plugins_loaded()
 	{
@@ -48,8 +48,8 @@ class Pico_Page_Extension {
 	
 	public function before_read_file_meta(&$headers)
 	{
-		$headers['type'] = 'Type';
-		$headers['menu'] = 'Menu';		
+		//$headers['type'] = 'Type';
+		//$headers['menu'] = 'Menu';		
 	}
 	
 	public function file_meta(&$meta)

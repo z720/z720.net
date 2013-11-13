@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{%if is_front_page%}
+			<h1>Sur le blog</h1>
+			{% for page in pages %}{% if page.template == 'post' %}
+				<div class="post">
+					<h3><a href="{{ page.url }}">{{ page.title }}</a> - <em class="meta">{{ page.date_formatted }}</em></h3>
+					<p class="excerpt">{{ page.excerpt }}</p>
+				</div>
+			{% endif %}{% endfor %}
+{%else%}
+			{{ content }}
+{%endif%}
+{% endblock %}

@@ -12,6 +12,14 @@ module.exports = function(grunt) {
 				},
 				src: 'public/themes/default/*.less',
 				dest: 'public/themes/default/style.css'
+			},
+			v06_theme: {
+				options: {
+					concat: false
+					/*require: ["src/mixins.less", "bootstrap/variables.less"]*/
+				},
+				src: 'public/themes/v06/*.less',
+				dest: 'public/themes/v06/style.css'
 			}
 		},
 		uglify: {

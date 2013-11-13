@@ -1,6 +1,6 @@
 /*
  Title: A propos...
- menu: true
+ Template: page
 */
 
 
