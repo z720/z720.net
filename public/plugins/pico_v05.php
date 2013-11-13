@@ -14,6 +14,7 @@ class Pico_v05 {
 	private $contentName = 'content:encoded';
 	private $dateName = 'pubDate';
 	private $prefix = 'v05';
+	private $postType = 'v05-post';
 
 	public function plugins_loaded()
 	{
@@ -45,10 +46,12 @@ class Pico_v05 {
 			$title = $json[$this->titleName];
 			$pubDate = $json[$this->dateName];
 			$oldcontent = $json[$this->contentName];
+			$type = $this->postType;
 			$content = <<<EOF
 /*
  Title: $title
  Date: $pubDate
+ Type: $type
 EOF;
 			foreach($json as $meta => $value) {
 				if(substr($meta,-7,7) != 'encoded') {
