@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	
-	<script src="{{ theme_url }}/script.min.js"></script>
+	<script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
 </head>
 <body>
 
@@ -21,16 +21,25 @@
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
 			<ul class="nav">
-				{% for page in pages %}
+				{% for page in pages %}{% if page.menu %}
 				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
-				{% endfor %}
+				{% endif %}{% endfor %}
 			</ul>
 		</div>
 	</header>
 
 	<section id="content">
 		<div class="inner">
+{%if is_front_page%}
+			<h1>Sur le blog</h1>
+			{% for page in pages %}{% if page.type == 'post' %}
+			<li>
+				<a href="{{ page.url }}">{{ page.title }}</a>
+			</li>
+			{% endif %}{% endfor %}
+{%else%}
 			{{ content }}
+{%endif%}
 		</div>
 	</section>
 	

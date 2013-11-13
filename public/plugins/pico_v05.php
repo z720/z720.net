@@ -1,5 +1,6 @@
 <?php
 
+include_once(dirname(__FILE__) . '/shortcodes.php');
 /**
  * Read content from archives in JSON
  *
@@ -13,6 +14,15 @@ class Pico_v05 {
 	private $contentName = 'content:encoded';
 	private $dateName = 'pubDate';
 	private $prefix = 'v05';
+
+	public function plugins_loaded()
+	{
+		add_shortcode('caption', array($this, 'shortcode_caption'));
+	}
+
+	public function shortcode_caption($att, $content) {
+		return "<figure>$content<figcation>$att[caption]</figcaption></figure>";
+	}
 
 	public function before_load_content(&$file)
 	{
@@ -51,7 +61,7 @@ EOF;
 				}
 			}
 			$content .= "\n*/\n";
-			$content .= $oldcontent;
+			$content .= do_shortcode($oldcontent);
 		}
 	}
 }
