@@ -69,7 +69,7 @@ class Pico_Page_Extension {
 	
 	public function get_page_data(&$data, $page_meta)
 	{
-		foreach(split(',', $this->metas) as $meta) {
+		foreach(explode(',', $this->metas) as $meta) {
 			if(isset($page_meta[trim($meta)])) {
 				$data[$meta] = $page_meta[$meta];
 			}
