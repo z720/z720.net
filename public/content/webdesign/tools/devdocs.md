@@ -1,11 +1,12 @@
 /*
-layout: link
-title: DevDocs
-date: 2013/11/12
-external-url: http://devdocs.io/
-categories: documentation, jQuery, html, js, css
+Title: DevDocs
+Date: 2013/11/12
+url: http://devdocs.io/
+Categories: documentation, jQuery, html, js, css
+Template: link
 */
 
 DevDocs is an all-in-one API documentation reader with a fast, organized, and consistent interface. 
 It allows you to search multiple documentations at the same time and can be operated entirely through the keyboard.
 
+http://devdocs.io/
