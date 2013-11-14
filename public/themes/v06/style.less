@@ -26,10 +26,19 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
 body {
 	line-height: 1;
 	color: black;
-	background: white;
+	background: @background-color;
 }
 
 table {
@@ -99,13 +108,13 @@ select:focus {
 /*---------------------------------------------*/
 body {
 	font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
-	color: #444;
-	background: #fff;
+	color: @text-color;
+	text-shadow: white 0.1em 0.1em 0.2em ;
 	-webkit-font-smoothing: antialiased;
 }
 
 a, a:visited {
-	color: #2EAE9B;
+	color: @link-color;
 	text-decoration: none;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
@@ -208,8 +217,8 @@ blockquote {
 
 #header {
 	background: @header-color;
-	padding: 10px 0;
-	margin-bottom: 80px;
+	padding: 0.5em 0;
+	margin-bottom: 4em; //80px;
 	color: @header-text;
 }
 #header a { color: @header-link; }
@@ -234,12 +243,23 @@ blockquote {
 
 #footer {
 	background: @footer-color;
-	padding: 20px 0;
-	margin-top: 80px;
+	padding: 1.2em 0;
+	margin-top: 4em; //80px;
 	color: @footer-text;
 }
 #footer a { color: @footer-link; }
 #footer a:hover { color: @footer-hover; }
+
+#content {
+	margin: -7.4em auto -8.2em;
+	min-height: 100%;
+	padding: 7.2em 0;	
+}
+#content .inner {
+	background: white;
+	background: rgba(255, 255, 255, 0.35) ;
+	padding: 30px;
+}
 
 /* Misc Styles
 /*---------------------------------------------*/

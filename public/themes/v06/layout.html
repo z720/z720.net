@@ -14,6 +14,17 @@
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	
 	<script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+	{% block background %}
+	<style>
+		html { 
+			background: url(/background/iphone.jpg) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
+	{% endblock %}
 </head>
 <body>
 

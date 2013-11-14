@@ -1,7 +1,7 @@
 /*
 Title: DevDocs
 Date: 2013/11/12
-url: http://devdocs.io/
+Link: http://devdocs.io/
 Categories: documentation, jQuery, html, js, css
 Template: link
 */
