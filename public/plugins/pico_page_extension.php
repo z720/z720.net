@@ -9,7 +9,7 @@
  */
 class Pico_Page_Extension {
 
-	private $metas = 'template';
+	private $metas = 'template,link';
 
 	public function plugins_loaded()
 	{
@@ -50,6 +50,7 @@ class Pico_Page_Extension {
 	{
 		//$headers['type'] = 'Type';
 		//$headers['menu'] = 'Menu';		
+		$headers['link'] = 'Link';
 	}
 	
 	public function file_meta(&$meta)
@@ -69,7 +70,7 @@ class Pico_Page_Extension {
 	
 	public function get_page_data(&$data, $page_meta)
 	{
-		foreach(split(',', $this->metas) as $meta) {
+		foreach(explode(',', $this->metas) as $meta) {
 			if(isset($page_meta[trim($meta)])) {
 				$data[$meta] = $page_meta[$meta];
 			}
