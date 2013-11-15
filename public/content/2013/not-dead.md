@@ -7,7 +7,7 @@
 Tel le phoenix
 --------------
 
-Finalement, ce site ne peut pas se résoudre à mourrir. Après plusieurs mois sans activité, j'ai cherché à le faire revivre. Mais avec moins de contraintes techniques.
+Finalement, ce site ne peut pas se résoudre à mourir. Après plusieurs mois sans activité, j'ai cherché à le faire revivre. Mais avec moins de contraintes techniques.
 [WordPress](http://wordpress.org) est très bien, mais ça de vient vite une usine à gaz. En plus je voulais m'affranchir du "passé" du blog, ce qui devient compliqué sans créer une nouvelle instance...
 
 Moralité, je suis partie sur une solution sans base de données parce qu'il faut l'admettre c'est un peu _too much_ pour mon usage.

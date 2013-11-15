@@ -176,6 +176,7 @@ a:visited {
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;
 }
 a:hover,
 a:active {

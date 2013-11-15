@@ -5,14 +5,6 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		less: {
 			// Compile all targeted LESS files individually
-			default_theme: {
-				options: {
-					concat: false
-					/*require: ["src/mixins.less", "bootstrap/variables.less"]*/
-				},
-				src: 'public/themes/default/*.less',
-				dest: 'public/themes/default/style.css'
-			},
 			v06_theme: {
 				options: {
 					concat: false
@@ -23,17 +15,22 @@ module.exports = function(grunt) {
 			}
 		},
 		uglify: {
-			default_theme: {
+			v06_theme: {
 				files: {
-					'public/themes/default/script.min.js': ['public/themes/default/scripts/modernizr-2.6.1.min.js']
+					'public/themes/v06/script.min.js': ['public/themes/v06/scripts/modernizr-2.6.1.min.js']
 				}
 			}
+		},
+		watch: {
+			files: ['public/themes/v06/**/*.less', 'public/themes/v06/**/*.js'],
+			tasks: ['less', 'uglify']
 		}
 	});
 
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task(s).
 	grunt.registerTask('build', ['less', 'uglify']);
 	grunt.registerTask('default', ['build']);
