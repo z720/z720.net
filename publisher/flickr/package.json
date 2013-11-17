@@ -1,0 +1,14 @@
+{
+  "name": "flickr-publisher",
+  "version": "1.0.0",
+  "description": "Flickr publisher module for ifttt and dropbox",
+  "main": "publisher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "S.Erard",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "mkdirp": "~0.3.5"
+  }
+}

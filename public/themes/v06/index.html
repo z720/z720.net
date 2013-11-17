@@ -3,7 +3,7 @@
 {% block content %}
 {%if is_front_page%}
 			<h1>Sur le blog</h1>
-			{% for page in pages %}{% if page.template in ['post','link'] %}
+			{% for page in pages %}{% if page.template in ['post','link', 'photo'] %}
 				<div class="post">
 					<h3><a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a> - <em class="meta">{{ page.date_formatted }}</em></h3>
 					<p class="excerpt">{{ page.excerpt }} - <a href="{{ page.url }}">&#8984;</a></p>

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+	html {
+		background-image: url({{ meta.background }});
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+			<h1><a href="{{ meta.link }}">{{ meta.title }}</a></h1>
+			<p class="meta">Cet article a été publié le {{ meta.date_formatted }} {% if meta.author %}par {{ meta.author }}{% endif %}</p>
+{% endblock %}

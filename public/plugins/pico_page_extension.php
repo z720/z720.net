@@ -51,7 +51,7 @@ class Pico_Page_Extension {
 		//$headers['type'] = 'Type';
 		//$headers['menu'] = 'Menu';		
 		$headers['link'] = 'Link';
-		$headers['background'] = 'Backgorund';
+		$headers['background'] = 'Background';
 	}
 	
 	public function file_meta(&$meta)
