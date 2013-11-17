@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['public/themes/v06/**/*.less', 'public/themes/v06/**/*.js'],
+			files: ['public/themes/v06/**/*.less', 'public/themes/v06/scripts/**/*.js'],
 			tasks: ['less', 'uglify']
 		}
 	});
