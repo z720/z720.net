@@ -1,15 +1,10 @@
-#logs
+#logs et cache
 logs/*
+*.log
 cache/*/*
-
-
-#jekyll
 
 #cloud 9 ide
 .c9revisions/
 
 # nodejs tools
 node_modules/
-
-# log
-*.log
