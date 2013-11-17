@@ -19,4 +19,8 @@ $config['excerpt_length'] = 50;			// The pages excerpt length (in words)
 
 //$config['custom_setting'] = 'Hello'; 	// Can be accessed by {{ config.custom_setting }} in a theme
 
-/**/
+/* Local override for developement */
+$config_override = '../dev.php';
+if(file_exists($config_override)) {
+	include($config_override);
+}

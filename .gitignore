@@ -3,8 +3,10 @@ logs/*
 *.log
 cache/*/*
 
+#Development
 #cloud 9 ide
 .c9revisions/
+dev.php
 
 # nodejs tools
 node_modules/
