@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
-{% import "macros.twig" as m %}
+{% import "includes/macros.twig" as m %}
 <head>
 	<meta charset="utf-8" />
 	
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	
-	<script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
 	<style>
 		html { 
@@ -29,11 +29,8 @@
 	<header id="header">
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
-			{{url}}
 			<ul class="nav">
-				{% for page in pages %}{% if page.template == 'page' %}
-				{{ m.menu_item(page.title, page.url) }}
-				{% endif %}{% endfor %}
+				{{ m.menu('About', '/about') }}
 			</ul>
 		</div>
 	</header>
