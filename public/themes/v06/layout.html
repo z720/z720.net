@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
+{% import "macros.twig" as m %}
 <head>
 	<meta charset="utf-8" />
 	
@@ -14,27 +15,24 @@
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	
 	<script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
-	{% block background %}
+	{% block head %}
 	<style>
 		html { 
-			background: url(/background/iphone.jpg) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
+			background-image: url(/background/iphone.jpg); 
 		}
 	</style>
 	{% endblock %}
-	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}" href="/feed">
+	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}"git add href="/feed">
 </head>
-<body>
+<body class="{%if meta.template %}{{ meta.template }}{% else %}index{% endif %}">
 
 	<header id="header">
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
+			{{url}}
 			<ul class="nav">
 				{% for page in pages %}{% if page.template == 'page' %}
-				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+				{{ m.menu_item(page.title, page.url) }}
 				{% endif %}{% endfor %}
 			</ul>
 		</div>

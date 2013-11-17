@@ -1,146 +1,3 @@
-/* Content */
-/* Header */
-/* Footer */
-
-.meta {
-  text-align: right;
-  font-size: 0.9em;
-}
-
-/* Reset Styles
-/*---------------------------------------------*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100%;
-}
-body {
-  line-height: 1;
-  color: black;
-  background: white;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-}
-blockquote,
-q {
-  quotes: "" "";
-}
-/* HTML5 tags */
-header,
-section,
-footer,
-aside,
-nav,
-article,
-figure {
-  display: block;
-}
-/* hand cursor on clickable input elements */
-label,
-input[type=button],
-input[type=submit],
-button {
-  cursor: pointer;
-}
-/* make buttons play nice in IE:	 
-		www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {
-  width: auto;
-  overflow: visible;
-}
-/* Sharper Thumbnails */
-img {
-  -ms-interpolation-mode: bicubic;
-}
-
 /*=================================*/
 /* Pico Default Theme
 /* By: Gilbert Pellegrom
@@ -303,6 +160,13 @@ select:focus {
 }
 /* Main Styles
 /*---------------------------------------------*/
+html {
+  background: #000000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body {
   font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
   color: #ffffff;

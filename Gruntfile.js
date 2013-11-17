@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					concat: false
 					/*require: ["src/mixins.less", "bootstrap/variables.less"]*/
 				},
-				src: 'public/themes/v06/*.less',
+				src: 'public/themes/v06/style.less',
 				dest: 'public/themes/v06/style.css'
 			}
 		},
