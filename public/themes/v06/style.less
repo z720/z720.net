@@ -1,87 +1,11 @@
-@import 'colors.less';
 /*=================================*/
 /* Pico Default Theme
 /* By: Gilbert Pellegrom
 /* http: //dev7studios.com
 /*=================================*/
 
-/* Reset Styles
-/*---------------------------------------------*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
-}
-
-html, body {
-	height: 100%;
-}
-body {
-	line-height: 1;
-	color: black;
-	background: @background-color;
-}
-
-table {
-	border-collapse: separate;
-	border-spacing: 0;
-}
-
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-
-blockquote, q {
-	quotes: "" "";
-}
-
-/* HTML5 tags */
-header, section, footer,
-aside, nav, article, figure {
-	display: block;
-}
-
-/* hand cursor on clickable input elements */
-label, input[type=button], input[type=submit], button {
-	cursor: pointer;
-}
-
-/* make buttons play nice in IE:	 
-		www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {
-	width: auto;
-	overflow: visible;
-}
-
-/* Sharper Thumbnails */
-img {
-	-ms-interpolation-mode: bicubic;
-}
+@import 'reset.less';
+@import 'colors.less';
 
 /* Input Styles
 /*---------------------------------------------*/
@@ -109,6 +33,7 @@ select:focus {
 body {
 	font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
 	color: @text-color;
+	background: transparent;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -124,12 +49,12 @@ a, a:visited {
 }
 
 a:hover, a:active {
-	color: #000;
+	color: darken(@text-color, 20%);
 	text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #000;
+	color: @text-color;
 	line-height: 1.2em;
 	margin-bottom: 0.6em;
 }
@@ -256,8 +181,9 @@ blockquote {
 	padding: 7.2em 0;	
 }
 #content .inner {
-	background: white;
-	background: rgba(255, 255, 255, 0.35) ;
+	background: @background-color;
+	background: rgba(red(@background-color), 
+		green(@background-color), blue(@background-color), 0.35);
 	padding: 30px;
 }
 
