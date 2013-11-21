@@ -1,6 +1,6 @@
 /*
 Title: Online applications
-Template: Page
+Template: page
 */
 ## Online Applications
 ### Diagram
