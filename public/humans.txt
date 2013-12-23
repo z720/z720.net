@@ -1,0 +1,5 @@
+/* Owner */
+	Boss: Sebastien Erard
+	twitter: @z720
+	
+/* Thanks & Credits */

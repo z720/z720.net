@@ -24,3 +24,7 @@ $config_override = '../dev.php';
 if(file_exists($config_override)) {
 	include($config_override);
 }
+$config['build'] = 'dev';
+if ( file_exists('../build') ) {
+	$config['build'] = file_get_contents('../build');
+}

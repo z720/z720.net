@@ -27,12 +27,15 @@ module.exports = function(grunt) {
 		}
 	});
 
-
+  grunt.registerTask('identify', 'Dump the build number if any...', function() {
+		var fs = require('fs');
+		fs.writeFileSync('build', process.env.BUILD_ID || 'beta');
+	});
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task(s).
-	grunt.registerTask('build', ['less', 'uglify']);
+	grunt.registerTask('build', ['less', 'uglify', 'identify']);
 	grunt.registerTask('default', ['build']);
 
 };
