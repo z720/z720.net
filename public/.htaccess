@@ -2,6 +2,12 @@
 RewriteEngine On
 RewriteBase /
 
+# Redirect old assets to cdn files.z720.net
+RewriteCond %{REQUEST_URI} ^/blog/images [OR]
+RewriteCond %{REQUEST_URI} ^/share [OR]
+RewriteCond %{REQUEST_URI} ^/FileSharing
+RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
+
 # If file doesn't exists process with pico
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

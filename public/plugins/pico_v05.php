@@ -22,7 +22,7 @@ class Pico_v05 {
 	}
 
 	public function shortcode_caption($att, $content) {
-		return "<figure>$content<figcation>$att[caption]</figcaption></figure>";
+		return "<figure>$content<br /><figcation>$att[caption]</figcaption></figure>";
 	}
 
 	public function before_load_content(&$file)
