@@ -2,8 +2,6 @@
 <html lang="fr" class="no-js">
 {% import "includes/macros.twig" as m %}
 <head>
-	<meta charset="utf-8" />
-	
 	<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
 {% if meta.description %}
 	<meta name="description" content="{{ meta.description }}"> 
@@ -18,6 +16,11 @@
 	
 	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
+	<style>
+		html { 
+			background-image: url(http://files.z720.net/background/iphone.jpg); 
+		}
+	</style>
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}"git add href="/feed">
 </head>
@@ -46,12 +49,6 @@
 		</div>
 	</footer>
   {% include 'includes/analytics.html' %}
-  {% block bottom %}
-	<style>
-		html { 
-			background-image: url(http://files.z720.net/background/iphone.jpg); 
-		}
-	</style>
-	{% endblock %}
+  {% block bottom %}{% endblock %}
 </body>
 </html>
