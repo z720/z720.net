@@ -18,11 +18,6 @@
 	
 	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
-	<style>
-		html { 
-			background-image: url(/background/iphone.jpg); 
-		}
-	</style>
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}"git add href="/feed">
 </head>
@@ -47,9 +42,16 @@
 	
 	<footer id="footer">
 		<div class="inner">
-			<a href="http://z720.net">z720.net</a>-<small>(v6.{{ config.build }})</small> est propulsé par <a href="http://pico.dev7studios.com">Pico</a> via <a href="http://github.com/z720/z720.net">Github</a>.
+			<a href="http://z720.net" title="z720.net v6.{{ config.build }}">z720.net</a> est propulsé par <a href="http://pico.dev7studios.com">Pico</a> via <a href="http://github.com/z720/z720.net">Github</a>.
 		</div>
 	</footer>
   {% include 'includes/analytics.html' %}
+  {% block bottom %}
+	<style>
+		html { 
+			background-image: url(http://files.z720.net/background/iphone.jpg); 
+		}
+	</style>
+	{% endblock %}
 </body>
 </html>
