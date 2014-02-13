@@ -3,12 +3,20 @@
 {% block content %}
 {%if is_front_page%}
 			<h1>Sur le blog</h1>
-			{% for page in pages %}{% if page.template in ['post','link', 'photo'] %}
-				<div class="post">
-					<h3><a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a> - <em class="meta">{{ page.date_formatted }}</em></h3>
-					<p class="excerpt">{{ page.excerpt }} - <a href="{{ page.url }}">&#8984;</a></p>
-				</div>
+			<ul>
+			{% for page in pages|slice(0,10) %}{% if page.template in ['post','link', 'photo'] %}
+				<li class="post">
+					<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a>
+					{% if page.template in ['link'] %}{{ page.excerpt }}{% endif %}
+					- <em class="meta">{{ page.date_formatted }}</em>
+				</li>
 			{% endif %}{% endfor %}
+			</ul>
+			<h1>Autres projets</h1>
+			<ul>
+				<li><a href="http://www.flickr.com/photos/z720/">Flickr</a></li>
+				<li><a href="http://instagram.com/z720">Instagram</a></li>
+			</ul>
 {%else%}
 			{{ content }}
 {%endif%}
