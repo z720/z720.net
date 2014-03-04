@@ -2,7 +2,12 @@
 <html lang="fr" class="no-js">
 {% import "includes/macros.twig" as m %}
 <head>
-	<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+	<title>
+	{% block title %}
+		{% if meta.title %}{{ meta.title }} | {% endif %}
+	{%endblock%} 
+	{{ site_title }}
+	</title>
 {% if meta.description %}
 	<meta name="description" content="{{ meta.description }}">
 {% endif %}{% if meta.robots %}
@@ -33,15 +38,17 @@
 	<header id="header">
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
+			
 			<nav id="navigation" class="nav-opened">
 			<ul>
+				<li>{% include "includes/searchform.html" %}</li>
 				{{ m.menu('About', '/about') }}
 				{% for media in ['Twitter', 'Flickr', 'LinkedIn'] %}
 				{# url for menuimage: "http://files.z720.net/icons/social/%s.png"|format( media | lower) #}
 				{{ m.menu( media, "/%s"|format(media | lower)) }}
 				{% endfor %}
 			</ul>
-		</nav>
+			</nav>
 		</div>
 	</header>
 
