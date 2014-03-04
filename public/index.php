@@ -1,1 +1,1 @@
-<?php include ('pico.php'); ?>
+<?php include ('../pico.php'); ?>

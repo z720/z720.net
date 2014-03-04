@@ -14,7 +14,7 @@ RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
 RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/logs
-RewriteRule . /pico.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 
 Options -Indexes
