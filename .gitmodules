@@ -1,6 +1,4 @@
-[submodule "pico"]
-	path = pico
-	url = git@github.com:z720/Pico.git
+
 [submodule "public/plugins/rss"]
 	path = public/plugins/rss
 	url = git@github.com:z720/Pico-RSS-Plugin.git

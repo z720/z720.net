@@ -1,0 +1,16 @@
+{
+    "name": "z720/z720.net",
+    "type": "library",
+    "description": "z720.net website",
+    "homepage": "http://z720.net",
+    "authors": [
+        {
+            "name": "Sebastien Erard",
+            "email": "blog@z720.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.4",
+        "gilbitron/Pico": "~0.8"
+    }
+}
