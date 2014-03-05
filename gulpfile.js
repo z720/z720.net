@@ -26,9 +26,6 @@ gulp.task('theme', [ 'theme.js', 'theme.css' ]);
 
 // Generate the build id
 gulp.task('fingerprint', function () {
-/*	return gulp.src('./build')
-		.pipe(gulp.dest('./'));
-		/**/
 	var fs = require('fs'),
 		now = new Date(),
 		year = new Date(now.getFullYear(), now.getMonth(), now.getDay()),
@@ -42,7 +39,7 @@ gulp.task('fingerprint', function () {
 });
 
 // Generate projet files
-gulp.task('default', ['theme', 'identify-build']);
+gulp.task('default', ['theme', 'fingerprint']);
 
 // Watch files
 gulp.task('watch', function() {

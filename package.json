@@ -4,8 +4,8 @@
   "author": "z720 <blog@z720.net>",
   "description": "Personnal Website and web playground",
   "scripts": {
-    "test": "echo test command",
-    "build": "grunt build"
+    "test": "echo Not test yet",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,6 @@
     "moment": "2.x",
     "underscore": "1.4.x",
     "typogr": "0.5.x",
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9",
-    "grunt-contrib-less": "~0.8.1",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
     "gulp": "~3.5.5",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.2.1",
