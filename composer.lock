@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7d1cea6c664faf420689d3119a135df5",
+    "hash": "5849aa98dde42a1ad7d8b513b8db2c50",
     "packages": [
         {
             "name": "gilbitron/pico",
@@ -129,6 +129,45 @@
                 "templating"
             ],
             "time": "2013-04-08 12:40:11"
+        },
+        {
+            "name": "z720/Pico-RSS-Plugin",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/z720/Pico-RSS-Plugin.git",
+                "reference": "7d3ad1020035d802c1d50b65d8234a266de118b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/z720/Pico-RSS-Plugin/zipball/7d3ad1020035d802c1d50b65d8234a266de118b6",
+                "reference": "7d3ad1020035d802c1d50b65d8234a266de118b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "Gilbert Pellegrom",
+                    "email": "gilbert@pellegrom.me"
+                },
+                {
+                    "name": "Sebastien Erard",
+                    "email": "seb@z720.net"
+                }
+            ],
+            "description": "Provides an RSS Feed for Pico. It will only include content with a 'Date' field.",
+            "homepage": "https://github.com/z720/Pico-RSS-Plugin",
+            "keywords": [
+                "PicoCMS",
+                "rss"
+            ],
+            "support": {
+                "source": "https://github.com/z720/Pico-RSS-Plugin/tree/master"
+            },
+            "time": "2014-03-05 17:50:12"
         }
     ],
     "packages-dev": [

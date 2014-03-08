@@ -129,5 +129,46 @@
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/"
+    },
+    {
+        "name": "z720/Pico-RSS-Plugin",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/z720/Pico-RSS-Plugin.git",
+            "reference": "7d3ad1020035d802c1d50b65d8234a266de118b6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/z720/Pico-RSS-Plugin/zipball/7d3ad1020035d802c1d50b65d8234a266de118b6",
+            "reference": "7d3ad1020035d802c1d50b65d8234a266de118b6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-03-05 17:50:12",
+        "type": "library",
+        "installation-source": "dist",
+        "authors": [
+            {
+                "name": "Gilbert Pellegrom",
+                "email": "gilbert@pellegrom.me"
+            },
+            {
+                "name": "Sebastien Erard",
+                "email": "seb@z720.net"
+            }
+        ],
+        "description": "Provides an RSS Feed for Pico. It will only include content with a 'Date' field.",
+        "homepage": "https://github.com/z720/Pico-RSS-Plugin",
+        "keywords": [
+            "PicoCMS",
+            "rss"
+        ],
+        "support": {
+            "source": "https://github.com/z720/Pico-RSS-Plugin/tree/master"
+        }
     }
 ]
