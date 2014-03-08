@@ -1,4 +1,0 @@
-
-[submodule "public/plugins/rss"]
-	path = public/plugins/rss
-	url = git@github.com:z720/Pico-RSS-Plugin.git
