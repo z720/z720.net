@@ -26,7 +26,8 @@
     "gulp": "~3.5.5",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.2.1",
-    "gulp-less": "~1.2.2"
+    "gulp-less": "~1.2.2",
+    "dalekjs": "0.0.8"
   },
   "bundledDependencies": [],
   "engines": {
