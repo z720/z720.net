@@ -325,7 +325,7 @@ blockquote {
 }
 #content .inner {
   background: #000000;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.6);
   padding: 30px;
 }
 /* Misc Styles
