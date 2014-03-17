@@ -1,8 +1,8 @@
-/*=================================*/
-/* Pico Default Theme
+/*===========================================*/
+/* z720.net theme based on Pico Default Theme
 /* By: Gilbert Pellegrom
 /* http: //dev7studios.com
-/*=================================*/
+/*===========================================*/
 /* Reset Styles
 /*---------------------------------------------*/
 html,
@@ -161,11 +161,12 @@ select:focus {
 /* Main Styles
 /*---------------------------------------------*/
 html {
-  background: #000000 no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #000000 url(escheresque/escheresque.png) repeat center center fixed;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  html {
+    background-image: url(escheresque/escheresque_@2X.png);
+  }
 }
 body {
   font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
@@ -214,7 +215,7 @@ p {
 }
 ol,
 ul {
-  padding-left: 30px;
+  padding-left: 20px;
   margin-bottom: 1em;
 }
 b,
@@ -271,14 +272,16 @@ blockquote {
 /* Structure Styles
 /*---------------------------------------------*/
 .inner {
-  width: 90%;
   max-width: 850px;
-  margin: 0 auto;
+  margin: 0 5%;
+}
+.inner img {
+  max-width: 100%;
 }
 #header {
   background: #2e9fae;
   padding: 0.5em 0;
-  margin-bottom: 4em;
+  margin-bottom: 5%;
   color: #afe1da;
 }
 #header a {

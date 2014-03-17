@@ -9,19 +9,13 @@
 	<meta name="robots" content="{{ meta.robots }}">
 {% endif %}
 	<link type="text/plain" rel="author" href="//z720.net/humans.txt" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style/print.css" type="text/css" media="print" />
 	<meta name="generator" value="z720.v6.{{ config.build }}" />
 	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
-	<style>
-		html { 
-			background-image: url({{ theme_url }}/escheresque/escheresque.png);
-			background-size: auto;
-			background-repeat: repeat;
-		}
-	</style>
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}"git add href="/feed">
 </head>
