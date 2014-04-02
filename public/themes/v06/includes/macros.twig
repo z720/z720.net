@@ -1,3 +1,8 @@
 {% macro menu(label, url) %}
 				<li class=""><a href="{{ url }}">{{ label }}</a></li>
 {% endmacro %}
+
+{% macro menuimage(label, icon, url) %}
+	{% import _self as m %}
+	{{ m.menu( '<img src="%s" alt="%s" />' | format(icon, label), url) }}
+{% endmacro %}

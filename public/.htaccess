@@ -4,6 +4,16 @@ AddDefaultCharset UTF-8
 RewriteEngine On
 RewriteBase /
 
+# Shortcuts
+RewriteCond %{REQUEST_URI} ^/linkedin 
+RewriteRule .* https://lu.linkedin.com/in/seberard/ [L,R]
+RewriteCond %{REQUEST_URI} ^/twitter 
+RewriteRule .* https://twitter.com/z720 [L,R]
+RewriteCond %{REQUEST_URI} ^/flickr 
+RewriteRule .* https://www.flickr.com/photos/z720/ [L,R]
+RewriteCond %{REQUEST_URI} ^/instagram 
+RewriteRule .* http://instagram.com/z720 [L,R]
+
 # Redirect old assets to cdn files.z720.net
 RewriteCond %{REQUEST_URI} ^/blog/images [OR]
 RewriteCond %{REQUEST_URI} ^/share [OR]
