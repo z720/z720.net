@@ -9,19 +9,15 @@
 	<meta name="robots" content="{{ meta.robots }}">
 {% endif %}
 	<link type="text/plain" rel="author" href="//z720.net/humans.txt" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style/print.css" type="text/css" media="print" />
 	<meta name="generator" value="z720.v6.{{ config.build }}" />
 	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
-	<style>
-		html { 
-			background-image: url(http://files.z720.net/background/iphone.jpg); 
-		}
-	</style>
 	{% endblock %}
-	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}"git add href="/feed">
+	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}" href="//z720.net/feed">
 </head>
 <body class="{%if meta.template %}{{ meta.template }}{% else %}index{% endif %}">
 
@@ -30,6 +26,10 @@
 			<h1><a href="/">{{ site_title }}</a></h1>
 			<ul class="nav">
 				{{ m.menu('About', '/about') }}
+				{% for media in ['Twitter', 'Flickr', 'LinkedIn'] %}
+				{# url for menuimage: "http://files.z720.net/icons/social/%s.png"|format( media | lower) #}
+				{{ m.menu( media, "/%s"|format(media | lower)) }}
+				{% endfor %}
 			</ul>
 		</div>
 	</header>

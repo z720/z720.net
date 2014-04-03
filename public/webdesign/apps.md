@@ -12,3 +12,6 @@ Template: page
 ### Code Lib & Docs
 - [Gist Box](https://app.gistboxapp.com/)
 - [Dev Docs](http://devdocs.io/)
+
+### Writing
+- [Hemingway app](http://www.hemingwayapp.com/) Hemingway helps you write bold and clear...
