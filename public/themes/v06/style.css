@@ -274,7 +274,7 @@ blockquote {
 /*---------------------------------------------*/
 .inner {
   max-width: 850px;
-  margin: 0 5%;
+  margin: 0 2em;
 }
 .inner img {
   max-width: 100%;
@@ -282,7 +282,7 @@ blockquote {
 #header {
   background: #2e9fae;
   padding: 0.5em 0;
-  margin-bottom: 5%;
+  margin-bottom: 2em;
   color: #afe1da;
 }
 #header a {
@@ -330,7 +330,7 @@ blockquote {
 #content .inner {
   background: #000000;
   background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
+  padding: 2em 30px;
 }
 /* Misc Styles
 /*---------------------------------------------*/
