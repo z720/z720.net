@@ -4,6 +4,9 @@ AddDefaultCharset UTF-8
 RewriteEngine On
 RewriteBase /
 
+# Skip 
+RewriteRule ^/stats/(.*) - [L]
+
 # Shortcuts
 RewriteCond %{REQUEST_URI} ^/linkedin 
 RewriteRule .* https://lu.linkedin.com/in/seberard/ [L,R]
