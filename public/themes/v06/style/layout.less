@@ -6,16 +6,17 @@
 
 #header {
 	background: @header-color;
-	padding: 0.5em 0;
 	margin-bottom: 2em;
+	line-height: 4em;
 	color: @header-text;
 	a { color: @header-link; }
 	h1 a,
-  a:hover { color: @header-hover; }
-	h1 { 
+	a:hover { color: @header-hover; }
+	h1 {
 		font-weight: bold;
-		margin: 0; 
-		float: left;
+		margin: 0;
+		//float: left;
+		display: inline-block;
 	}
 	.nav {
 		float: right;
@@ -29,23 +30,24 @@
 		}
 	}
 }
-	
+
 #footer {
 	background: @footer-color;
-	padding: 1.2em 0;
-	margin-top: 4em; //80px;
+	margin-top: 2em; //80px;
+	line-height: 4em;
 	color: @footer-text;
 	a { color: @footer-link; }
 	a:hover { color: @footer-hover; }
+	.credit { float:right; }
 }
 
 #content {
-	margin: -7.4em auto -8.2em;
 	min-height: 100%;
-	padding: 7.2em 0;	
+	margin: -6em auto -6em;
+	padding: 6em 0 6em;
 	.inner {
 		background: @background-color;
-		background: rgba(red(@background-color), 
+		background: rgba(red(@background-color),
 			green(@background-color), blue(@background-color), 0.60);
 		padding: 2em 30px;
 	}
