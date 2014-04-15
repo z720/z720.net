@@ -34,7 +34,7 @@ gulp.task('fingerprint', function () {
 		err = fs.writeFileSync('./build', process.env.BUILD_ID || 'beta-'.concat(key.toString(16)));
 		if(err) {
 			throw("Cannot write Build file: ".concat(err));
-		} 
+		}
 	return gulp.src('./build');
 });
 
@@ -43,7 +43,6 @@ gulp.task('default', ['theme', 'fingerprint']);
 
 // Watch files
 gulp.task('watch', function() {
-	gulp.run('default');
   gulp.watch(themejs.concat('/*.js'), ['theme.js', 'fingerprint']);
   gulp.watch(themecss.concat('/*.less'), ['theme.css', 'fingerprint']);
 });
