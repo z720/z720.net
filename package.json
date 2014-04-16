@@ -23,7 +23,7 @@
     "moment": "2.x",
     "underscore": "1.4.x",
     "typogr": "0.5.x",
-    "gulp": "~3.5.5",
+    "gulp": "~3.6",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.2.1",
     "gulp-less": "~1.2.2",
