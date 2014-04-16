@@ -1,20 +1,125 @@
-@media all {
+html, body, #content .inner  {
+	line-height: 1.3 ! important;
+}
+
+h1 { float:right; clear:right; }
+
+section a {
+	color: #000 ! important;
+	text-shadow: none ! important;
+	text-decoration: none ! important;
+}
+
+h2 {
+	font-size: 16pt;
+	border-bottom: 1px solid #DDD;
+	clear: left;
+}
+
+h3 {
+	font-size: 12pt;
+	text-align: right;
+	clear: left;
+}
+
+section p,
+section ul,
+section ul + p {
+	margin-left: 4cm !important;
+	clear: left;
+	page-break-before: avoid;
+}
+
+section ul + p:before {
+	content: "Environnement";
+}
+
+section ul + p:before {
+	display: inline-block;
+	width: 4cm;
+	text-align:right;
+	margin-left: -4cm;
+	padding-right:1ex;
+	font-weight: bold;
+}
+
+section ul {
+	margin-top: 6pt !important;
+	margin-bottom: 6pt !important
+}
+
+p + h3, hr + h3 {
+	border-top: 1.5pt solid #DDD;
+}
+
+h3 strong {
+	float: left;
+	width: 7,25cm;
+	text-align:left;
+}
+h3 em {
+	display: block;
+	font-size: 80%;
+	float:left;
+	clear:left;
+}
+blockquote {
+	border:none;
+	padding:0;
+	margin-bottom: 12pt! important;
+	margin-top: 0 !important;
+	float:left;
+	font-size: 12pt;
+	text-align: justify;
+}
+blockquote p {
+	margin-left: 0 ! important;
+}
+blockquote:first-of-type {
+	float: left;
+	width: 7cm;
+	margin-top: 0 !important;
+	margin-left: 0! important;
+	margin-bottom: 24pt !important;
+	font-size: 14pt;
+}
+blockquote:first-of-type p {
+	line-height: 1.1em;
+}
+
+section h2:nth-of-type(2) + ul {
+	padding-left: 0 !important;
+}
+
+section h2:nth-of-type(2) + ul li {
+	list-style-type: none;
+	display: block;
+	position: relative;
+	text-indent: -4cm;
+}
+section h2:nth-of-type(2) + ul li strong {
+	display: inline-block;
+	left: -4cm;
+	text-align: right;
+	padding-right: 1ex ! important;
+	width: 4cm;
+}
+
+@media print {
+	@page{
+		size:A4;
+	}
 	#header, #footer {
 		display: none;
-	}
-
-	html {
-		background-image: none;
 	}
 
 	html, body, #content .inner  {
 		color: #000 ! important;
 		background: #fff;
-		line-height: 100%;
 		font-size: 10pt;
-		line-height: 13pt;
+/*		line-height: 13pt ! important; */
 	}
-	
+
 	.inner {
 		width: 19cm;
 	}
@@ -23,101 +128,17 @@
 		color: #000;
 		margin-top: 12pt ! important;
 	}
-
-	h1 {
-		font-size: 16pt;
-		border-bottom: 1px solid #DDD;
-		clear: left;
+	a[href]:after {
+		display:none;
 	}
 
-	h2 {
-		font-size: 12pt;
-		text-align: right;
-		clear: left;
+	h3 {
 		page-break-before: auto;
 	}
-
-	h2:nth-of-type(4) {
+	h3:nth-of-type(4) {
 		page-break-before:always;
 	}
-
-	h2 + p, ul, ul + p { 
-		margin-left: 5cm !important;
-		clear: left;
-		page-break-before: avoid;
-	}
-
-	ul + p:before {
-		content: "Environnement: ";
-	}
-	
-	ul + p:before {
-		display: inline-block;
-		width: 5cm;
-		text-align:right;
-		/*float:left;*/
-		margin-left: -5cm;
-		padding-right:1ex;
-		font-weight: bold;
-	}
-	
-	ul {
-		margin-top: 6pt !important;
-		margin-bottom: 6pt !important
-	}
-
-	p + h2, hr + h2 {
-		border-top: 1px solid #DDD;
-	}
-
-	h2 strong {
-		float: left;
-		width: 7,25cm;
-		text-align:left;
-	}
-	h2 em { 
-		display: block;
-		font-size: 80%;
-		float:left;
-		clear:left;
-	}
-	blockquote {
-		border:none;
-		padding:0;
-		margin-bottom: 12pt! important;
-		margin-top: 0 !important;
-		float:left;
-		font-size: 12pt;
-		text-align: justify;
-	}
-	blockquote:first-of-type {
-		float: left;
-		width: 7cm;
-		margin-top: 0 !important;
-		margin-left: 0! important;
-		margin-bottom: 24pt !important;
-		font-size: 14pt;
-	}
-	
-	.inner h1:nth-of-type(2) + ul {
-		padding-left: 0 !important;
-		/*margin-left:0 !important;*/
-	}
-
-	.inner h1:nth-of-type(2) + ul li {
-		list-style-type: none;
-		display: block;
-		position: relative;
-	}
-	.inner h1:nth-of-type(2) + ul li em {
-		position:absolute;
-		left: -5cm;
-		text-align: right;
-		padding-right: 1ex ! important;
-		width: 5cm;
-	}
-	
-	a[href]:after {
-  		display:none;
+	a[href$='.pdf'] {
+		display: none;
 	}
 }
