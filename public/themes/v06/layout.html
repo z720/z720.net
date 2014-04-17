@@ -4,7 +4,7 @@
 <head>
 	<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
 {% if meta.description %}
-	<meta name="description" content="{{ meta.description }}"> 
+	<meta name="description" content="{{ meta.description }}">
 {% endif %}{% if meta.robots %}
 	<meta name="robots" content="{{ meta.robots }}">
 {% endif %}
@@ -18,9 +18,17 @@
 	{% block head %}
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}" href="//z720.net/feed">
+	{% if meta.background %}
+	<style>
+		html {
+			background-image: url({{meta.background}});
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+	{% endif %}
 </head>
 <body class="{%if meta.template %}{{ meta.template }}{% else %}index{% endif %}">
-
 	<header id="header">
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
@@ -41,10 +49,13 @@
 		{% endblock %}
 		</div>
 	</section>
-	
+
 	<footer id="footer">
 		<div class="inner">
 			<a href="http://z720.net" title="z720.net v6.{{ config.build }}">z720.net</a> est propulsé par <a href="http://pico.dev7studios.com">Pico</a> via <a href="http://github.com/z720/z720.net">Github</a>.
+			{% if meta.background and meta.backgroundCredit %}
+			<a href="{{meta.backgroundCredit}}" class="credit">Crédit photo.</a>
+			{% endif %}
 		</div>
 	</footer>
   {% include 'includes/analytics.html' %}
