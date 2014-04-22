@@ -114,10 +114,12 @@ header,
 section,
 footer,
 aside,
-nav,
 article,
 figure {
   display: block;
+}
+nav {
+  display: inline-block;
 }
 /* hand cursor on clickable input elements */
 label,
@@ -126,7 +128,7 @@ input[type=submit],
 button {
   cursor: pointer;
 }
-/* make buttons play nice in IE:	 
+/* make buttons play nice in IE:
 		www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
 button {
   width: auto;
@@ -303,16 +305,17 @@ blockquote {
   margin: 0;
   display: inline-block;
 }
-#header .nav {
+#header nav,
+#header nav ul {
   float: right;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-#header .nav li {
+#header nav li {
   display: inline;
 }
-#header .nav a {
+#header nav a {
   font-weight: bold;
   margin-left: 20px;
 }
@@ -340,6 +343,24 @@ blockquote {
   background: #000000;
   background: rgba(0, 0, 0, 0.6);
   padding: 2em 30px;
+}
+@media (max-width: 767px) {
+  nav:before {
+    font-size: 3em;
+    min-width: 1em;
+    text-align: center;
+    content: "\2261";
+    display: inline-block;
+    position: absolute;
+    right: 0.66em;
+    top: -0.16em;
+  }
+  nav ul {
+    display: none;
+  }
+  nav.nav-opened ul {
+    display: block;
+  }
 }
 /* Misc Styles
 /*---------------------------------------------*/

@@ -1,0 +1,20 @@
+@media  (max-width: 767px) {
+  nav {
+    &:before {
+      font-size: 3em;
+      min-width: 1em;
+      text-align: center;
+      content: "\2261";
+      display: inline-block;
+      position: absolute;
+      right: 0.66em;
+      top:-0.16em;
+    }
+    ul {
+      display: none;
+    }
+    &.nav-opened ul {
+      display: block;
+    }
+  }
+}

@@ -11,20 +11,21 @@
 	<link type="text/plain" rel="author" href="//z720.net/humans.txt" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
-	<link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
-	<link rel="stylesheet" href="{{ theme_url }}/style/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="{{ theme_url }}/style.css?build={{ config.build }}" type="text/css" />
+	<link rel="stylesheet" href="{{ theme_url }}/style/print.css?build={{ config.build }}" type="text/css" media="print" />
 	<meta name="generator" value="z720.v6.{{ config.build }}" />
-	<script src="{{ theme_url }}/script.min.js"></script>
 	{% block head %}
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}" href="//z720.net/feed">
 	{% if meta.background %}
 	<style>
+	@media  (min-width: 770px) {
 		html {
 			background-image: url({{meta.background}});
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+	}
 	</style>
 	{% endif %}
 </head>
@@ -32,13 +33,15 @@
 	<header id="header">
 		<div class="inner clearfix">
 			<h1><a href="/">{{ site_title }}</a></h1>
-			<ul class="nav">
+			<nav id="navigation" class="nav-opened">
+			<ul>
 				{{ m.menu('About', '/about') }}
 				{% for media in ['Twitter', 'Flickr', 'LinkedIn'] %}
 				{# url for menuimage: "http://files.z720.net/icons/social/%s.png"|format( media | lower) #}
 				{{ m.menu( media, "/%s"|format(media | lower)) }}
 				{% endfor %}
 			</ul>
+		</nav>
 		</div>
 	</header>
 
@@ -58,6 +61,7 @@
 			{% endif %}
 		</div>
 	</footer>
+	<script src="{{ theme_url }}/script.min.js?build={{ config.build }}"></script>
   {% include 'includes/analytics.html' %}
   {% block bottom %}{% endblock %}
 </body>
