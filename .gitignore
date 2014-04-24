@@ -1,7 +1,7 @@
 #logs et cache
 logs/*
 *.log
-cache/*/*
+cache/**
 
 # CI
 build

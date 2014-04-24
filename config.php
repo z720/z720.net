@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Override any of the default settings below:
 
@@ -14,6 +14,8 @@ $config['twig_config'] = array(			// Twig settings
 $config['pages_order_by'] = 'date';	// Order pages by "alpha" or "date"
 $config['pages_order'] = 'desc';			// Order pages "asc" or "desc"
 $config['excerpt_length'] = 50;			// The pages excerpt length (in words)
+
+$config['oEmbed_cache_dir'] = CACHE_DIR;
 
 // To add a custom config setting:
 
