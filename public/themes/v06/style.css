@@ -286,6 +286,7 @@ blockquote {
 }
 .inner img {
   max-width: 100%;
+  height: auto;
 }
 #header {
   background: #665a9d;
