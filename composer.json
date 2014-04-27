@@ -9,12 +9,6 @@
             "email": "blog@z720.net"
         }
     ],
-    "repositories": [
-    {
-        "type":"vcs",
-        "url":"/Users/seb/Documents/github/pico-oembed"
-    }
-    ],
     "require": {
         "php": ">=5.2.4",
         "gilbitron/Pico": "~0.8",
