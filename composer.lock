@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cfb1c4dc87ca08b2bc9b3301f78be934",
+    "hash": "88d7ad95e81e4285a24eccd1ca68f014",
     "packages": [
         {
             "name": "fg/essence",
@@ -215,6 +215,42 @@
             "description": "oEmbed Pico Plugin",
             "homepage": "http://z720.net/pico/oembed",
             "time": "2014-04-27 14:44:25"
+        },
+        {
+            "name": "z720/pico_scheduled_post",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/z720/pico_scheduled_post.git",
+                "reference": "06c60934d3d33ac7f968b9f00036b601ab78ae26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/z720/pico_scheduled_post/zipball/06c60934d3d33ac7f968b9f00036b601ab78ae26",
+                "reference": "06c60934d3d33ac7f968b9f00036b601ab78ae26",
+                "shasum": ""
+            },
+            "suggest": {
+                "gilbitron/Pico": "~0.8"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Pico_Scheduled_Post.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastien Erard",
+                    "email": "blog@z720.net"
+                }
+            ],
+            "description": "Post/Page scheduling in PicoCMS",
+            "time": "2014-04-27 16:00:08"
         }
     ],
     "packages-dev": [
@@ -223,7 +259,7 @@
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [
 
     ],

@@ -1,8 +1,9 @@
 {
     "name": "z720/z720.net",
-    "type": "library",
+    "type": "website",
     "description": "z720.net website",
     "homepage": "http://z720.net",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Sebastien Erard",
@@ -12,6 +13,7 @@
     "require": {
         "php": ">=5.2.4",
         "gilbitron/Pico": "~0.8",
-        "z720/pico_oembed": "0.*"
+        "z720/pico_oembed": "0.*",
+        "z720/pico_scheduled_post": "0.*"
     }
 }

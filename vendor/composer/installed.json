@@ -219,5 +219,43 @@
         ],
         "description": "oEmbed Pico Plugin",
         "homepage": "http://z720.net/pico/oembed"
+    },
+    {
+        "name": "z720/pico_scheduled_post",
+        "version": "0.1.1",
+        "version_normalized": "0.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/z720/pico_scheduled_post.git",
+            "reference": "06c60934d3d33ac7f968b9f00036b601ab78ae26"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/z720/pico_scheduled_post/zipball/06c60934d3d33ac7f968b9f00036b601ab78ae26",
+            "reference": "06c60934d3d33ac7f968b9f00036b601ab78ae26",
+            "shasum": ""
+        },
+        "suggest": {
+            "gilbitron/Pico": "~0.8"
+        },
+        "time": "2014-04-27 16:00:08",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "Pico_Scheduled_Post.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sebastien Erard",
+                "email": "blog@z720.net"
+            }
+        ],
+        "description": "Post/Page scheduling in PicoCMS"
     }
 ]
