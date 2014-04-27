@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'FileCacheEngine' => $vendorDir . '/z720/pico_oembed/Pico_oEmbed.php',
+    'Pico_oEmbed' => $vendorDir . '/z720/pico_oembed/Pico_oEmbed.php',
 );

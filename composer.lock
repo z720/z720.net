@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "538a82cbe91aa2eff3ef5e37c6fe70e0",
+    "hash": "cfb1c4dc87ca08b2bc9b3301f78be934",
     "packages": [
         {
             "name": "fg/essence",
@@ -181,16 +181,16 @@
         },
         {
             "name": "z720/pico_oembed",
-            "version": "0.1",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z720/pico_oembed.git",
-                "reference": "dbe657715dc610159cda3d71247ace0708acf473"
+                "reference": "e30cde6d63bbe4b0e05329599035e229fda8998d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z720/pico_oembed/zipball/dbe657715dc610159cda3d71247ace0708acf473",
-                "reference": "dbe657715dc610159cda3d71247ace0708acf473",
+                "url": "https://api.github.com/repos/z720/pico_oembed/zipball/e30cde6d63bbe4b0e05329599035e229fda8998d",
+                "reference": "e30cde6d63bbe4b0e05329599035e229fda8998d",
                 "shasum": ""
             },
             "require": {
@@ -200,6 +200,11 @@
                 "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Pico_oEmbed.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -209,7 +214,7 @@
             ],
             "description": "oEmbed Pico Plugin",
             "homepage": "http://z720.net/pico/oembed",
-            "time": "2014-04-27 13:09:27"
+            "time": "2014-04-27 14:44:25"
         }
     ],
     "packages-dev": [

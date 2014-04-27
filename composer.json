@@ -12,6 +12,6 @@
     "require": {
         "php": ">=5.2.4",
         "gilbitron/Pico": "~0.8",
-        "z720/pico_oembed": "~0.1"
+        "z720/pico_oembed": "0.*"
     }
 }
