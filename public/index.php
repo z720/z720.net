@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0); // no errors in production
 date_default_timezone_set('Europe/Paris');
 
 define('ROOT_DIR', realpath(dirname(__FILE__).'/../') .'/');
