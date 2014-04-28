@@ -5,8 +5,6 @@ Date: 2014-04-28 20:00
 Background: 
 */
 
-# Quelques photos de Miami
-
 <https://www.flickr.com/photos/z720/13981016141/>
 Real Fake.
 
