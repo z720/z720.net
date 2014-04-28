@@ -204,7 +204,7 @@
         },
         "time": "2014-04-27 14:44:25",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "classmap": [
                 "Pico_oEmbed.php"
@@ -240,7 +240,7 @@
         },
         "time": "2014-04-27 16:00:08",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "classmap": [
                 "Pico_Scheduled_Post.php"
