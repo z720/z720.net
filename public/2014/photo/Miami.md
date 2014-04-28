@@ -2,7 +2,8 @@
 title: Quelques photos de Miami
 Template: post
 Date: 2014-04-28 20:00
-Background: 
+Background: https://farm8.staticflickr.com/7218/14004147323_02a8fc21d3_h_d.jpg
+Background-Credit: https://www.flickr.com/photos/z720/14004147323
 */
 
 <https://www.flickr.com/photos/z720/13981016141/>
