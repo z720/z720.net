@@ -7,13 +7,17 @@ Background-Credit: https://www.flickr.com/photos/z720/14294424279
 */
 
 <https://www.flickr.com/photos/z720/14481062005/>
+
 Guitariste.
 
 <https://www.flickr.com/photos/z720/14479852274>
+
 Temple Neuf
 
 <https://www.flickr.com/photos/z720/14294424279>
+
 Ambiance de rue
 
 <https://www.flickr.com/photos/z720/14501177433>
+
 Sainte Ségolène by Night
