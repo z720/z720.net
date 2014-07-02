@@ -2,7 +2,7 @@
 Title: Peroxide - configurable local proxy server
 Template: link
 Link: https://github.com/creativemarket/peroxide
-Date: 2014/05/08 13:00
+Date: 2014-05-08 13:00
 */
 
 
