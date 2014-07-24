@@ -25,7 +25,7 @@ RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
 
 # Redirect renammed resources
 RewriteCond %{REQUEST_URI} ^/webdesign/(.*)
-RewriteRule ^/webdesign/(.*) /work/$1 [L]
+RewriteRule ^/webdesign/(.*) /work/$1 [L,R]
 
 # If file doesn't exists process with pico
 RewriteCond %{REQUEST_FILENAME} !-f
