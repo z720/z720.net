@@ -7,9 +7,12 @@ cache/**
 build
 
 #Development
+**.deactivated
 #cloud 9 ide
 .c9revisions/
+.c9/
 dev.php
+composer.phar
 
 # nodejs tools
 node_modules/
