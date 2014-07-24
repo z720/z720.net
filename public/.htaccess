@@ -23,7 +23,7 @@ RewriteCond %{REQUEST_URI} ^/share [OR]
 RewriteCond %{REQUEST_URI} ^/FileSharing
 RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
 
-# Redirect renammed resources
+# Redirect renammed resources 
 RewriteCond %{REQUEST_URI} ^/webdesign/(.*)
 RewriteRule ^/webdesign/(.*) /work/$1 [L]
 
