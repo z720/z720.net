@@ -1,6 +1,8 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//z720.net/NONSGML v1.0//FR
+X-WR-CALNAME: Défi Création Aout 
+X-WR-CALDESC: (http://weblog.redisdead.net/main/post/2014/07/27/Un-defi-creatif-pour-le-mois-d-Aout)
 BEGIN:VEVENT
 DTSTART;VALUE=DATE:20140801
 DTEND;VALUE=DATE:20140801
