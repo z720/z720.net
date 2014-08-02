@@ -11,7 +11,7 @@ Une fois n'est pas coutume, [Laurence](http://weblog.redisdead.net/main/post/201
 nous propose un petit défi créatif pour le mois d'août, certainement une bonne occasion d'aiguiser son esprit créatif.
 
 1. [Vendredi](1-Vendredi)
-1. Bleu
+1. [Bleu](2-Bleu)
 1. Cabane
 1. Gribouillis
 1. Soirée
