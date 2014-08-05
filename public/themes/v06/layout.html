@@ -16,8 +16,8 @@
 	<link type="text/plain" rel="author" href="//z720.net/humans.txt" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
-	<link rel="stylesheet" href="{{ theme_url }}/style.css?build={{ config.build }}" type="text/css" />
-	<link rel="stylesheet" href="{{ theme_url }}/style/print.css?build={{ config.build }}" type="text/css" media="print" />
+	<link rel="stylesheet" href="{{ theme_url|replace({'http://': '//'}) }}/style.css?build={{ config.build }}" type="text/css" />
+	<link rel="stylesheet" href="{{ theme_url|replace({'http://': '//'} }}/style/print.css?build={{ config.build }}" type="text/css" media="print" />
 	<meta name="generator" value="z720.v6.{{ config.build }}" />
 	{% if meta.customCSS %}{% for ref in meta.customCSS|split(',') %}<link rel="stylesheet" href="{{ref|trim}}" type="text/css" />{% endfor %}{% endif %}
 	{% block head %}
@@ -69,7 +69,7 @@
 			<br />
 		</div>
 	</footer>
-	<script src="{{ theme_url }}/script.min.js?build={{ config.build }}"></script>
+	<script src="{{ theme_url|replace({'http://': '//'} }}/script.min.js?build={{ config.build }}"></script>
   {% include 'includes/analytics.html' %}
   {% if meta.customJS %}{% for ref in meta.customJS|split(',') %}
   <script type="text/javascript" src="{{ref|trim}}"></script>
