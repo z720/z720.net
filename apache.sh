@@ -56,5 +56,5 @@ fi
 
 kill_apache2
 echo "Started apache2"
-apache2ctl -f ~/workspace/dev.conf
+apache2ctl -f ~/workspace/apache.conf
 tail_log
