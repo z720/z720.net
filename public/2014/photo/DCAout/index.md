@@ -13,8 +13,8 @@ nous propose un petit défi créatif pour le mois d'août, certainement une bonn
 1. [Vendredi](1-Vendredi)
 1. [Bleu](2-Bleu)
 1. [Cabane](3-Cabane)
-1. Gribouillis
-1. Soirée
+1. [Gribouillis](4-Gribouillis)
+1. [Soirée](5-Soiree)
 1. Animal
 1. Sourire
 1. Rose
