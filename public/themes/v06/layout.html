@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="{{ theme_url }}/style.css?build={{ config.build }}" type="text/css" />
 	<link rel="stylesheet" href="{{ theme_url }}/style/print.css?build={{ config.build }}" type="text/css" media="print" />
 	<meta name="generator" value="z720.v6.{{ config.build }}" />
+	{% if meta.customCSS %}{% for ref in meta.customCSS|split(',') %}<link rel="stylesheet" href="{{ref|trim}}" type="text/css" />{% endfor %}{% endif %}
 	{% block head %}
 	{% endblock %}
 	<link rel="alternate" type="application/rss+xml" title="Flux {{site_title}}" href="//z720.net/feed">
@@ -59,17 +60,20 @@
 		{% endblock %}
 		</div>
 	</section>
-
 	<footer id="footer">
 		<div class="inner">
 			<a href="http://z720.net" title="z720.net v6.{{ config.build }}">z720.net</a> est propulsé par <a href="http://pico.dev7studios.com">Pico</a> via <a href="http://github.com/z720/z720.net">Github</a>.
 			{% if meta.background and meta.backgroundCredit %}
 			<a href="{{meta.backgroundCredit}}" class="credit">Crédit photo.</a>
 			{% endif %}
+			<br />
 		</div>
 	</footer>
 	<script src="{{ theme_url }}/script.min.js?build={{ config.build }}"></script>
   {% include 'includes/analytics.html' %}
+  {% if meta.customJS %}{% for ref in meta.customJS|split(',') %}
+  <script type="text/javascript" src="{{ref|trim}}"></script>
+  {% endfor %}{% endif %}
   {% block bottom %}{% endblock %}
 </body>
 </html>

@@ -178,7 +178,7 @@ html {
   }
 }
 body {
-  font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
+  font: 16px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
   color: #ffffff;
   background: transparent;
   -webkit-font-smoothing: antialiased;
@@ -266,6 +266,7 @@ pre {
   padding: 20px;
   margin-bottom: 1em;
   overflow: auto;
+  color: #333;
 }
 blockquote {
   font-style: italic;
@@ -296,7 +297,7 @@ nav form[action$=search] input[type=submit] {
 /* Structure Styles
 /*---------------------------------------------*/
 .inner {
-  max-width: 850px;
+  max-width: 70ex;
   margin: 0 2em;
 }
 .inner img {
@@ -338,8 +339,10 @@ nav form[action$=search] input[type=submit] {
 #footer {
   background: #707070;
   margin-top: 2em;
-  line-height: 4em;
+  min-height: 4em;
+  padding-top: 0.8em;
   color: #c0c0c0;
+  clear: both;
 }
 #footer a {
   color: #dddddd;

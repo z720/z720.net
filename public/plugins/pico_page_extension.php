@@ -11,6 +11,24 @@ class Pico_Page_Extension {
 
 	private $metas = 'template,link,background';
 
+	public function before_read_file_meta(&$headers)
+	{
+		$headers['link'] = 'Link';
+		$headers['background'] = 'Background';
+    	$headers['backgroundCredit'] = 'Background-credit';
+    	$headers['customCSS'] = 'css';
+    	$headers['customJS'] = 'js';
+  	}
+
+	public function get_page_data(&$data, $page_meta)
+	{
+		foreach(explode(',', $this->metas) as $meta) {
+			if(isset($page_meta[trim($meta)])) {
+				$data[$meta] = $page_meta[$meta];
+			}
+		}
+	}
+
 	public function plugins_loaded()
 	{
 
@@ -46,13 +64,6 @@ class Pico_Page_Extension {
 
 	}
 
-	public function before_read_file_meta(&$headers)
-	{
-		$headers['link'] = 'Link';
-		$headers['background'] = 'Background';
-    $headers['backgroundCredit'] = 'Background-credit';
-  }
-
 	public function file_meta(&$meta)
 	{
 
@@ -66,15 +77,6 @@ class Pico_Page_Extension {
 	public function after_parse_content(&$content)
 	{
 
-	}
-
-	public function get_page_data(&$data, $page_meta)
-	{
-		foreach(explode(',', $this->metas) as $meta) {
-			if(isset($page_meta[trim($meta)])) {
-				$data[$meta] = $page_meta[$meta];
-			}
-		}
 	}
 
 	public function get_pages(&$pages, &$current_page, &$prev_page, &$next_page)

@@ -1,5 +1,5 @@
 .inner {
-	max-width: 850px;
+	max-width: 70ex;
 	margin: 0 2em;
 	img { max-width: 100%; height:auto; }
 }
@@ -36,8 +36,10 @@
 #footer {
 	background: @footer-color;
 	margin-top: 2em; //80px;
-	line-height: 4em;
+	min-height: 4em;
+	padding-top: 0.8em;
 	color: @footer-text;
+	clear: both;
 	a { color: @footer-link; }
 	a:hover { color: @footer-hover; }
 	.credit { float:right; }
