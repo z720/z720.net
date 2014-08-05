@@ -5,7 +5,7 @@
 $config['site_title'] = 'z720.net';			// Site title
 //$config['base_url'] = ''; 				// Override base URL (e.g. http://example.com)
 $config['theme'] = 'v06'; 			// Set the theme (defaults to "default")
-$config['date_format'] = 'j/m/Y';		// Set the PHP date format
+$config['date_format'] = 'd/m/Y';		// Set the PHP date format
 $config['twig_config'] = array(			// Twig settings
 	'cache' => CACHE_DIR,					// To enable Twig caching change this to CACHE_DIR
 	'autoescape' => false,				// Autoescape Twig vars
@@ -18,6 +18,8 @@ $config['excerpt_length'] = 50;			// The pages excerpt length (in words)
 $config['oEmbed_cache_dir'] = CACHE_DIR;
 
 // To add a custom config setting:
+
+$config['request_uri'] = $_SERVER['REQUEST_URI'];
 
 //$config['custom_setting'] = 'Hello'; 	// Can be accessed by {{ config.custom_setting }} in a theme
 

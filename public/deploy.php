@@ -13,9 +13,10 @@
 		'whoami',
 		'git pull',
 		'git status',
-		'git submodule sync',
-		'git submodule update',
-		'git submodule status',
+		'git log --pretty=format:\'%h\' -n 1 > ../build',
+//		'git submodule sync',
+//		'git submodule update',
+//		'git submodule status',
 	);
 
 	// Run the commands for output

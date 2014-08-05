@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+			{{ content }}
+			{% set index_root = base_url ~ _context.config.request_uri  %}
+			<h2>Inside {{ _context.config.request_uri|trim('/') }}</h2>
+    	<ul>
+    	{% for page in pages %}
+    	{% set page_root = page.url|slice(0, index_root | length ) %}
+    	{% if (page_root == index_root) and (page.url != index_root) %}
+    		<li class="post">
+    			<a href="{{ page.url }}">{% if page.date %}{{ page.date_formatted }} - {% endif %}{{ page.title }}</a>
+    		</li>
+    	{% endif %}
+    	{% endfor %}
+    	</ul>
+{% endblock %}
