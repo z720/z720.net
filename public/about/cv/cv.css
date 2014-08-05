@@ -1,5 +1,6 @@
 #content .inner  {
 	line-height: 1.3 ! important;
+	max-width: 850px;
 }
 
 section h1 { float:right; clear:right; }

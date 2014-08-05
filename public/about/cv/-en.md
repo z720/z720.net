@@ -1,8 +1,8 @@
 /*
  Title: Curriculum Vitae
  Template: page
+ css: cv.css
 */
-<link rel="stylesheet" href="/cv/cv.css" type="text/css" />
 
 [](id:contact)
 >Sébastien Erard  
