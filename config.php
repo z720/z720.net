@@ -19,6 +19,8 @@ $config['oEmbed_cache_dir'] = CACHE_DIR;
 
 // To add a custom config setting:
 
+$config['request_uri'] = $_SERVER['REQUEST_URI'];
+
 //$config['custom_setting'] = 'Hello'; 	// Can be accessed by {{ config.custom_setting }} in a theme
 
 /* Local override for developement */
