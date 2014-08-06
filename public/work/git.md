@@ -12,6 +12,9 @@ Template: page
 * [Create your own Git cheatsheet (according to your workflow)](http://24ways.org/2013/git-for-grownups/)
 * [Bien utiliser git-merge et git-rebase](http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/)
 
+## Configuration
+* [Configuration GIT "aux petits oignons"](http://www.git-attitude.fr/2013/04/03/configuration-git/) - [GIST](https://gist.github.com/tdd/470582#file-config-git-globale-qui-va-bien)
+
 # GitHub
 ## Fork
 
