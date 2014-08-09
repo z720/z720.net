@@ -17,7 +17,7 @@ nous propose un petit défi créatif pour le mois d'août, certainement une bonn
 1. [Soirée](5-Soiree)
 1. [Animal](6-Animal)
 1. [Sourire](7-Sourire)
-1. Rose
+1. [Rose](8-Rose)
 1. Totem
 1. Monument
 1. Graffiti
