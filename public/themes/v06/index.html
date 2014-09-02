@@ -3,8 +3,9 @@
 {% block content %}
 {%if is_front_page%}
 			<h1>Sur le blog</h1>
-			<ul>
-			{% for page in pages|slice(0,10) %}{% if page.template in ['post','link', 'photo'] %}
+			<ul>{% set count = 0 %}
+			{% for page in pages %}{% if count < 10 and page.template in ['post','link', 'photo'] and page.date > 0 %}
+				{% set count = count+1 %}
 				<li class="post">
 					<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a>
 					{% if page.template in ['link'] %}{{ page.excerpt }}{% endif %}
