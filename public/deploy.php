@@ -11,9 +11,10 @@
 	$commands = array(
 		'echo $PWD',
 		'whoami',
-		'git pull',
-		'git status',
-		'git log --pretty=format:\'%h\' -n 1 > ../build',
+		'cd ..; ./deploy.sh',
+//		'git pull',
+//		'git status',
+//		'git log --pretty=format:\'%h\' -n 1 > ../build',
 //		'git submodule sync',
 //		'git submodule update',
 //		'git submodule status',
@@ -45,7 +46,10 @@
  |___==___|  /              &copy; oodavid 2012 |
               |____________________________|
 
-<?php echo $output; ?>
+<?php 
+echo $output; 
+@mail($_SERVER["SERVER_ADMIN"], "Deployment: ".$_SERVER["SERVER_NAME"], $output);
+?>
 </pre>
 </body>
 </html>
