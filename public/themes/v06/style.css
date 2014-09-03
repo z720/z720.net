@@ -279,16 +279,19 @@ blockquote {
   font-size: 0.9em;
 }
 /* Search */
-nav .searchform {
+nav form[action$=search] {
   display: inline;
   font-size: 0.8em;
 }
-nav .searchform input[type=search] {
+nav form[action$=search] input[type=search] {
   width: 9em;
   transition: width 0.5s ease;
 }
-nav .searchform input[type=search]:focus {
+nav form[action$=search] input[type=search]:focus {
   width: 20em;
+}
+nav form[action$=search] input[type=submit] {
+  display: none;
 }
 /* Structure Styles
 /*---------------------------------------------*/

@@ -1,4 +1,4 @@
-nav .searchform { 
+nav form[action$=search] { 
 	display: inline;
 	font-size: 0.8em;
 	input[type=search] {
@@ -7,5 +7,8 @@ nav .searchform {
 		&:focus {
 			width: 20em;
 		}
+	}
+	input[type=submit] {
+		display: none;
 	}
 }
