@@ -6,3 +6,18 @@
 	{% import _self as m %}
 	{{ m.menu( '<img src="%s" alt="%s" />' | format(icon, label), url) }}
 {% endmacro %}
+
+{% macro breadcrumb(uri) %}
+{% spaceless %}
+		<p class="breadcrumb">
+			<a href="{{config.base_url}}">z720.net</a>
+			{% set path = config.base_url %}
+			{% for crumb in uri|slice(1)|split('/') %}
+				{% if crumb != '' %}
+			&raquo; <a href="{{path}}/{{crumb}}/">{{crumb|split('?')|first}}</a>
+				{%endif%}
+				{% set path = path ~ '/' ~ crumb %}
+			{% endfor %}
+		</p>
+{% endspaceless %}
+{% endmacro %}
