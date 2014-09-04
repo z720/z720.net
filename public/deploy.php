@@ -22,12 +22,15 @@
 
 	// Run the commands for output
 	$output = '';
+	$txtoutput = '';
 	foreach($commands AS $command){
 		// Run it
 		$tmp = shell_exec($command);
 		// Output
 		$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
 		$output .= htmlentities(trim($tmp)) . "\n";
+		$txtoutput .= "\n\$>" . $command;
+		$txtoutput .= "\n" . htmlentities(trim($tmp)) . "\n";
 	}
 
 	// Make it pretty for manual user access (and why not?)
@@ -48,7 +51,7 @@
 
 <?php 
 echo $output; 
-@mail($_SERVER["SERVER_ADMIN"], "Deployment: ".$_SERVER["SERVER_NAME"], $output);
+@mail($_SERVER["SERVER_ADMIN"], "Deployment: ".$_SERVER["SERVER_NAME"], $txtoutput);
 ?>
 </pre>
 </body>
