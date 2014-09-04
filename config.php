@@ -18,15 +18,12 @@ $config['excerpt_length'] = 50;			// The pages excerpt length (in words)
 $config['oEmbed_cache_dir'] = CACHE_DIR . 'oEmbed';
 
 // To add a custom config setting:
-
 $config['request_uri'] = $_SERVER['REQUEST_URI'];
 
-//$config['custom_setting'] = 'Hello'; 	// Can be accessed by {{ config.custom_setting }} in a theme
-
-/* Local override for developement */
-$config_override = '../dev.php';
-if(file_exists($config_override)) {
-	include($config_override);
+/* Local override for env dependent settings (api key...) */
+$env_override = '../env.php';
+if(file_exists($env_override)) {
+	include($env_override);
 }
 $config['build'] = 'dev';
 if ( file_exists('../build') ) {

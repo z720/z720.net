@@ -1,0 +1,14 @@
+nav form[action$=search] { 
+	display: inline;
+	font-size: 0.8em;
+	input[type=search] {
+		width: 9em;
+		transition: width 0.5s ease;
+		&:focus {
+			width: 20em;
+		}
+	}
+	input[type=submit] {
+		display: none;
+	}
+}

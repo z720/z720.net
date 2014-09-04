@@ -12,6 +12,7 @@ build
 .c9revisions/
 .c9/
 dev.php
+env.php
 composer.phar
 
 # nodejs tools
