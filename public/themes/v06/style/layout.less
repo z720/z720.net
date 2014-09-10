@@ -9,26 +9,30 @@
 	margin-bottom: 2em;
 	line-height: 4em;
 	color: @header-text;
-	a { color: @header-link; }
+	a, label { color: @header-link; }
 	h1 a,
-	a:hover { color: @header-hover; }
+	a:hover, label:hover { color: @header-hover; }
 	h1 {
 		font-weight: bold;
 		margin: 0;
-		//float: left;
+		float: left;
 		display: inline-block;
 	}
 	nav {
+		text-align: right;
 		&, ul {
-			float: right;
+			//float: right;
 			list-style: none;
 			margin: 0;
 			padding: 0;
+			display: inline-block;
 		}
-		li { display: inline; }
-		a {
-			font-weight: bold;
+		li { 
+			display: inline-block; 
 			margin-left: 20px;
+		}
+		a, label {
+			font-weight: bold;
 		}
 	}
 }

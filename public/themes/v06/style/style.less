@@ -50,7 +50,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-a, a:visited {
+a, a:visited,
+label {
 	color: @link-color;
 	text-decoration: none;
 	-webkit-transition: all 0.2s linear;
@@ -61,7 +62,7 @@ a, a:visited {
 	text-shadow: rgba(0,0,0, 0.5) 0.1em 0.1em 0.2em;
 }
 
-a:hover, a:active {
+a:hover, a:active, label:hover {
 	color: darken(@text-color, 20%);
 	text-decoration: none;
 }

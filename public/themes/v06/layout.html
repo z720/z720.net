@@ -42,13 +42,14 @@
 			
 			<nav id="navigation" class="nav-opened">
 			<ul>
-				<li>{% include "includes/searchform.html" %}</li>
 				{{ m.menu('About', '/about') }}
 				{% for media in ['Twitter', 'Flickr', 'LinkedIn'] %}
 				{# url for menuimage: "http://files.z720.net/icons/social/%s.png"|format( media | lower) #}
 				{{ m.menu( media, "/%s"|format(media | lower)) }}
 				{% endfor %}
+				<li><label for="search">Recherche</label></li>
 			</ul>
+			{% include "includes/searchform.html" with { 'inputid': 'search' } %}
 			</nav>
 		</div>
 	</header>

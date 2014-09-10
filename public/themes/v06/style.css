@@ -184,7 +184,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a,
-a:visited {
+a:visited,
+label {
   color: #cdc9e0;
   text-decoration: none;
   -webkit-transition: all 0.2s linear;
@@ -195,7 +196,8 @@ a:visited {
   text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;
 }
 a:hover,
-a:active {
+a:active,
+label:hover {
   color: #cccccc;
   text-decoration: none;
 }
@@ -266,7 +268,6 @@ pre {
   padding: 20px;
   margin-bottom: 1em;
   overflow: auto;
-  color: #333;
 }
 blockquote {
   font-style: italic;
@@ -281,15 +282,19 @@ blockquote {
 }
 /* Search */
 nav form[action$=search] {
-  display: inline;
+  display: block;
   font-size: 0.8em;
 }
 nav form[action$=search] input[type=search] {
-  width: 9em;
+  width: 0;
+  position: absolute;
+  left: -9000px;
   transition: width 0.5s ease;
 }
 nav form[action$=search] input[type=search]:focus {
-  width: 20em;
+  width: 100%;
+  position: relative;
+  left: 0;
 }
 nav form[action$=search] input[type=submit] {
   display: none;
@@ -310,31 +315,38 @@ nav form[action$=search] input[type=submit] {
   line-height: 4em;
   color: #cdc9e0;
 }
-#header a {
+#header a,
+#header label {
   color: #cdc9e0;
 }
 #header h1 a,
-#header a:hover {
+#header a:hover,
+#header label:hover {
   color: #ffffff;
 }
 #header h1 {
   font-weight: bold;
   margin: 0;
+  float: left;
   display: inline-block;
+}
+#header nav {
+  text-align: right;
 }
 #header nav,
 #header nav ul {
-  float: right;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: inline-block;
 }
 #header nav li {
-  display: inline;
-}
-#header nav a {
-  font-weight: bold;
+  display: inline-block;
   margin-left: 20px;
+}
+#header nav a,
+#header nav label {
+  font-weight: bold;
 }
 #footer {
   background: #707070;
