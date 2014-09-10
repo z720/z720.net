@@ -14,6 +14,7 @@ build
 dev.php
 env.php
 composer.phar
+public/info.php
 
 # nodejs tools
 node_modules/
