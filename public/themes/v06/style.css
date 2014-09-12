@@ -315,6 +315,9 @@ nav form[action$=search] input[type=submit] {
   line-height: 4em;
   color: #cdc9e0;
 }
+#header .inner {
+  max-width: 100%;
+}
 #header a,
 #header label {
   color: #cdc9e0;
