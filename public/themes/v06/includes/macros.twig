@@ -1,17 +1,17 @@
-{% macro menu(label, url) %}
-				<li class=""><a href="{{ url }}">{{ label }}</a></li>
+{% macro menu(label, url, class) %}
+				<li class="{{ class }}"><a href="{{ url }}">{{ label }}</a></li>
 {% endmacro %}
 
-{% macro menuimage(label, icon, url) %}
+{% macro menuimage(label, icon, url, class) %}
 	{% import _self as m %}
-	{{ m.menu( '<img src="%s" alt="%s" />' | format(icon, label), url) }}
+	{{ m.menu( '<img src="%s" alt="%s" />' | format(icon, label), url, class) }}
 {% endmacro %}
 
-{% macro breadcrumb(uri) %}
+{% macro breadcrumb(uri, base) %}
 {% spaceless %}
 		<p class="breadcrumb">
-			<a href="{{config.base_url}}">z720.net</a>
-			{% set path = config.base_url %}
+			<a href="{{base|default('/')}}">z720.net</a>
+			{% set path = base %}
 			{% for crumb in uri|slice(1)|split('/') %}
 				{% if crumb != '' %}
 			&raquo; <a href="{{path}}/{{crumb}}/">{{crumb|split('?')|first}}</a>
