@@ -10,9 +10,15 @@
             "email": "blog@z720.net"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/picocms/pico"
+        }
+    ],
     "require": {
         "php": ">=5.2.4",
-        "gilbitron/Pico": "~0.8",
+        "picocms/pico": "~0.8",
         "z720/pico_oembed": "0.*",
         "z720/pico_scheduled_post": "0.*"
     }

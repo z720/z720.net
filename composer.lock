@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "88d7ad95e81e4285a24eccd1ca68f014",
+    "hash": "5f0e5ab2900e56e773f01a92f1ea965a",
     "packages": [
         {
             "name": "fg/essence",
@@ -55,28 +56,6 @@
             "time": "2014-03-29 12:35:10"
         },
         {
-            "name": "gilbitron/pico",
-            "version": "0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gilbitron/pico.git",
-                "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gilbitron/pico/zipball/aa59661ff81dd52c3a2596988372a214b0fc31b9",
-                "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9",
-                "shasum": ""
-            },
-            "require": {
-                "michelf/php-markdown": "1.3",
-                "twig/twig": "1.12.*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "time": "2013-10-23 09:39:23"
-        },
-        {
             "name": "michelf/php-markdown",
             "version": "1.3",
             "source": {
@@ -126,6 +105,31 @@
                 "markdown"
             ],
             "time": "2013-04-11 18:53:11"
+        },
+        {
+            "name": "picocms/pico",
+            "version": "0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/picocms/Pico.git",
+                "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/picocms/Pico/zipball/aa59661ff81dd52c3a2596988372a214b0fc31b9",
+                "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9",
+                "shasum": ""
+            },
+            "require": {
+                "michelf/php-markdown": "1.3",
+                "twig/twig": "1.12.*"
+            },
+            "type": "library",
+            "support": {
+                "source": "https://github.com/picocms/Pico/tree/0.8",
+                "issues": "https://github.com/picocms/Pico/issues"
+            },
+            "time": "2013-10-23 09:39:23"
         },
         {
             "name": "twig/twig",
@@ -263,6 +267,7 @@
     "stability-flags": [
 
     ],
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.2.4"
     },

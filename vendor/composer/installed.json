@@ -107,30 +107,6 @@
         ]
     },
     {
-        "name": "gilbitron/pico",
-        "version": "0.8",
-        "version_normalized": "0.8.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/gilbitron/pico.git",
-            "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/gilbitron/pico/zipball/aa59661ff81dd52c3a2596988372a214b0fc31b9",
-            "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9",
-            "shasum": ""
-        },
-        "require": {
-            "michelf/php-markdown": "1.3",
-            "twig/twig": "1.12.*"
-        },
-        "time": "2013-10-23 09:39:23",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/"
-    },
-    {
         "name": "fg/essence",
         "version": "2.4.0",
         "version_normalized": "2.4.0.0",
@@ -257,5 +233,32 @@
             }
         ],
         "description": "Post/Page scheduling in PicoCMS"
+    },
+    {
+        "name": "picocms/pico",
+        "version": "0.8",
+        "version_normalized": "0.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picocms/Pico.git",
+            "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picocms/Pico/zipball/aa59661ff81dd52c3a2596988372a214b0fc31b9",
+            "reference": "aa59661ff81dd52c3a2596988372a214b0fc31b9",
+            "shasum": ""
+        },
+        "require": {
+            "michelf/php-markdown": "1.3",
+            "twig/twig": "1.12.*"
+        },
+        "time": "2013-10-23 09:39:23",
+        "type": "library",
+        "installation-source": "dist",
+        "support": {
+            "source": "https://github.com/picocms/Pico/tree/0.8",
+            "issues": "https://github.com/picocms/Pico/issues"
+        }
     }
 ]
