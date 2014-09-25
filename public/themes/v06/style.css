@@ -264,10 +264,13 @@ code {
   padding: 0px 2px;
 }
 pre {
-  background: black;
+  background: #fff;
   padding: 20px;
   margin-bottom: 1em;
   overflow: auto;
+  float: left;
+  line-height: 1em;
+  min-width: 100%;
 }
 blockquote {
   font-style: italic;
