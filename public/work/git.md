@@ -22,6 +22,7 @@ Sources: http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-example
 ## Workflow
 * [Create your own Git cheatsheet (according to your workflow)](http://24ways.org/2013/git-for-grownups/)
 * [Bien utiliser git-merge et git-rebase](http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/)
+* [Résoudre les conflits une fois pour toutes (Control Merge + Git rerere)](https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67)
 
 ## Configuration
 * [Configuration GIT "aux petits oignons"](http://www.git-attitude.fr/2013/04/03/configuration-git/) - [GIST](https://gist.github.com/tdd/470582#file-config-git-globale-qui-va-bien)
