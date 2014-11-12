@@ -38,6 +38,7 @@ Options -Indexes
 
 # Perf. and cache control http://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/
 # MOD_DEFLATE COMPRESSION
+<IfModule mod_deflate.c>
 SetOutputFilter DEFLATE
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
 #Pour les navigateurs incompatibles
@@ -49,6 +50,7 @@ BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
 SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
 #les proxies doivent donner le bon contenu
 Header append Vary User-Agent env=!dont-vary
+</IfModule>
 
 # BEGIN Expire headers
 <IfModule mod_expires.c>
