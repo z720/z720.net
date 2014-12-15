@@ -4,6 +4,7 @@ var build = function () {
   var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
+    dalek = require('gulp-dalek'),
     less = require('gulp-less'),
     theme = 'public/themes/v06',
     themejs = theme + '/scripts',
@@ -49,5 +50,14 @@ var build = function () {
     gulp.watch(themejs.concat('/*.js'), ['theme.js', 'fingerprint']);
     gulp.watch(themecss.concat('/*.less'), ['theme.css', 'fingerprint']);
   });
+  
+  gulp.task('test', function () {
+    return gulp.src(['test/*.js'])
+      .pipe(dalek({
+        browser: ['phantomjs'/*, 'chrome', 'chrome:canary'*/],
+        reporter: ['html', 'junit']
+      }));
+  });
+  
 };
 build();

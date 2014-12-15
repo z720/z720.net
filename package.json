@@ -4,7 +4,7 @@
   "author": "z720 <blog@z720.net>",
   "description": "Personnal Website and web playground",
   "scripts": {
-    "test": "echo Not test yet",
+    "test": "gulp test",
     "build": "gulp"
   },
   "repository": {
@@ -18,16 +18,17 @@
   "analyze": true,
   "dependencies": {},
   "devDependencies": {
-    "xml2js": "*",
-    "mkdirp": ">= 0.3",
-    "moment": "2.x",
-    "underscore": "1.4.x",
-    "typogr": "0.5.x",
+    "dalekjs": "0.0.8",
     "gulp": "~3.6",
     "gulp-concat": "~2.1.7",
-    "gulp-uglify": "~0.2.1",
+    "gulp-dalek": "0.0.1",
     "gulp-less": "~1.2.2",
-    "dalekjs": "0.0.8"
+    "gulp-uglify": "~0.2.1",
+    "mkdirp": ">= 0.3",
+    "moment": "2.x",
+    "typogr": "0.5.x",
+    "underscore": "1.4.x",
+    "xml2js": "*"
   },
   "bundledDependencies": [],
   "engines": {
