@@ -18,3 +18,5 @@ public/info.php
 
 # nodejs tools
 node_modules/
+
+test/screenshots/
