@@ -6,7 +6,7 @@ var build = function () {
     concat = require('gulp-concat'),
     dalek = require('gulp-dalek'),
     less = require('gulp-less'),
-    theme = 'public/themes/v06',
+    theme = 'htdocs/themes/v06',
     themejs = theme + '/scripts',
     themecss = theme + '/style';
 
