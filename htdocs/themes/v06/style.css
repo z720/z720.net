@@ -383,21 +383,9 @@ nav form[action$=search] input[type=submit] {
   padding: 2em 30px;
 }
 @media (max-width: 767px) {
-  nav:before {
-    font-size: 3em;
-    min-width: 1em;
-    text-align: center;
-    content: "\2261";
-    display: inline-block;
-    position: absolute;
-    right: 0.66em;
-    top: -0.16em;
-  }
   nav ul {
     display: none;
-  }
-  nav.nav-opened ul {
-    display: block;
+    line-height: 2em;
   }
 }
 /* Misc Styles
