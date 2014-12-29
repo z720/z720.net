@@ -48,7 +48,13 @@
 
 <?php 
 echo $output; 
-@mail($_SERVER["SERVER_ADMIN"], "Deployment: ".$_SERVER["SERVER_NAME"], $txtoutput);
+$em = @mail($_SERVER["SERVER_ADMIN"], "Deployment: ".$_SERVER["SERVER_NAME"], $txtoutput);
+if ($em) {
+  echo "\n\n Email sent to server admin";
+} else {
+  echo "\n\n Impossible to send email";
+}
+    
 ?>
 </pre>
 </body>
