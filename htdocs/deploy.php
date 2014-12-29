@@ -7,17 +7,14 @@
 	 *		https://gist.github.com/1809044
 	 */
 
+  // Include env
+  @include('server-admin.php');
+
 	// The commands
 	$commands = array(
 		'echo $PWD',
 		'whoami',
-		'cd ..; ./deploy.sh',
-//		'git pull',
-//		'git status',
-//		'git log --pretty=format:\'%h\' -n 1 > ../build',
-//		'git submodule sync',
-//		'git submodule update',
-//		'git submodule status',
+		'../deploy.sh',
 	);
 
 	// Run the commands for output
