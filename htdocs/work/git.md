@@ -15,9 +15,14 @@ Sources: http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-example
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
     # Start a new branch
     cob = checkout -b
+    # Add all
+    aa = add --all
+    # Amend 
+    oops = commit --amend --no-edit
 
 ## Usefull commands
 * View history with graph: `git log --oneline --abbrev-commit --all --graph --decorate`
+* Package project: `git archive --format zip -o sources.zip branch/tag/HEAD`
 
 ## Workflow
 * [Create your own Git cheatsheet (according to your workflow)](http://24ways.org/2013/git-for-grownups/)
@@ -29,7 +34,14 @@ Sources: http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-example
 
 # GitHub
 ## Fork
-
-* [Fork a Repo](https://help.github.com/articles/fork-a-repo)
-* [Syncing a Fork](https://help.github.com/articles/syncing-a-fork)
+* [Fork a Repo](https://help.github.com/articles/fork-a-repo):
+* [Syncing a Fork](https://help.github.com/articles/syncing-a-fork):
+  1. `git fetch upstream` (Upstream is the source to sync your fork with)
+  2. `git checkout master` (or any tracking branch to sync)
+  3. `git merge upstream/master`
 * [How to reset your GitHub Fork](http://scribu.net/blog/resetting-your-github-fork.html)
+  1. `git remote add upstream git://github.com/fork/repo`
+  2. `git fetch upstream`
+  3. `git branch backup`
+  4. `git checkout upstream/master -B master`
+  5. `git push --force`
