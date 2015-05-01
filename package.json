@@ -4,6 +4,7 @@
   "author": "z720 <blog@z720.net>",
   "description": "Personnal Website and web playground",
   "scripts": {
+    "start": "gulp watch",
     "test": "gulp test",
     "build": "gulp"
   },

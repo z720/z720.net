@@ -257,6 +257,7 @@ sup {
   vertical-align: super;
   font-size: smaller;
 }
+pre,
 code {
   font-family: Courier, "Courier New", Monaco, Tahoma;
   background: #eee;
@@ -264,11 +265,9 @@ code {
   padding: 0px 2px;
 }
 pre {
-  background: #fff;
   padding: 20px;
   margin-bottom: 1em;
-  overflow: auto;
-  float: left;
+  display: inline-block;
   line-height: 1em;
   min-width: 100%;
 }
@@ -311,6 +310,9 @@ nav form[action$=search] input[type=submit] {
 .inner img {
   max-width: 100%;
   height: auto;
+}
+.text-post .inner {
+  max-width: none;
 }
 #header {
   background: #665a9d;
