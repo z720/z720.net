@@ -20,3 +20,6 @@ public/info.php
 node_modules/
 
 test/screenshots/
+
+#Vagrant working dir (vagrant up)
+/.vagrant
