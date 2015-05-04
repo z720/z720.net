@@ -5,4 +5,6 @@ whoami
 git pull
 git status
 git log --pretty=format:\'%h\' -n 1 > build
-rm -rf cache/twig/??/
+echo "Clear template cache:"
+rm -rvf ../cache/twig/??
+rm -rvf ./cache/twig/??
