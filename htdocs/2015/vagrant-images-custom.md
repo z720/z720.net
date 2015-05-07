@@ -1,11 +1,17 @@
 /*
 title: Vagrant: Créer des images custom - "Base boxes"
 template: text-post
-date: 2015-05-04T18:00:00
+date: 2015-05-07T21:00:00
 background: http://files.z720.net/2015/vagrant/steps_background-10801579.png
 */
 
-# Vagrant : Image custom
+Suite à mon [article précédent sur Vagrant](./vagrant), Nous allons un peu creuser le mécanisme de création des *base boxes*. 
+L'idée est d'obtenir un système de référence représentant une infrastructure, une catégorie de projets... qui puisse être personnalisée ou paramétrées pour un projet concret via le fichier `Vagrantfile`.
+
+Ces *base boxes* peuvent être très généralistes en n'offrant qu'un système vierge ou très spécialisées en offrant un systèmes avec des applicaitons et services déjà installés et paramétrés.
+
+Dans cet exemple, nous allons créer une simple image Ubuntu, probablement très similaire à [ubuntu/trusty64][vagrant-ubuntu-boxes] sur le dépot [Atlas]. 
+Mais dans cette box, vous saurez exactement ce qui est installé.
 
 ## Créer une image Vagrant custom Ubuntu
 Le principe est le même pour les images d'autres systèmes. Posez-vous la question de la raison pour laquelle vous n’utilisez pas les [images fournie par Ubuntu][vagrant-ubuntu-boxes] ou tout autre éditeur dont vous avez besoin.
@@ -18,17 +24,18 @@ Ce guide se base sur:
 ### Résumé:
 
 1. Créer une VM `vagrant-image`
-2. Installer le système (avec SSH)
+2. Installer le système (avec un serveur SSH) avec l'utilisateur `vagrant` par défaut
 3. Désactiver la vérification du mot de passe pour l'élévation de privilèges de l'utilisateur `vagrant` (remove sudo password)
-4. Configurer l'accès en SSH (avec la clé Vagrant)
+4. Configurer l'accès SSH avec la clé Vagrant
 5. Installer les addons invités
 6. Personnalisez l'instance
 6. Mettre à jour le système
 7. Packager la *box*
 
-### Créer une VM, vous pouvez utiliser n'importe quel ["provider" compatible][vagrant-providers]  :
+### Créer une VM
 
-Nous utiliserons [VirtualBox] comme hyperviseur, mais la procédure est sensiblement la même pour d'autres:
+Vous pouvez utiliser n'importe quel ["provider" compatible][vagrant-providers].
+Nous utiliserons [VirtualBox] comme hyperviseur, mais la procédure est similaire pour les autres:
 
 - Nom:  `vagrant-image`
 - Type: `Linux`, 
@@ -36,7 +43,7 @@ Nous utiliserons [VirtualBox] comme hyperviseur, mais la procédure est sensible
 - Mémoire: `512Mo` (ou plus),
 - User : `vagrant` (Vagrant s'attend à utiliser cet utilisateur par défaut)
 
-La taille du disque est à votre convenance selon l'usage prévu, il est préférable de prendre une taille adaptable pour réduire la taille finale de l'image au minimum **en cas de partage** même en interne (l'image doit être téléchargée).
+La taille du disque est à votre convenance selon l'usage prévu, il est préférable de prendre une taille adaptable pour réduire la taille finale de l'image au minimum **en cas de partage** même en interne (l'image doit être téléchargée/copiée).
 
 Nous avons utilisé **vagrant-image** comme nom de machine virtuelle, vous pouvez utiliser le nom que vous voulez, mais il sera nécessaire lors de l'opération de packaging. Evitez donc les noms trop compliqués.
 
@@ -45,6 +52,7 @@ Nous avons utilisé **vagrant-image** comme nom de machine virtuelle, vous pouve
 Télécharger et installer [Ubuntu Server] avec OpenSSH pour pouvoir accéder au système depuis l’hôte.
 
 ### Autorisations et permissions d'accès
+
 On commence par désactiver le mot de passe `sudo` pour l'utilisateur `vagrant` pouvoir exécuter des commandes par script: 
 
 Créer un fichier de configuration pour `sudo`:
@@ -57,7 +65,7 @@ avec le contenu suivant:
     vagrant ALL=(ALL) NOPASSWD:ALL
 
 
-Cette étape est importante car Vagrant s'attend à ne pas avoir à fournir de mot de passe. Cela permet à Vagrant de modifier la configuration réseau, de monter des partages et d'installer les package nécessaires.
+Cette étape est importante car Vagrant s'attend à ne pas avoir à fournir de mot de passe. Cela permet à Vagrant de modifier la configuration réseau, de monter des partages et d'installer les package nécessaires de façon automatique.
 
 ### Accès SSH
 Ensuite on va configurer SSH avec la clé Vagrant. Cette clé `ssh` va permettre à **vagrant**  la machine hôte se connecter à la machine invitée pour y exécuter les commandes. 
@@ -71,9 +79,11 @@ Ensuite on va configurer SSH avec la clé Vagrant. Cette clé `ssh` va permettre
     chown -R vagrant /home/vagrant/.ssh
 
 
-Dans le fichier de configuration d'OpenSSH Server `/etc/ssh/sshd_config`, s'assurer que le fichier utilisateur est pris en compte que la ligne n'est pas commentée :
+Dans le fichier de configuration d'OpenSSH Server `/etc/ssh/sshd_config`:
 
     sudo nano /etc/ssh/sshd_config
+
+s'assurer que le fichier utilisateur est pris en compte que la ligne suivante est présente ou n'est pas commentée :
 
     AuthorizedKeysFile %h/.ssh/authorized_keys
 
