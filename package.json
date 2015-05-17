@@ -1,9 +1,10 @@
 {
   "name": "z720.net",
-  "version": "0.1.0",
+  "version": "6.0.0",
   "author": "z720 <blog@z720.net>",
   "description": "Personnal Website and web playground",
   "scripts": {
+    "install": "php composer install",
     "start": "gulp watch",
     "test": "gulp test",
     "build": "gulp"

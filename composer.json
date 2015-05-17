@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.2.4",
-        "picocms/pico": "~0.8",
+        "picocms/pico": "0.8.*",
         "z720/pico_oembed": "0.*",
         "z720/pico_scheduled_post": "0.*"
     }
