@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./htdocs", "/var/www/html", owner: "www-data", group: "www-data"
+  config.vm.synced_folder ".", "/vagrant", owner: "www-data", group: "www-data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -69,7 +69,8 @@ Vagrant.configure(2) do |config|
     apt-get update
     apt-get install -y apache2 php5
     apt-get clean -y
-    echo "ServerName localhost" >> /etc/apache2/apache2.conf
+    echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
+    sudo a2enconf fqdn
     a2enmod rewrite
     a2enmod headers
     mkdir /vagrant/logs
