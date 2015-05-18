@@ -5,7 +5,7 @@
   "description": "Personnal Website and web playground",
   "scripts": {
     "install": "php composer install",
-    "start": "gulp watch",
+    "start": "vagrant up && gulp watch",
     "test": "gulp test",
     "build": "gulp"
   },
