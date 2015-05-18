@@ -12,20 +12,21 @@
 
 	// The commands
 	$commands = array(
-		'echo $PWD',
-		'whoami',
-		'../deploy.sh',
+        'echo $PWD',
+		'../deploy.sh'
 	);
 
 	// Run the commands for output
 	$output = '';
 	$txtoutput = '';
+$tmp = '';
 	foreach($commands AS $command){
 		// Run it
-		$tmp = shell_exec($command);
+		exec($command, $tmp, $result);
+        $tmp = join($tmp, "\n");
 		// Output
-		$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-		$output .= htmlentities(trim($tmp)) . "\n";
+        $output .= "<span class=\"prompt\">\$({$result})</span> <kbd>{$command}\n</kbd>";
+		$output .= "<code>" . htmlentities(trim($tmp)) . "</code>\n";
 		$txtoutput .= "\n\$>" . $command;
 		$txtoutput .= "\n" . htmlentities(trim($tmp)) . "\n";
 	}
@@ -35,14 +36,31 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>DEPLOYMENT SCRIPT</title>
+  <meta charset="UTF-8">
+  <title>DEPLOYMENT SCRIPT</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 0 10px;
+    }
+    .prompt {
+      color: #6BE234;
+    }
+    kbd {
+      color: #729FCF;
+    }
+    em {
+      color: #FF0000;
+    }
+  </style>
 </head>
-<body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
+<body>
 <pre>
  .  ____  .    ____________________________
  |/      \|   |                            |
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v0.1 |
+[| <em>&hearts;    &hearts;</em> |]  | Git Deployment Script v0.1 |
  |___==___|  /              &copy; oodavid 2012 |
               |____________________________|
 
