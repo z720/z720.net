@@ -23,6 +23,7 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -65,17 +66,27 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    export DEBIAN_FRONTEND=noninteractive
-    apt-get update
-    apt-get install -y apache2 php5
-    apt-get clean -y
-    echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
-    sudo a2enconf fqdn
-    a2enmod rewrite
-    a2enmod headers
-    mkdir /vagrant/logs
-    ln -s /vagrant/dev.vhost.conf /etc/apache2/sites-enabled/001-dev.z720.net.conf
-    service apache2 restart
-    date > /etc/vagrant_provisioned_at
-  SHELL
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get upgrade -y
+apt-get install -y apache2 php5 php5-curl git
+apt-get clean -y
+echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
+sudo a2enconf fqdn
+a2enmod rewrite
+a2enmod headers
+mkdir /vagrant/logs
+cp /vagrant/dev.vhost.conf /etc/apache2/sites-available/001-dev.z720.net.conf
+a2ensite 001-dev.z720.net
+service apache2 restart
+date > /etc/vagrant_provisioned_at
+SHELL
+
+  # update VM and configuration on every boot
+  config.vm.provision "shell", run: "always", inline: <<-SHELL
+cp /vagrant/dev.vhost.conf /etc/apache2/sites-available/001-dev.z720.net.conf
+a2ensite 001-dev.z720.net
+service apache2 reload
+SHELL
+
 end
