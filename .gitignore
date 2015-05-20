@@ -22,16 +22,9 @@ node_modules/
 test/screenshots/
 
 #Vagrant working dir (vagrant up)
-<<<<<<< HEAD
 .vagrant
-
-||||||| merged common ancestors
-/.vagrant
-=======
-/.vagrant
 
 #composer
 composer
 vendor/
 composer.lock
->>>>>>> Remove vendor from repository + fix dependencies
