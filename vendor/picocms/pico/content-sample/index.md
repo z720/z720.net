@@ -1,6 +1,16 @@
 ---
 Title: Welcome
 Description: Pico is a stupidly simple, blazing fast, flat file CMS.
+social:
+    - title: Visit us on GitHub
+      url: https://github.com/picocms/Pico
+      icon: octocat
+    - title: Check us out on Twitter
+      url: https://twitter.com/gitpicocms
+      icon: birdy
+    - title: Join us on Freenode IRC Webchat
+      url: https://webchat.freenode.net/?channels=%23picocms
+      icon: chat
 ---
 
 ## Welcome to Pico
@@ -217,12 +227,12 @@ Additional to Twigs extensive list of filters, functions and tags, Pico also
 provides some useful additional filters to make theming easier. You can parse
 any Markdown string to HTML using the `markdown` filter. Arrays can be sorted
 by one of its keys or a arbitrary deep sub-key using the `sort_by` filter
-(e.g. `{% for page in pages|sort_by("meta:nav"|split(":")) %}...{% endfor %}`
+(e.g. `{% for page in pages|sort_by([ 'meta', 'nav' ]) %}...{% endfor %}`
 iterates through all pages, ordered by the `nav` meta header; please note the
-`"meta:nav"|split(":")` part of the example, which passes `['meta', 'nav']` to
-the filter describing a key path). You can return all values of a given key or
-key path of an array using the `map` filter (e.g. `{{ pages|map("title") }}`
-returns all page titles).
+`[ 'meta', 'nav' ]` part of the example, it instructs Pico to sort by
+`page.meta.nav`). You can return all values of a given key or key path of an
+array using the `map` filter (e.g. `{{ pages|map("title") }}` returns all
+page titles).
 
 You can use different templates for different content files by specifying the
 `Template` meta header. Simply add e.g. `Template: blog-post` to a content file
