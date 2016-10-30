@@ -10,7 +10,7 @@ $pico = new Pico(
     'themes/'   // themes dir
 );
 
-lookup("htdocs/", $pico);
+lookup("html/", $pico);
 
 function lookup($dir, $pico) {
   if (is_dir($dir)) {
