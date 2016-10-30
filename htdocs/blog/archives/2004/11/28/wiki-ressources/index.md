@@ -1,12 +1,13 @@
-/*
- Title: Wiki Ressources
- Author: Seb
- Excerpt:  <p>Cette semaine j'ai particip&eacute; &agrave; une petite formation <a href="http://www.sap.com/solutions/netweaver/businessintelligence/index.aspx" hreflang="en">SAP BW</a>.</p>
- Template: post
- Permalink: /blog/archives/2004/11/28/wiki-ressources
- Date: 2004-11-28T13:00:07+00:00
- Categories: Projets
-*/
+--- 
+Title: Wiki Ressources
+Author: Seb
+Excerpt:  <p>Cette semaine j'ai particip&eacute; &agrave; une petite formation <a href="http://www.sap.com/solutions/netweaver/businessintelligence/index.aspx" hreflang="en">SAP BW</a>.</p>
+Template: post
+Permalink: /blog/archives/2004/11/28/wiki-ressources
+Date: 2004-11-28T13:00:07+00:00
+Categories: Projets
+--- 
+
 Cette semaine j&rsquo;ai particip&eacute; &agrave; une petite formation <a href="http://www.sap.com/solutions/netweaver/businessintelligence/index.aspx" hreflang="en">SAP BW</a>.
 
 <!--more-->

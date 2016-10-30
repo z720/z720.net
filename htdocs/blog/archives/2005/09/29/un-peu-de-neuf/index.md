@@ -1,11 +1,12 @@
-/*
- Title: Un peu de neuf&#8230;
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/09/29/un-peu-de-neuf
- Date: 2005-09-29T13:01:54+00:00
- Categories: Design, Développement, Projets, Web
-*/
+--- 
+Title: Un peu de neuf&#8230;
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/09/29/un-peu-de-neuf
+Date: 2005-09-29T13:01:54+00:00
+Categories: Design, Développement, Projets, Web
+--- 
+
 J&rsquo;ai pris un peu de temps aujourd&rsquo;hui pour mettre à jour [mon portfolio][1]. Effectivement j&rsquo;ai fait pas mal de choses depuis quelques mois mais je n&rsquo;en ai pas beaucoup parlé, dans l&rsquo;ordre : 
 
 1.  Ouverture de depuis peu du [moteur de recherche des formations aux métiers de la santé][2]. Il s&rsquo;agit d&rsquo;un projet tiré par la [FHP Auvergne][3] afin de mettre en relation les établissements hospitaliés privés adhérents avec des organismes qui proposent des formations dans le domaine de la santé. Pour cela j&rsquo;ai du développer un petit framework PHP très pratique pour ajouter de nouvelles fonctionnalités à l&rsquo;application au fur et à mesure.

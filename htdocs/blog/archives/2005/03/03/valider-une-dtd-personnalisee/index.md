@@ -1,11 +1,12 @@
-/*
- Title: Valider une DTD personnalisée
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/03/03/valider-une-dtd-personnalisee
- Date: 2005-03-03T12:47:01+00:00
- Categories: Développement, Traductions, Web, WebStandards
-*/
+--- 
+Title: Valider une DTD personnalisée
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/03/03/valider-une-dtd-personnalisee
+Date: 2005-03-03T12:47:01+00:00
+Categories: Développement, Traductions, Web, WebStandards
+--- 
+
 Comment valider des documents XHTML utilisant une DTD personnalisée.
 
 Traduction de l&rsquo;article [Validating a Custom DTD][1]. Translated with the permission of A List Apart Magazine ([http://alistapart.com][2]) and the author[s].

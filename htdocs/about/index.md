@@ -1,9 +1,9 @@
-/*
-  Title: A propos...
-  Template: page
-  Background: //farm4.staticflickr.com/3831/13875588543_4d3b4d098a_h_d.jpg
-  Background-credit: https://www.flickr.com/photos/z720/13875588543/
-*/
+--- 
+Title: A propos...
+Template: page
+Background: //farm4.staticflickr.com/3831/13875588543_4d3b4d098a_h_d.jpg
+Background-credit: https://www.flickr.com/photos/z720/13875588543/
+--- 
 <style>
 .inner {
 	max-width: 450px;

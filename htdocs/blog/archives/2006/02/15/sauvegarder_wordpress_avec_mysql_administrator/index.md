@@ -1,11 +1,12 @@
-/*
- Title: Sauvegarder WordPress avec MySQL Administrator
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/02/15/sauvegarder_wordpress_avec_mysql_administrator
- Date: 2006-02-15T11:59:58+00:00
- Categories: Web, WordPress
-*/
+--- 
+Title: Sauvegarder WordPress avec MySQL Administrator
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/02/15/sauvegarder_wordpress_avec_mysql_administrator
+Date: 2006-02-15T11:59:58+00:00
+Categories: Web, WordPress
+--- 
+
 <p>La sauvegarde de ses publications est une probl&eacute;matique<br />
 r&eacute;curente pour toutes les personnes qui publient sur<br />
 internet via une syst&egrave;me de gestion de contenu bas&eacute;<br />

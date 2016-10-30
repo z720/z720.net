@@ -1,11 +1,12 @@
-/*
- Title: Déclencheurs JavaScript
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/04/29/declencheurs-javascript
- Date: 2005-04-29T06:34:21+00:00
- Categories: Développement, Traductions, Web, WebStandards
-*/
+--- 
+Title: Déclencheurs JavaScript
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/04/29/declencheurs-javascript
+Date: 2005-04-29T06:34:21+00:00
+Categories: Développement, Traductions, Web, WebStandards
+--- 
+
 En dépit de la stricte séparation, les couches de présentation et de comportement ont besoin d&rsquo;instructions de la couche structurelle. Elles ont besoin de savoir où ajouter cette jolie touche de style, quand initier ces petites actions qui font la différence. Elles ont besoin de déclencheurs. 
 
 Traduction de l&rsquo;article <a href="http://alistapart.com/articles/javascripttriggers/" hreflang="en">JavaScript Triggers</a>.   

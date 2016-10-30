@@ -1,11 +1,12 @@
-/*
- Title: Bien développer un plugin pour WordPress
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/03/28/bien-developper-un-plugin-pour-wordpress
- Date: 2006-03-28T19:07:37+00:00
- Categories: Développement, Web, WordPress
-*/
+--- 
+Title: Bien développer un plugin pour WordPress
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/03/28/bien-developper-un-plugin-pour-wordpress
+Date: 2006-03-28T19:07:37+00:00
+Categories: Développement, Web, WordPress
+--- 
+
 WordPress est étonnant de simplicité lorsqu&rsquo;il s&rsquo;agit de développer de nouveaux plugins. Cependant, il convient de suivre un certains nombre de bonnes pratiques.
 
 ## Quelques bonnes pratiques

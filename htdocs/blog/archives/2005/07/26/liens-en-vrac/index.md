@@ -1,11 +1,12 @@
-/*
- Title: Liens en vrac
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/26/liens-en-vrac
- Date: 2005-07-26T09:24:34+00:00
- Categories: Goodies, Liens, Web
-*/
+--- 
+Title: Liens en vrac
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/26/liens-en-vrac
+Date: 2005-07-26T09:24:34+00:00
+Categories: Goodies, Liens, Web
+--- 
+
 Compilation de liens à parcourir.
 
 <!--more-->

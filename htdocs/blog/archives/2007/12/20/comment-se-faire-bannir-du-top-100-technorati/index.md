@@ -1,11 +1,12 @@
-/*
- Title: Comment se faire bannir du Top 100 Technorati?
- Author: Seb
- Template: post
- Permalink: /blog/archives/2007/12/20/comment-se-faire-bannir-du-top-100-technorati
- Date: 2007-12-20T12:02:55+00:00
- Categories: Bref, Web, WordPress
-*/
+--- 
+Title: Comment se faire bannir du Top 100 Technorati?
+Author: Seb
+Template: post
+Permalink: /blog/archives/2007/12/20/comment-se-faire-bannir-du-top-100-technorati
+Date: 2007-12-20T12:02:55+00:00
+Categories: Bref, Web, WordPress
+--- 
+
 J&rsquo;ai beaucoup aimer [ce petit article listant 4 méthodes pour se faire bannir du top 100 de Technorati][1]. En résumé, il suffit d&rsquo;être populaire.
 
 Pour les anglophobes:

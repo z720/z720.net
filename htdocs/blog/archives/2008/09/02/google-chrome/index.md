@@ -1,11 +1,12 @@
-/*
- Title: Google Chrome
- Author: Seb
- Template: post
- Permalink: /blog/archives/2008/09/02/google-chrome
- Date: 2008-09-02T20:13:57+00:00
- Categories: Web
-*/
+--- 
+Title: Google Chrome
+Author: Seb
+Template: post
+Permalink: /blog/archives/2008/09/02/google-chrome
+Date: 2008-09-02T20:13:57+00:00
+Categories: Web
+--- 
+
 Tout le monde y va de son petit article sur Google Chrome. [Voilà il est sorti][1].
 
 Premier test, est-ce que les standards sont toujours aussi profitable? Oui, ce site semble s&rsquo;afficher tout à fait correctement dans ce &laquo;&nbsp;nouveau&nbsp;&raquo; navigateur.

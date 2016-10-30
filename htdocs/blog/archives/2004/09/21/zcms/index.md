@@ -1,12 +1,13 @@
-/*
- Title: zCMS
- Author: Seb
- Excerpt:  <p>Cela fait plusieurs jours que je me suis mis en t&ecirc;te de faire mon propre <acronym title="Content Managment System">CMS</acronym> pour g&eacute;rer le site <a href="http://z720.net" hreflang="fr">z720.net</a>.</p>
- Template: post
- Permalink: /blog/archives/2004/09/21/zcms
- Date: 2004-09-21T12:00:05+00:00
- Categories: Projets
-*/
+--- 
+Title: zCMS
+Author: Seb
+Excerpt:  <p>Cela fait plusieurs jours que je me suis mis en t&ecirc;te de faire mon propre <acronym title="Content Managment System">CMS</acronym> pour g&eacute;rer le site <a href="http://z720.net" hreflang="fr">z720.net</a>.</p>
+Template: post
+Permalink: /blog/archives/2004/09/21/zcms
+Date: 2004-09-21T12:00:05+00:00
+Categories: Projets
+--- 
+
 Cela fait plusieurs jours que je me suis mis en t&ecirc;te de faire mon propre <acronym title="Content Managment System">CMS</acronym> pour g&eacute;rer le site <a href="http://z720.net" hreflang="fr">z720.net</a>.
 
 <!--more-->

@@ -6,7 +6,7 @@
    +----------------------------------------------------------------------+
    | Redistribution and use in source and binary forms, with or without   |
    | modification, are permitted provided that the conditions mentioned   |
-   | in the accompanying LICENSE file are met (BSD, revised).             |
+   | in the accompanying LICENSE file are met (BSD-3-Clause).             |
    +----------------------------------------------------------------------+
    | Author: Derick Rethans <derick@derickrethans.nl>                     |
    +----------------------------------------------------------------------+
@@ -18,8 +18,10 @@
 
 #include "php.h"
 #include "php_twig.h"
+#include "ext/standard/php_var.h"
 #include "ext/standard/php_string.h"
 #include "ext/standard/php_smart_str.h"
+#include "ext/spl/spl_exceptions.h"
 
 #include "Zend/zend_object_handlers.h"
 #include "Zend/zend_interfaces.h"
@@ -52,11 +54,22 @@ ZEND_BEGIN_ARG_INFO_EX(twig_template_get_attribute_args, ZEND_SEND_BY_VAL, ZEND_
 	ZEND_ARG_INFO(0, isDefinedTest)
 ZEND_END_ARG_INFO()
 
-zend_function_entry twig_functions[] = {
+#ifndef PHP_FE_END
+#define PHP_FE_END { NULL, NULL, NULL}
+#endif
+
+static const zend_function_entry twig_functions[] = {
 	PHP_FE(twig_template_get_attributes, twig_template_get_attribute_args)
-	{NULL, NULL, NULL}
+	PHP_FE_END
 };
 
+PHP_RSHUTDOWN_FUNCTION(twig)
+{
+#if ZEND_DEBUG
+	CG(unclean_shutdown) = 0; /* get rid of PHPUnit's exit() and report memleaks */
+#endif
+	return SUCCESS;
+}
 
 zend_module_entry twig_module_entry = {
 	STANDARD_MODULE_HEADER,
@@ -65,7 +78,7 @@ zend_module_entry twig_module_entry = {
 	NULL,
 	NULL,
 	NULL,
-	NULL,
+	PHP_RSHUTDOWN(twig),
 	NULL,
 	PHP_TWIG_VERSION,
 	STANDARD_MODULE_PROPERTIES
@@ -76,15 +89,29 @@ zend_module_entry twig_module_entry = {
 ZEND_GET_MODULE(twig)
 #endif
 
-int TWIG_ARRAY_KEY_EXISTS(zval *array, char* key, int key_len)
+static int TWIG_ARRAY_KEY_EXISTS(zval *array, zval *key)
 {
 	if (Z_TYPE_P(array) != IS_ARRAY) {
 		return 0;
 	}
-	return zend_symtable_exists(Z_ARRVAL_P(array), key, key_len + 1);
+
+	switch (Z_TYPE_P(key)) {
+		case IS_NULL:
+			return zend_hash_exists(Z_ARRVAL_P(array), "", 1);
+
+		case IS_BOOL:
+		case IS_DOUBLE:
+			convert_to_long(key);
+		case IS_LONG:
+			return zend_hash_index_exists(Z_ARRVAL_P(array), Z_LVAL_P(key));
+
+		default:
+			convert_to_string(key);
+			return zend_symtable_exists(Z_ARRVAL_P(array), Z_STRVAL_P(key), Z_STRLEN_P(key) + 1);
+	}
 }
 
-int TWIG_INSTANCE_OF(zval *object, zend_class_entry *interface TSRMLS_DC)
+static int TWIG_INSTANCE_OF(zval *object, zend_class_entry *interface TSRMLS_DC)
 {
 	if (Z_TYPE_P(object) != IS_OBJECT) {
 		return 0;
@@ -92,7 +119,7 @@ int TWIG_INSTANCE_OF(zval *object, zend_class_entry *interface TSRMLS_DC)
 	return instanceof_function(Z_OBJCE_P(object), interface TSRMLS_CC);
 }
 
-int TWIG_INSTANCE_OF_USERLAND(zval *object, char *interface TSRMLS_DC)
+static int TWIG_INSTANCE_OF_USERLAND(zval *object, char *interface TSRMLS_DC)
 {
 	zend_class_entry **pce;
 	if (Z_TYPE_P(object) != IS_OBJECT) {
@@ -104,30 +131,30 @@ int TWIG_INSTANCE_OF_USERLAND(zval *object, char *interface TSRMLS_DC)
 	return instanceof_function(Z_OBJCE_P(object), *pce TSRMLS_CC);
 }
 
-zval *TWIG_GET_ARRAYOBJECT_ELEMENT(zval *object, zval *offset TSRMLS_DC)
+static zval *TWIG_GET_ARRAYOBJECT_ELEMENT(zval *object, zval *offset TSRMLS_DC)
 {
-    zend_class_entry *ce = Z_OBJCE_P(object);
-    zval *retval;
+	zend_class_entry *ce = Z_OBJCE_P(object);
+	zval *retval;
 
 	if (Z_TYPE_P(object) == IS_OBJECT) {
 		SEPARATE_ARG_IF_REF(offset);
 		zend_call_method_with_1_params(&object, ce, NULL, "offsetget", &retval, offset);
 
-        zval_ptr_dtor(&offset);
+		zval_ptr_dtor(&offset);
 
-        if (!retval) {
-            if (!EG(exception)) {
-                zend_error(E_ERROR, "Undefined offset for object of type %s used as array", ce->name);
-            }
-            return NULL;
-        }
+		if (!retval) {
+			if (!EG(exception)) {
+				zend_error(E_ERROR, "Undefined offset for object of type %s used as array", ce->name);
+			}
+			return NULL;
+		}
 
-        return retval;
+		return retval;
 	}
 	return NULL;
 }
 
-int TWIG_ISSET_ARRAYOBJECT_ELEMENT(zval *object, zval *offset TSRMLS_DC)
+static int TWIG_ISSET_ARRAYOBJECT_ELEMENT(zval *object, zval *offset TSRMLS_DC)
 {
 	zend_class_entry *ce = Z_OBJCE_P(object);
 	zval *retval;
@@ -150,7 +177,7 @@ int TWIG_ISSET_ARRAYOBJECT_ELEMENT(zval *object, zval *offset TSRMLS_DC)
 	return 0;
 }
 
-char *TWIG_STRTOLOWER(const char *str, int str_len)
+static char *TWIG_STRTOLOWER(const char *str, int str_len)
 {
 	char *item_dup;
 
@@ -159,7 +186,7 @@ char *TWIG_STRTOLOWER(const char *str, int str_len)
 	return item_dup;
 }
 
-zval *TWIG_CALL_USER_FUNC_ARRAY(zval *object, char *function, zval *arguments TSRMLS_DC)
+static zval *TWIG_CALL_USER_FUNC_ARRAY(zval *object, char *function, zval *arguments TSRMLS_DC)
 {
 	zend_fcall_info fci;
 	zval ***args = NULL;
@@ -200,8 +227,8 @@ zval *TWIG_CALL_USER_FUNC_ARRAY(zval *object, char *function, zval *arguments TS
 	fci.no_separation = 0;
 
 	if (zend_call_function(&fci, NULL TSRMLS_CC) == FAILURE) {
-		FREE_DTOR(zfunction)
-		zend_throw_exception_ex(zend_exception_get_default(TSRMLS_C), 0 TSRMLS_CC, "Could not execute %s::%s()", zend_get_class_entry(object TSRMLS_CC)->name, function TSRMLS_CC);
+		ALLOC_INIT_ZVAL(retval_ptr);
+		ZVAL_BOOL(retval_ptr, 0);
 	}
 
 	if (args) {
@@ -211,7 +238,7 @@ zval *TWIG_CALL_USER_FUNC_ARRAY(zval *object, char *function, zval *arguments TS
 	return retval_ptr;
 }
 
-int TWIG_CALL_BOOLEAN(zval *object, char *functionName TSRMLS_DC)
+static int TWIG_CALL_BOOLEAN(zval *object, char *functionName TSRMLS_DC)
 {
 	zval *ret;
 	int   res;
@@ -222,7 +249,7 @@ int TWIG_CALL_BOOLEAN(zval *object, char *functionName TSRMLS_DC)
 	return res;
 }
 
-zval *TWIG_GET_STATIC_PROPERTY(zval *class, char *prop_name TSRMLS_DC)
+static zval *TWIG_GET_STATIC_PROPERTY(zval *class, char *prop_name TSRMLS_DC)
 {
 	zval **tmp_zval;
 	zend_class_entry *ce;
@@ -240,12 +267,11 @@ zval *TWIG_GET_STATIC_PROPERTY(zval *class, char *prop_name TSRMLS_DC)
 	return *tmp_zval;
 }
 
-zval *TWIG_GET_ARRAY_ELEMENT_ZVAL(zval *class, zval *prop_name TSRMLS_DC)
+static zval *TWIG_GET_ARRAY_ELEMENT_ZVAL(zval *class, zval *prop_name TSRMLS_DC)
 {
 	zval **tmp_zval;
-	char *tmp_name;
 
-	if (class == NULL || Z_TYPE_P(class) != IS_ARRAY || Z_TYPE_P(prop_name) != IS_STRING) {
+	if (class == NULL || Z_TYPE_P(class) != IS_ARRAY) {
 		if (class != NULL && Z_TYPE_P(class) == IS_OBJECT && TWIG_INSTANCE_OF(class, zend_ce_arrayaccess TSRMLS_CC)) {
 			// array access object
 			return TWIG_GET_ARRAYOBJECT_ELEMENT(class, prop_name TSRMLS_CC);
@@ -253,15 +279,27 @@ zval *TWIG_GET_ARRAY_ELEMENT_ZVAL(zval *class, zval *prop_name TSRMLS_DC)
 		return NULL;
 	}
 
-	convert_to_string(prop_name);
-	tmp_name = Z_STRVAL_P(prop_name);
-	if (zend_symtable_find(HASH_OF(class), tmp_name, strlen(tmp_name)+1, (void**) &tmp_zval) == SUCCESS) {
-		return *tmp_zval;
+	switch(Z_TYPE_P(prop_name)) {
+		case IS_NULL:
+			zend_hash_find(HASH_OF(class), "", 1, (void**) &tmp_zval);
+			return *tmp_zval;
+
+		case IS_BOOL:
+		case IS_DOUBLE:
+			convert_to_long(prop_name);
+		case IS_LONG:
+			zend_hash_index_find(HASH_OF(class), Z_LVAL_P(prop_name), (void **) &tmp_zval);
+			return *tmp_zval;
+
+		case IS_STRING:
+			zend_symtable_find(HASH_OF(class), Z_STRVAL_P(prop_name), Z_STRLEN_P(prop_name) + 1, (void**) &tmp_zval);
+			return *tmp_zval;
 	}
+
 	return NULL;
 }
 
-zval *TWIG_GET_ARRAY_ELEMENT(zval *class, char *prop_name, int prop_name_length TSRMLS_DC)
+static zval *TWIG_GET_ARRAY_ELEMENT(zval *class, char *prop_name, int prop_name_length TSRMLS_DC)
 {
 	zval **tmp_zval;
 
@@ -287,7 +325,7 @@ zval *TWIG_GET_ARRAY_ELEMENT(zval *class, char *prop_name, int prop_name_length 
 	return NULL;
 }
 
-zval *TWIG_PROPERTY(zval *object, zval *propname TSRMLS_DC)
+static zval *TWIG_PROPERTY(zval *object, zval *propname TSRMLS_DC)
 {
 	zval *tmp = NULL;
 
@@ -297,16 +335,14 @@ zval *TWIG_PROPERTY(zval *object, zval *propname TSRMLS_DC)
 #else
 		tmp = Z_OBJ_HT_P(object)->read_property(object, propname, BP_VAR_IS TSRMLS_CC);
 #endif
-		if (tmp != EG(uninitialized_zval_ptr)) {
-			return tmp;
-		} else {
-			return NULL;
+		if (tmp == EG(uninitialized_zval_ptr)) {
+		        ZVAL_NULL(tmp);
 		}
 	}
 	return tmp;
 }
 
-int TWIG_HAS_PROPERTY(zval *object, zval *propname TSRMLS_DC)
+static int TWIG_HAS_PROPERTY(zval *object, zval *propname TSRMLS_DC)
 {
 	if (Z_OBJ_HT_P(object)->has_property) {
 #if PHP_VERSION_ID >= 50400
@@ -318,7 +354,7 @@ int TWIG_HAS_PROPERTY(zval *object, zval *propname TSRMLS_DC)
 	return 0;
 }
 
-int TWIG_HAS_DYNAMIC_PROPERTY(zval *object, char *prop, int prop_len TSRMLS_DC)
+static int TWIG_HAS_DYNAMIC_PROPERTY(zval *object, char *prop, int prop_len TSRMLS_DC)
 {
 	if (Z_OBJ_HT_P(object)->get_properties) {
 		return zend_hash_quick_exists(
@@ -331,7 +367,7 @@ int TWIG_HAS_DYNAMIC_PROPERTY(zval *object, char *prop, int prop_len TSRMLS_DC)
 	return 0;
 }
 
-zval *TWIG_PROPERTY_CHAR(zval *object, char *propname TSRMLS_DC)
+static zval *TWIG_PROPERTY_CHAR(zval *object, char *propname TSRMLS_DC)
 {
 	zval *tmp_name_zval, *tmp;
 
@@ -342,12 +378,7 @@ zval *TWIG_PROPERTY_CHAR(zval *object, char *propname TSRMLS_DC)
 	return tmp;
 }
 
-int TWIG_CALL_B_0(zval *object, char *method)
-{
-	return 0;
-}
-
-zval *TWIG_CALL_S(zval *object, char *method, char *arg0 TSRMLS_DC)
+static zval *TWIG_CALL_S(zval *object, char *method, char *arg0 TSRMLS_DC)
 {
 	zend_fcall_info fci;
 	zval **args[1];
@@ -385,7 +416,7 @@ zval *TWIG_CALL_S(zval *object, char *method, char *arg0 TSRMLS_DC)
 	return retval_ptr;
 }
 
-int TWIG_CALL_SB(zval *object, char *method, char *arg0 TSRMLS_DC)
+static int TWIG_CALL_SB(zval *object, char *method, char *arg0 TSRMLS_DC)
 {
 	zval *retval_ptr;
 	int success;
@@ -400,51 +431,7 @@ int TWIG_CALL_SB(zval *object, char *method, char *arg0 TSRMLS_DC)
 	return success;
 }
 
-int TWIG_CALL_Z(zval *object, char *method, zval *arg1 TSRMLS_DC)
-{
-	zend_fcall_info fci;
-	zval **args[1];
-	zval *zfunction;
-	zval *retval_ptr;
-	int   success;
-
-	args[0] = &arg1;
-
-	MAKE_STD_ZVAL(zfunction);
-	ZVAL_STRING(zfunction, method, 1);
-	fci.size = sizeof(fci);
-	fci.function_table = EG(function_table);
-	fci.function_name = zfunction;
-	fci.symbol_table = NULL;
-#if PHP_VERSION_ID >= 50300
-	fci.object_ptr = object;
-#else
-	fci.object_pp = &object;
-#endif
-	fci.retval_ptr_ptr = &retval_ptr;
-	fci.param_count = 1;
-	fci.params = args;
-	fci.no_separation = 0;
-
-	if (zend_call_function(&fci, NULL TSRMLS_CC) == FAILURE) {
-		FREE_DTOR(zfunction);
-		if (retval_ptr) {
-			zval_ptr_dtor(&retval_ptr);
-		}
-		return 0;
-	}
-
-	FREE_DTOR(zfunction);
-
-	success = (retval_ptr && (Z_TYPE_P(retval_ptr) == IS_BOOL) && Z_LVAL_P(retval_ptr));
-	if (retval_ptr) {
-		zval_ptr_dtor(&retval_ptr);
-	}
-
-	return success;
-}
-
-int TWIG_CALL_ZZ(zval *object, char *method, zval *arg1, zval *arg2 TSRMLS_DC)
+static int TWIG_CALL_ZZ(zval *object, char *method, zval *arg1, zval *arg2 TSRMLS_DC)
 {
 	zend_fcall_info fci;
 	zval **args[2];
@@ -491,7 +478,7 @@ int TWIG_CALL_ZZ(zval *object, char *method, zval *arg1, zval *arg2 TSRMLS_DC)
 # define Z_UNSET_ISREF_P(pz) pz->is_ref = 0
 #endif
 
-void TWIG_NEW(zval *object, char *class, zval *arg0, zval *arg1 TSRMLS_DC)
+static void TWIG_NEW(zval *object, char *class, zval *arg0, zval *arg1 TSRMLS_DC)
 {
 	zend_class_entry **pce;
 
@@ -536,7 +523,7 @@ static int twig_add_array_key_to_string(void *pDest APPLY_TSRMLS_DC, int num_arg
 	return 0;
 }
 
-char *TWIG_IMPLODE_ARRAY_KEYS(char *joiner, zval *array TSRMLS_DC)
+static char *TWIG_IMPLODE_ARRAY_KEYS(char *joiner, zval *array TSRMLS_DC)
 {
 	smart_str collector = { 0, 0, 0 };
 
@@ -545,24 +532,6 @@ char *TWIG_IMPLODE_ARRAY_KEYS(char *joiner, zval *array TSRMLS_DC)
 	smart_str_0(&collector);
 
 	return collector.c;
-}
-
-static void TWIG_THROW_EXCEPTION(char *exception_name TSRMLS_DC, char *message, ...)
-{
-	char *buffer;
-	va_list args;
-	zend_class_entry **pce;
-
-	if (zend_lookup_class(exception_name, strlen(exception_name), &pce TSRMLS_CC) == FAILURE) {
-		return;
-	}
-
-	va_start(args, message);
-	vspprintf(&buffer, 0, message, args);
-	va_end(args);
-
-	zend_throw_exception_ex(*pce, 0 TSRMLS_CC, buffer);
-	efree(buffer);
 }
 
 static void TWIG_RUNTIME_ERROR(zval *template TSRMLS_DC, char *message, ...)
@@ -640,6 +609,7 @@ static char *TWIG_GET_CLASS_NAME(zval *object TSRMLS_DC)
 
 static int twig_add_method_to_class(void *pDest APPLY_TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
 {
+	zend_class_entry *ce;
 	zval *retval;
 	char *item;
 	size_t item_len;
@@ -650,11 +620,22 @@ static int twig_add_method_to_class(void *pDest APPLY_TSRMLS_DC, int num_args, v
 		return 0;
 	}
 
+	ce = *va_arg(args, zend_class_entry**);
 	retval = va_arg(args, zval*);
 
 	item_len = strlen(mptr->common.function_name);
 	item = estrndup(mptr->common.function_name, item_len);
 	php_strtolower(item, item_len);
+
+	if (strcmp("getenvironment", item) == 0) {
+		zend_class_entry **twig_template_ce;
+		if (zend_lookup_class("Twig_Template", strlen("Twig_Template"), &twig_template_ce TSRMLS_CC) == FAILURE) {
+			return 0;
+		}
+		if (instanceof_function(ce, *twig_template_ce TSRMLS_CC)) {
+			return 0;
+		}
+	}
 
 	add_assoc_stringl_ex(retval, item, item_len+1, item, item_len, 0);
 
@@ -669,7 +650,7 @@ static int twig_add_property_to_class(void *pDest APPLY_TSRMLS_DC, int num_args,
 	zend_property_info *pptr = (zend_property_info *) pDest;
 	APPLY_TSRMLS_FETCH();
 
-	if (!(pptr->flags & ZEND_ACC_PUBLIC)) {
+	if (!(pptr->flags & ZEND_ACC_PUBLIC) || (pptr->flags & ZEND_ACC_STATIC)) {
 		return 0;
 	}
 
@@ -701,7 +682,7 @@ static void twig_add_class_to_cache(zval *cache, zval *object, char *class_name 
 	array_init(class_methods);
 	array_init(class_properties);
 	// add all methods to self::cache[$class]['methods']
-	zend_hash_apply_with_arguments(&class_ce->function_table APPLY_TSRMLS_CC, twig_add_method_to_class, 1, class_methods);
+	zend_hash_apply_with_arguments(&class_ce->function_table APPLY_TSRMLS_CC, twig_add_method_to_class, 2, &class_ce, class_methods);
 	zend_hash_apply_with_arguments(&class_ce->properties_info APPLY_TSRMLS_CC, twig_add_property_to_class, 2, &class_ce, class_properties);
 
 	add_assoc_zval(class_info, "methods", class_methods);
@@ -717,7 +698,7 @@ PHP_FUNCTION(twig_template_get_attributes)
 	zval *object;
 	char *item;
 	int  item_len;
-	zval  zitem;
+	zval *zitem, ztmpitem;
 	zval *arguments = NULL;
 	zval *ret = NULL;
 	char *type = NULL;
@@ -726,24 +707,21 @@ PHP_FUNCTION(twig_template_get_attributes)
 	zend_bool ignoreStrictCheck = 0;
 	int free_ret = 0;
 	zval *tmp_self_cache;
+	char *class_name = NULL;
+	zval *tmp_class;
+	char *type_name;
 
-
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ozs|asbb", &template, &object, &item, &item_len, &arguments, &type, &type_len, &isDefinedTest, &ignoreStrictCheck) == FAILURE) {
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ozz|asbb", &template, &object, &zitem, &arguments, &type, &type_len, &isDefinedTest, &ignoreStrictCheck) == FAILURE) {
 		return;
 	}
 
-	INIT_PZVAL(&zitem);
-	ZVAL_STRINGL(&zitem, item, item_len, 0);
-
-    switch (is_numeric_string(item, item_len, &Z_LVAL(zitem), &Z_DVAL(zitem), 0)) {
-    case IS_LONG:
-        Z_TYPE(zitem) = IS_LONG;
-        break;
-    case IS_DOUBLE:
-        Z_TYPE(zitem) = IS_DOUBLE;
-        convert_to_long(&zitem);
-        break;
-    }
+	// convert the item to a string
+	ztmpitem = *zitem;
+	zval_copy_ctor(&ztmpitem);
+	convert_to_string(&ztmpitem);
+	item_len = Z_STRLEN(ztmpitem);
+	item = estrndup(Z_STRVAL(ztmpitem), item_len);
+	zval_dtor(&ztmpitem);
 
 	if (!type) {
 		type = "any";
@@ -751,29 +729,33 @@ PHP_FUNCTION(twig_template_get_attributes)
 
 /*
 	// array
-	if (Twig_TemplateInterface::METHOD_CALL !== $type) {
-		if ((is_array($object) && array_key_exists($item, $object))
-			|| ($object instanceof ArrayAccess && isset($object[$item]))
+	if (Twig_Template::METHOD_CALL !== $type) {
+		$arrayItem = is_bool($item) || is_float($item) ? (int) $item : $item;
+
+		if ((is_array($object) && array_key_exists($arrayItem, $object))
+			|| ($object instanceof ArrayAccess && isset($object[$arrayItem]))
 		) {
 			if ($isDefinedTest) {
 				return true;
 			}
 
-			return $object[$item];
+			return $object[$arrayItem];
 		}
 */
+
+
 	if (strcmp("method", type) != 0) {
-//		printf("XXXmethod: %s\n", type);
-		if ((TWIG_ARRAY_KEY_EXISTS(object, item, item_len))
-			|| (TWIG_INSTANCE_OF(object, zend_ce_arrayaccess TSRMLS_CC) && TWIG_ISSET_ARRAYOBJECT_ELEMENT(object, &zitem TSRMLS_CC))
+		if ((TWIG_ARRAY_KEY_EXISTS(object, zitem))
+			|| (TWIG_INSTANCE_OF(object, zend_ce_arrayaccess TSRMLS_CC) && TWIG_ISSET_ARRAYOBJECT_ELEMENT(object, zitem TSRMLS_CC))
 		) {
-			zval *ret;
 
 			if (isDefinedTest) {
+				efree(item);
 				RETURN_TRUE;
 			}
 
-			ret = TWIG_GET_ARRAY_ELEMENT(object, item, item_len TSRMLS_CC);
+			ret = TWIG_GET_ARRAY_ELEMENT_ZVAL(object, zitem TSRMLS_CC);
+
 			if (!ret) {
 				ret = &EG(uninitialized_zval);
 			}
@@ -781,10 +763,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 			if (free_ret) {
 				zval_ptr_dtor(&ret);
 			}
+			efree(item);
 			return;
 		}
 /*
-		if (Twig_TemplateInterface::ARRAY_CALL === $type) {
+		if (Twig_Template::ARRAY_CALL === $type) {
 			if ($isDefinedTest) {
 				return false;
 			}
@@ -792,31 +775,74 @@ PHP_FUNCTION(twig_template_get_attributes)
 				return null;
 			}
 */
-		if (strcmp("array", type) == 0) {
+		if (strcmp("array", type) == 0 || Z_TYPE_P(object) != IS_OBJECT) {
 			if (isDefinedTest) {
+				efree(item);
 				RETURN_FALSE;
 			}
 			if (ignoreStrictCheck || !TWIG_CALL_BOOLEAN(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "isStrictVariables" TSRMLS_CC)) {
+				efree(item);
 				return;
 			}
 /*
-			if (is_object($object)) {
-				throw new Twig_Error_Runtime(sprintf('Key "%s" in object (with ArrayAccess) of type "%s" does not exist', $item, get_class($object)), -1, $this->getTemplateName());
+			if ($object instanceof ArrayAccess) {
+				$message = sprintf('Key "%s" in object with ArrayAccess of class "%s" does not exist', $arrayItem, get_class($object));
+			} elseif (is_object($object)) {
+				$message = sprintf('Impossible to access a key "%s" on an object of class "%s" that does not implement ArrayAccess interface', $item, get_class($object));
 			} elseif (is_array($object)) {
-				throw new Twig_Error_Runtime(sprintf('Key "%s" for array with keys "%s" does not exist', $item, implode(', ', array_keys($object))), -1, $this->getTemplateName());
+				if (empty($object)) {
+					$message = sprintf('Key "%s" does not exist as the array is empty', $arrayItem);
+				} else {
+					$message = sprintf('Key "%s" for array with keys "%s" does not exist', $arrayItem, implode(', ', array_keys($object)));
+				}
+			} elseif (Twig_Template::ARRAY_CALL === $type) {
+				if (null === $object) {
+					$message = sprintf('Impossible to access a key ("%s") on a null variable', $item);
+				} else {
+					$message = sprintf('Impossible to access a key ("%s") on a %s variable ("%s")', $item, gettype($object), $object);
+				}
+			} elseif (null === $object) {
+				$message = sprintf('Impossible to access an attribute ("%s") on a null variable', $item);
 			} else {
-				throw new Twig_Error_Runtime(sprintf('Impossible to access a key ("%s") on a "%s" variable', $item, gettype($object)), -1, $this->getTemplateName());
+				$message = sprintf('Impossible to access an attribute ("%s") on a %s variable ("%s")', $item, gettype($object), $object);
 			}
+			throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
 		}
 	}
 */
-			if (Z_TYPE_P(object) == IS_OBJECT) {
-				TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Key \"%s\" in object (with ArrayAccess) of type \"%s\" does not exist", item, TWIG_GET_CLASS_NAME(object TSRMLS_CC));
+			if (TWIG_INSTANCE_OF(object, zend_ce_arrayaccess TSRMLS_CC)) {
+				TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Key \"%s\" in object with ArrayAccess of class \"%s\" does not exist", item, TWIG_GET_CLASS_NAME(object TSRMLS_CC));
+			} else if (Z_TYPE_P(object) == IS_OBJECT) {
+				TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to access a key \"%s\" on an object of class \"%s\" that does not implement ArrayAccess interface", item, TWIG_GET_CLASS_NAME(object TSRMLS_CC));
 			} else if (Z_TYPE_P(object) == IS_ARRAY) {
-				TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Key \"%s\" for array with keys \"%s\" does not exist", item, TWIG_IMPLODE_ARRAY_KEYS(", ", object TSRMLS_CC));
+				if (0 == zend_hash_num_elements(Z_ARRVAL_P(object))) {
+					TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Key \"%s\" does not exist as the array is empty", item);
+				} else {
+					char *array_keys = TWIG_IMPLODE_ARRAY_KEYS(", ", object TSRMLS_CC);
+					TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Key \"%s\" for array with keys \"%s\" does not exist", item, array_keys);
+					efree(array_keys);
+				}
 			} else {
-				TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to access a key (\"%s\") on a \"%s\" variable", item, zend_zval_type_name(object));
+				char *type_name = zend_zval_type_name(object);
+				Z_ADDREF_P(object);
+				if (Z_TYPE_P(object) == IS_NULL) {
+					convert_to_string(object);
+					TWIG_RUNTIME_ERROR(template TSRMLS_CC,
+						(strcmp("array", type) == 0)
+							? "Impossible to access a key (\"%s\") on a %s variable"
+							: "Impossible to access an attribute (\"%s\") on a %s variable",
+						item, type_name);
+				} else {
+					convert_to_string(object);
+					TWIG_RUNTIME_ERROR(template TSRMLS_CC,
+						(strcmp("array", type) == 0)
+							? "Impossible to access a key (\"%s\") on a %s variable (\"%s\")"
+							: "Impossible to access an attribute (\"%s\") on a %s variable (\"%s\")",
+						item, type_name, Z_STRVAL_P(object));
+				}
+				zval_ptr_dtor(&object);
 			}
+			efree(item);
 			return;
 		}
 	}
@@ -830,64 +856,66 @@ PHP_FUNCTION(twig_template_get_attributes)
 
 	if (Z_TYPE_P(object) != IS_OBJECT) {
 		if (isDefinedTest) {
+			efree(item);
 			RETURN_FALSE;
 		}
 /*
 		if ($ignoreStrictCheck || !$this->env->isStrictVariables()) {
 			return null;
 		}
-		throw new Twig_Error_Runtime(sprintf('Item "%s" for "%s" does not exist', $item, implode(', ', array_keys($object))));
+
+		if (null === $object) {
+			$message = sprintf('Impossible to invoke a method ("%s") on a null variable', $item);
+		} else {
+			$message = sprintf('Impossible to invoke a method ("%s") on a %s variable ("%s")', $item, gettype($object), $object);
+		}
+
+		throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
 	}
 */
 		if (ignoreStrictCheck || !TWIG_CALL_BOOLEAN(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "isStrictVariables" TSRMLS_CC)) {
-			RETURN_FALSE;
+			efree(item);
+			return;
 		}
-		if (Z_TYPE_P(object) == IS_ARRAY) {
-			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Item \"%s\" for \"Array\" does not exist", item);
-		} else {
-			Z_ADDREF_P(object);
+
+		type_name = zend_zval_type_name(object);
+		Z_ADDREF_P(object);
+		if (Z_TYPE_P(object) == IS_NULL) {
 			convert_to_string_ex(&object);
-			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Item \"%s\" for \"%s\" does not exist", item, Z_STRVAL_P(object));
-			zval_ptr_dtor(&object);
+
+			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to invoke a method (\"%s\") on a %s variable", item, type_name);
+		} else {
+			convert_to_string_ex(&object);
+
+			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to invoke a method (\"%s\") on a %s variable (\"%s\")", item, type_name, Z_STRVAL_P(object));
 		}
+
+		zval_ptr_dtor(&object);
+		efree(item);
 		return;
 	}
 /*
-	// get some information about the object
 	$class = get_class($object);
-	if (!isset(self::$cache[$class])) {
-		$r = new ReflectionClass($class);
-		self::$cache[$class] = array('methods' => array(), 'properties' => array());
-		foreach ($r->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
-			self::$cache[$class]['methods'][strtolower($method->getName())] = true;
-		}
-
-		foreach ($r->getProperties(ReflectionProperty::IS_PUBLIC) as $property) {
-			self::$cache[$class]['properties'][$property->getName()] = true;
-		}
-	}
 */
-	if (Z_TYPE_P(object) == IS_OBJECT) {
-		char *class_name = NULL;
 
-		class_name = TWIG_GET_CLASS_NAME(object TSRMLS_CC);
-		tmp_self_cache = TWIG_GET_STATIC_PROPERTY(template, "cache" TSRMLS_CC);
+	class_name = TWIG_GET_CLASS_NAME(object TSRMLS_CC);
+	tmp_self_cache = TWIG_GET_STATIC_PROPERTY(template, "cache" TSRMLS_CC);
+	tmp_class = TWIG_GET_ARRAY_ELEMENT(tmp_self_cache, class_name, strlen(class_name) TSRMLS_CC);
 
-		if (!TWIG_GET_ARRAY_ELEMENT(tmp_self_cache, class_name, strlen(class_name) TSRMLS_CC)) {
-			twig_add_class_to_cache(tmp_self_cache, object, class_name TSRMLS_CC);
-		}
-		efree(class_name);
+	if (!tmp_class) {
+		twig_add_class_to_cache(tmp_self_cache, object, class_name TSRMLS_CC);
+		tmp_class = TWIG_GET_ARRAY_ELEMENT(tmp_self_cache, class_name, strlen(class_name) TSRMLS_CC);
 	}
+	efree(class_name);
 
 /*
 	// object property
-	if (Twig_TemplateInterface::METHOD_CALL !== $type) {
-		if (isset(self::$cache[$class]['properties'][$item])
-			|| isset($object->$item) || array_key_exists($item, $object)
-		) {
+	if (Twig_Template::METHOD_CALL !== $type && !$object instanceof Twig_Template) {
+		if (isset($object->$item) || array_key_exists((string) $item, $object)) {
 			if ($isDefinedTest) {
 				return true;
 			}
+
 			if ($this->env->hasExtension('sandbox')) {
 				$this->env->getExtension('sandbox')->checkPropertyAllowed($object, $item);
 			}
@@ -896,54 +924,74 @@ PHP_FUNCTION(twig_template_get_attributes)
 		}
 	}
 */
-	if (strcmp("method", type) != 0) {
-		zval *tmp_class, *tmp_properties, *tmp_item;
-		char *class_name = NULL;
+	if (strcmp("method", type) != 0 && !TWIG_INSTANCE_OF_USERLAND(object, "Twig_Template" TSRMLS_CC)) {
+		zval *tmp_properties, *tmp_item;
 
-		class_name = TWIG_GET_CLASS_NAME(object TSRMLS_CC);
-		tmp_class = TWIG_GET_ARRAY_ELEMENT(tmp_self_cache, class_name, strlen(class_name) TSRMLS_CC);
 		tmp_properties = TWIG_GET_ARRAY_ELEMENT(tmp_class, "properties", strlen("properties") TSRMLS_CC);
 		tmp_item = TWIG_GET_ARRAY_ELEMENT(tmp_properties, item, item_len TSRMLS_CC);
 
-		efree(class_name);
-
-		if (tmp_item || TWIG_HAS_PROPERTY(object, &zitem TSRMLS_CC) || TWIG_HAS_DYNAMIC_PROPERTY(object, item, item_len TSRMLS_CC)) {
+		if (tmp_item || TWIG_HAS_PROPERTY(object, zitem TSRMLS_CC) || TWIG_HAS_DYNAMIC_PROPERTY(object, item, item_len TSRMLS_CC)) {
 			if (isDefinedTest) {
+				efree(item);
 				RETURN_TRUE;
 			}
 			if (TWIG_CALL_SB(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "hasExtension", "sandbox" TSRMLS_CC)) {
-				TWIG_CALL_ZZ(TWIG_CALL_S(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "getExtension", "sandbox" TSRMLS_CC), "checkPropertyAllowed", object, &zitem TSRMLS_CC);
+				TWIG_CALL_ZZ(TWIG_CALL_S(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "getExtension", "sandbox" TSRMLS_CC), "checkPropertyAllowed", object, zitem TSRMLS_CC);
 			}
 			if (EG(exception)) {
+				efree(item);
 				return;
 			}
 
-			ret = TWIG_PROPERTY(object, &zitem TSRMLS_CC);
+			ret = TWIG_PROPERTY(object, zitem TSRMLS_CC);
+			efree(item);
 			RETURN_ZVAL(ret, 1, 0);
 		}
 	}
 /*
 	// object method
+	if (!isset(self::$cache[$class]['methods'])) {
+		if ($object instanceof self) {
+			$ref = new ReflectionClass($class);
+			$methods = array();
+
+			foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $refMethod) {
+				$methodName = strtolower($refMethod->name);
+
+				// Accessing the environment from templates is forbidden to prevent untrusted changes to the environment
+				if ('getenvironment' !== $methodName) {
+					$methods[$methodName] = true;
+				}
+			}
+
+			self::$cache[$class]['methods'] = $methods;
+        } else {
+			self::$cache[$class]['methods'] = array_change_key_case(array_flip(get_class_methods($object)));
+        }
+	}
+
+	$call = false;
 	$lcItem = strtolower($item);
 	if (isset(self::$cache[$class]['methods'][$lcItem])) {
-		$method = $item;
+		$method = (string) $item;
 	} elseif (isset(self::$cache[$class]['methods']['get'.$lcItem])) {
 		$method = 'get'.$item;
 	} elseif (isset(self::$cache[$class]['methods']['is'.$lcItem])) {
 		$method = 'is'.$item;
 	} elseif (isset(self::$cache[$class]['methods']['__call'])) {
-		$method = $item;
+		$method = (string) $item;
+		$call = true;
 */
 	{
+		int call = 0;
 		char *lcItem = TWIG_STRTOLOWER(item, item_len);
 		int   lcItem_length;
 		char *method = NULL;
 		char *tmp_method_name_get;
 		char *tmp_method_name_is;
-		zval *tmp_class, *tmp_methods;
-		char *class_name = NULL;
+		zval *zmethod;
+		zval *tmp_methods;
 
-		class_name = TWIG_GET_CLASS_NAME(object TSRMLS_CC);
 		lcItem_length = strlen(lcItem);
 		tmp_method_name_get = emalloc(4 + lcItem_length);
 		tmp_method_name_is  = emalloc(3 + lcItem_length);
@@ -951,9 +999,7 @@ PHP_FUNCTION(twig_template_get_attributes)
 		sprintf(tmp_method_name_get, "get%s", lcItem);
 		sprintf(tmp_method_name_is, "is%s", lcItem);
 
-		tmp_class = TWIG_GET_ARRAY_ELEMENT(tmp_self_cache, class_name, strlen(class_name) TSRMLS_CC);
 		tmp_methods = TWIG_GET_ARRAY_ELEMENT(tmp_class, "methods", strlen("methods") TSRMLS_CC);
-		efree(class_name);
 
 		if (TWIG_GET_ARRAY_ELEMENT(tmp_methods, lcItem, lcItem_length TSRMLS_CC)) {
 			method = item;
@@ -963,16 +1009,20 @@ PHP_FUNCTION(twig_template_get_attributes)
 			method = tmp_method_name_is;
 		} else if (TWIG_GET_ARRAY_ELEMENT(tmp_methods, "__call", 6 TSRMLS_CC)) {
 			method = item;
+			call = 1;
 /*
 	} else {
 		if ($isDefinedTest) {
 			return false;
 		}
+
 		if ($ignoreStrictCheck || !$this->env->isStrictVariables()) {
 			return null;
 		}
-		throw new Twig_Error_Runtime(sprintf('Method "%s" for object "%s" does not exist', $item, get_class($object)));
+
+		throw new Twig_Error_Runtime(sprintf('Method "%s" for object "%s" does not exist', $item, get_class($object)), -1, $this->getTemplateName());
 	}
+
 	if ($isDefinedTest) {
 		return true;
 	}
@@ -983,19 +1033,22 @@ PHP_FUNCTION(twig_template_get_attributes)
 			efree(lcItem);
 
 			if (isDefinedTest) {
+				efree(item);
 				RETURN_FALSE;
 			}
 			if (ignoreStrictCheck || !TWIG_CALL_BOOLEAN(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "isStrictVariables" TSRMLS_CC)) {
+				efree(item);
 				return;
 			}
-			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Method \"%s\" for object \"%s\" does not exist", item, TWIG_GET_CLASS_NAME(object TSRMLS_CC));
+			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Neither the property \"%s\" nor one of the methods \"%s()\", \"get%s()\"/\"is%s()\" or \"__call()\" exist and have public access in class \"%s\"", item, item, item, item, TWIG_GET_CLASS_NAME(object TSRMLS_CC));
+			efree(item);
 			return;
 		}
 
 		if (isDefinedTest) {
 			efree(tmp_method_name_get);
 			efree(tmp_method_name_is);
-			efree(lcItem);
+			efree(lcItem);efree(item);
 			RETURN_TRUE;
 		}
 /*
@@ -1003,39 +1056,59 @@ PHP_FUNCTION(twig_template_get_attributes)
 		$this->env->getExtension('sandbox')->checkMethodAllowed($object, $method);
 	}
 */
+		MAKE_STD_ZVAL(zmethod);
+		ZVAL_STRING(zmethod, method, 1);
 		if (TWIG_CALL_SB(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "hasExtension", "sandbox" TSRMLS_CC)) {
-			TWIG_CALL_ZZ(TWIG_CALL_S(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "getExtension", "sandbox" TSRMLS_CC), "checkMethodAllowed", object, &zitem TSRMLS_CC);
+			TWIG_CALL_ZZ(TWIG_CALL_S(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "getExtension", "sandbox" TSRMLS_CC), "checkMethodAllowed", object, zmethod TSRMLS_CC);
 		}
+		zval_ptr_dtor(&zmethod);
 		if (EG(exception)) {
 			efree(tmp_method_name_get);
 			efree(tmp_method_name_is);
-			efree(lcItem);
+			efree(lcItem);efree(item);
 			return;
 		}
 /*
-	$ret = call_user_func_array(array($object, $method), $arguments);
+	// Some objects throw exceptions when they have __call, and the method we try
+	// to call is not supported. If ignoreStrictCheck is true, we should return null.
+	try {
+	    $ret = call_user_func_array(array($object, $method), $arguments);
+	} catch (BadMethodCallException $e) {
+	    if ($call && ($ignoreStrictCheck || !$this->env->isStrictVariables())) {
+	        return null;
+	    }
+	    throw $e;
+	}
 */
-		if (Z_TYPE_P(object) == IS_OBJECT) {
-			ret = TWIG_CALL_USER_FUNC_ARRAY(object, method, arguments TSRMLS_CC);
-			free_ret = 1;
+		ret = TWIG_CALL_USER_FUNC_ARRAY(object, method, arguments TSRMLS_CC);
+		if (EG(exception) && TWIG_INSTANCE_OF(EG(exception), spl_ce_BadMethodCallException TSRMLS_CC)) {
+			if (ignoreStrictCheck || !TWIG_CALL_BOOLEAN(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "isStrictVariables" TSRMLS_CC)) {
+				efree(tmp_method_name_get);
+				efree(tmp_method_name_is);
+				efree(lcItem);efree(item);
+				zend_clear_exception(TSRMLS_C);
+				return;
+			}
 		}
+		free_ret = 1;
 		efree(tmp_method_name_get);
 		efree(tmp_method_name_is);
 		efree(lcItem);
 	}
 /*
+	// useful when calling a template method from a template
+	// this is not supported but unfortunately heavily used in the Symfony profiler
 	if ($object instanceof Twig_TemplateInterface) {
 		return $ret === '' ? '' : new Twig_Markup($ret, $this->env->getCharset());
 	}
 
 	return $ret;
 */
+	efree(item);
 	// ret can be null, if e.g. the called method throws an exception
 	if (ret) {
 		if (TWIG_INSTANCE_OF_USERLAND(object, "Twig_TemplateInterface" TSRMLS_CC)) {
-			if (Z_STRLEN_P(ret) == 0) {
-				free_ret = 1;
-			} else {
+			if (Z_STRLEN_P(ret) != 0) {
 				zval *charset = TWIG_CALL_USER_FUNC_ARRAY(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "getCharset", NULL TSRMLS_CC);
 				TWIG_NEW(return_value, "Twig_Markup", ret, charset TSRMLS_CC);
 				zval_ptr_dtor(&charset);

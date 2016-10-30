@@ -1,12 +1,13 @@
-/*
- Title: En ligne&#8230;
- Author: Seb
- Excerpt:  <p>Enfin en ligne officiellement.</p>
- Template: post
- Permalink: /blog/archives/2004/07/08/en-ligne
- Date: 2004-07-08T23:16:18+00:00
- Categories: Humeur
-*/
+--- 
+Title: En ligne&#8230;
+Author: Seb
+Excerpt:  <p>Enfin en ligne officiellement.</p>
+Template: post
+Permalink: /blog/archives/2004/07/08/en-ligne
+Date: 2004-07-08T23:16:18+00:00
+Categories: Humeur
+--- 
+
 Enfin en ligne officiellement.
 
 <!--more-->

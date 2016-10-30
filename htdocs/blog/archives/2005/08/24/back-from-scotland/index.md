@@ -1,12 +1,13 @@
-/*
- Title: Back from Scotland
- Author: Seb
- Excerpt: Et oui les vacances sont finies...
- Template: post
- Permalink: /blog/archives/2005/08/24/back-from-scotland
- Date: 2005-08-24T14:31:57+00:00
- Categories: Humeur
-*/
+--- 
+Title: Back from Scotland
+Author: Seb
+Excerpt: Et oui les vacances sont finies...
+Template: post
+Permalink: /blog/archives/2005/08/24/back-from-scotland
+Date: 2005-08-24T14:31:57+00:00
+Categories: Humeur
+--- 
+
 Et oui les vacances sont finies&#8230;
 
 <!--more-->

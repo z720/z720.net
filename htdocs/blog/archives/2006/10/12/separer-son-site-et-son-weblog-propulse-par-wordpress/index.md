@@ -1,11 +1,12 @@
-/*
- Title: Séparer son site et son weblog propulsé par WordPress
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/10/12/separer-son-site-et-son-weblog-propulse-par-wordpress
- Date: 2006-10-12T11:25:55+00:00
- Categories: Développement, Web, WordPress
-*/
+--- 
+Title: Séparer son site et son weblog propulsé par WordPress
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/10/12/separer-son-site-et-son-weblog-propulse-par-wordpress
+Date: 2006-10-12T11:25:55+00:00
+Categories: Développement, Web, WordPress
+--- 
+
 Le but de cet article est de permettre l&rsquo;utilisation de WordPress comme un gestionnaire de contenu faisant apparaitre un site classique et un blog de manière distincte.
 
 ![Exemple de plan du site][1]

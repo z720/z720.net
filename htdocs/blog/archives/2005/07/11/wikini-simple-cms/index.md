@@ -1,11 +1,12 @@
-/*
- Title: Wikini comme simple CMS
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/11/wikini-simple-cms
- Date: 2005-07-11T11:28:59+00:00
- Categories: Design, Développement, Divers, Projets, Web
-*/
+--- 
+Title: Wikini comme simple CMS
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/11/wikini-simple-cms
+Date: 2005-07-11T11:28:59+00:00
+Categories: Design, Développement, Divers, Projets, Web
+--- 
+
 L&rsquo;idée peut paraître originale, pourtant cela n&rsquo;est pas idiot. Les fonctionnalités de base d&rsquo;un moteur de wiki sont : la facilité d&rsquo;édition et la possibilité pour n&rsquo;importe qui d&rsquo;intervenir sur le contenu&#8230; Pour avoir un CMS simple, il suffit de brider la seconde possibilité.
 
 <!--more-->

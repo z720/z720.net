@@ -1,11 +1,12 @@
-/*
- Title: Summer Refresh &#8211; Etape 2 &#8211; Description des pages
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/12/12/summer-refresh-etape-2-description-des-pages
- Date: 2005-12-12T16:30:55+00:00
- Categories: Design, Développement, Projets, Summer Refresh, Web
-*/
+--- 
+Title: Summer Refresh &#8211; Etape 2 &#8211; Description des pages
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/12/12/summer-refresh-etape-2-description-des-pages
+Date: 2005-12-12T16:30:55+00:00
+Categories: Design, Développement, Projets, Summer Refresh, Web
+--- 
+
 Pour clarifier les besoins, ainsi que pour mettre une priorité à chacun d&rsquo;eux. Il est intéressant de faire l&rsquo;exercice du diagramme de description des pages. Voici le résultat de ce petit Brainstorming personnel : 
 
 <!--more-->

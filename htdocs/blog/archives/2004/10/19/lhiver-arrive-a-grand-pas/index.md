@@ -1,12 +1,13 @@
-/*
- Title: L&rsquo;Hiver arrive &agrave;  grand pas&#8230;
- Author: Seb
- Excerpt:  <p>Et voil&agrave;  ce qui devait arriver, arrive enfin!!! La saison de ski va bient&ocirc;t pouvoir commencer...</p>
- Template: post
- Permalink: /blog/archives/2004/10/19/lhiver-arrive-a-grand-pas
- Date: 2004-10-19T21:55:48+00:00
- Categories: Humeur
-*/
+--- 
+Title: L&rsquo;Hiver arrive &agrave;  grand pas&#8230;
+Author: Seb
+Excerpt:  <p>Et voil&agrave;  ce qui devait arriver, arrive enfin!!! La saison de ski va bient&ocirc;t pouvoir commencer...</p>
+Template: post
+Permalink: /blog/archives/2004/10/19/lhiver-arrive-a-grand-pas
+Date: 2004-10-19T21:55:48+00:00
+Categories: Humeur
+--- 
+
 Et voil&agrave; ce qui devait arriver, arrive enfin!!! La saison de ski va bient&ocirc;t pouvoir commencer&#8230;
 
 <!--more-->

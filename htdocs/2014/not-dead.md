@@ -1,8 +1,9 @@
-/*
- Title: Ce blog n'est pas mort
- Template: post
- Date: 2014-03-23T21:00:00+00:00
-*/
+--- 
+Title: Ce blog n'est pas mort
+Template: post
+Date: 2014-03-23T21:00:00+00:00
+--- 
+
 
 Tel le phoenix
 --------------

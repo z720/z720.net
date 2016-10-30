@@ -1,11 +1,12 @@
-/*
- Title: Summer Refresh &#8211; Etape 1
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/26/summer-refresh-etape-1
- Date: 2005-07-26T09:24:20+00:00
- Categories: Design, Développement, Projets, Summer Refresh, Web
-*/
+--- 
+Title: Summer Refresh &#8211; Etape 1
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/26/summer-refresh-etape-1
+Date: 2005-07-26T09:24:20+00:00
+Categories: Design, Développement, Projets, Summer Refresh, Web
+--- 
+
 Premiére étape : Quel est le besoin&nbsp;? Quelles fonctionnalités&nbsp;? Comment &laquo;&nbsp;afficher&nbsp;&raquo; les informations&nbsp;?  
 <!--more-->
 

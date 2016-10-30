@@ -1,11 +1,12 @@
-/*
- Title: Grenoble selon Google
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/27/grenoble-selon-google
- Date: 2005-06-27T08:31:54+00:00
- Categories: Goodies, Humeur, Photo du jour
-*/
+--- 
+Title: Grenoble selon Google
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/27/grenoble-selon-google
+Date: 2005-06-27T08:31:54+00:00
+Categories: Goodies, Humeur, Photo du jour
+--- 
+
 Inspiré du [billet de Noliv sur Google Map][1]
 
 <!--more-->

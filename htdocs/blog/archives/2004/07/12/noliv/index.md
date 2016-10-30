@@ -1,12 +1,13 @@
-/*
- Title: Bonne f&ecirc;te Noliv
- Author: Seb
- Excerpt:  <p>Aujourd'hui je suis arriv&eacute; un plus t&ocirc;t que d'habitude au boulot, je ne sais plus trop pourquoi maintenant mais je devais avoir une bonne raison hier...</p>
- Template: post
- Permalink: /blog/archives/2004/07/12/noliv
- Date: 2004-07-12T09:13:32+00:00
- Categories: Humeur
-*/
+--- 
+Title: Bonne f&ecirc;te Noliv
+Author: Seb
+Excerpt:  <p>Aujourd'hui je suis arriv&eacute; un plus t&ocirc;t que d'habitude au boulot, je ne sais plus trop pourquoi maintenant mais je devais avoir une bonne raison hier...</p>
+Template: post
+Permalink: /blog/archives/2004/07/12/noliv
+Date: 2004-07-12T09:13:32+00:00
+Categories: Humeur
+--- 
+
 Aujourd&rsquo;hui je suis arriv&eacute; un plus t&ocirc;t que d&rsquo;habitude au boulot, je ne sais plus trop pourquoi maintenant mais je devais avoir une bonne raison hier&#8230;
 
 <!--more-->

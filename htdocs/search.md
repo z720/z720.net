@@ -1,5 +1,5 @@
 /*
- Title: Recherche
- Template: search
- */
+Title: Recherche
+Template: search
+*/
 

@@ -1,11 +1,12 @@
-/*
- Title: Liens interessants
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/18/liens-interessants
- Date: 2005-06-18T09:12:17+00:00
- Categories: Design, Développement, Traductions, Web, WebStandards
-*/
+--- 
+Title: Liens interessants
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/18/liens-interessants
+Date: 2005-06-18T09:12:17+00:00
+Categories: Design, Développement, Traductions, Web, WebStandards
+--- 
+
 Voici quelques liens intéressants.
 
 <!--more-->

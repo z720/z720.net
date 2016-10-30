@@ -1,11 +1,12 @@
-/*
- Title: Extension Wikini
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/03/13/extension-wikini
- Date: 2005-03-13T19:11:32+00:00
- Categories: Développement, Goodies, Web
-*/
+--- 
+Title: Extension Wikini
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/03/13/extension-wikini
+Date: 2005-03-13T19:11:32+00:00
+Categories: Développement, Goodies, Web
+--- 
+
 Publication d&rsquo;une première version d&rsquo;une extension de chargement de fichier pour [Wikini][1]
 
 <!--more-->

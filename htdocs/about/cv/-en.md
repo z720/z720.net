@@ -1,8 +1,9 @@
-/*
- Title: Curriculum Vitae
- Template: page
- css: cv.css
-*/
+--- 
+Title: Curriculum Vitae
+Template: page
+css: cv.css
+--- 
+
 
 [](id:contact)
 >Sébastien Erard  

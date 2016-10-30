@@ -1,11 +1,12 @@
-/*
- Title: Du neuf avec du vieux : balise <code>button</code>
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/10/16/du-neuf-avec-du-vieux-balise-button
- Date: 2006-10-16T10:10:48+00:00
- Categories: Design, Développement, Web
-*/
+--- 
+Title: Du neuf avec du vieux : balise <code>button</code>
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/10/16/du-neuf-avec-du-vieux-balise-button
+Date: 2006-10-16T10:10:48+00:00
+Categories: Design, Développement, Web
+--- 
+
 Grâce au [Digital Web Magazine][1], je viens de découvrir une nouvelle balise HTML, la balise `button`. Je me suis alors rendu compte que cette balise n&rsquo;était pas du tout nouvelle. Par contre elle est très peu employée, et je me demande pourquoi&nbsp;? Effectivement, cette balise fonctionne totalement différemment de la balise `input` et a bien des avantages. 
 
 <!--more-->

@@ -1,11 +1,12 @@
-/*
- Title: Suivre les retards SNCF
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/12/02/suivre-les-retards-sncf
- Date: 2005-12-02T13:30:58+00:00
- Categories: Goodies, Web
-*/
+--- 
+Title: Suivre les retards SNCF
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/12/02/suivre-les-retards-sncf
+Date: 2005-12-02T13:30:58+00:00
+Categories: Goodies, Web
+--- 
+
 Je viens d&rsquo;apprendre que suite à un soucis technique entre Grenoble et Lyon, les TGV Paris-Grenoble et Grenoble-Paris avaient un peu de retard (2 heures).
 
 Je me dirige donc vers le site de la [sncf][1] pour avoir des informations sur les trains qui doivent arriver ce soir. C&rsquo;est là que je m&rsquo;aperçois que ce site sncf est fait sous [SPIP][2].

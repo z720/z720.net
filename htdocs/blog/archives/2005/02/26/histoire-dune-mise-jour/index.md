@@ -1,11 +1,12 @@
-/*
- Title: Histoire d&rsquo;une mise &agrave;  jour
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/02/26/histoire-dune-mise-jour
- Date: 2005-02-25T23:18:56+00:00
- Categories: Développement, Projets, Web, WordPress
-*/
+--- 
+Title: Histoire d&rsquo;une mise &agrave;  jour
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/02/26/histoire-dune-mise-jour
+Date: 2005-02-25T23:18:56+00:00
+Categories: Développement, Projets, Web, WordPress
+--- 
+
 Ce soir ce weblog est passé à la [dernière version de wordpress][1], petite histoire d&rsquo;une bascule
 
 <!--more-->

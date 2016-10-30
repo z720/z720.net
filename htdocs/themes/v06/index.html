@@ -4,11 +4,11 @@
 {%if is_front_page%}
 			<h1>Sur le blog</h1>
 			<ul>{% set count = 0 %}
-			{% for page in pages %}{% if count < 10 and page.template in ['post', 'text-post', 'link', 'photo'] and page.date > 0 %}
+			{% for page in pages %}{% if count < 10 and page.meta.template in ['post', 'text-post', 'link', 'photo'] and page.meta.date > 0 %}
 				{% set count = count+1 %}
 				<li class="post">
-					<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a>
-					{% if page.template in ['link'] %}{{ page.excerpt }}{% endif %}
+					<a href="{% if page.meta.link %}{{ page.meta.link }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a>
+					{% if page.meta.template in ['link'] %}{{ page.excerpt }}{% endif %}
 					- <em class="meta">{{ page.date_formatted }}</em>
 				</li>
 			{% endif %}{% endfor %}

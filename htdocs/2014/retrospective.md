@@ -1,9 +1,10 @@
-/*
- title: Rétrospective 2014
- template: post
- date: 2014-12-31T18:00:00
- background: https://farm8.staticflickr.com/7505/15519072063_762884f54c_k_d.jpg
-*/
+--- 
+title: Rétrospective 2014
+template: post
+date: 2014-12-31T18:00:00
+background: https://farm8.staticflickr.com/7505/15519072063_762884f54c_k_d.jpg
+--- 
+
 
 Voici une petite retrospective de mon année 2014 en photos:
 

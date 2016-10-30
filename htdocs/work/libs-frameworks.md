@@ -1,7 +1,8 @@
-/*
- Title: Useful libs and frameworks (js/css)
- Template: page
-*/
+--- 
+Title: Useful libs and frameworks (js/css)
+Template: page
+--- 
+
 
 # JS librairies
 

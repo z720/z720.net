@@ -1,37 +1,47 @@
 AddDefaultCharset UTF-8
+DirectorySlash On
 
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-
-# Skip
-RewriteRule ^/stats/(.*) - [L]
-
-# Shortcuts
-RewriteCond %{REQUEST_URI} ^/linkedin
-RewriteRule .* https://lu.linkedin.com/in/seberard/ [L,R]
-RewriteCond %{REQUEST_URI} ^/twitter
-RewriteRule .* https://twitter.com/z720 [L,R]
-RewriteCond %{REQUEST_URI} ^/flickr
-RewriteRule .* https://www.flickr.com/photos/z720/ [L,R]
-RewriteCond %{REQUEST_URI} ^/instagram
-RewriteRule .* http://instagram.com/z720 [L,R]
-
-# Redirect old assets to cdn files.z720.net
-RewriteCond %{REQUEST_URI} ^/blog/images [OR]
-RewriteCond %{REQUEST_URI} ^/share [OR]
-RewriteCond %{REQUEST_URI} ^/FileSharing
-RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
-
-# Redirect renammed resources
-RewriteCond %{REQUEST_URI} ^/webdesign/(.*)
-RewriteRule ^webdesign/(.*) /work/$1 [L,R]
-
-# If file doesn't exists process with pico
-RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/logs
-RewriteRule . /index.php [L]
+  RewriteEngine On
+  RewriteBase /
+  
+  # Skip
+  RewriteRule ^/stats/(.*) - [L]
+  
+  # Shortcuts
+  RewriteCond %{REQUEST_URI} ^/linkedin
+  RewriteRule .* https://lu.linkedin.com/in/seberard/ [L,R]
+  RewriteCond %{REQUEST_URI} ^/twitter
+  RewriteRule .* https://twitter.com/z720 [L,R]
+  RewriteCond %{REQUEST_URI} ^/flickr
+  RewriteRule .* https://www.flickr.com/photos/z720/ [L,R]
+  RewriteCond %{REQUEST_URI} ^/instagram
+  RewriteRule .* http://instagram.com/z720 [L,R]
+  
+  # Redirect old assets to cdn files.z720.net
+  RewriteCond %{REQUEST_URI} ^/blog/images [OR]
+  RewriteCond %{REQUEST_URI} ^/share [OR]
+  RewriteCond %{REQUEST_URI} ^/FileSharing
+  RewriteRule ^(.*)$ http://files.z720.net/$1 [L,R]
+  
+  # Redirect renammed resources
+  RewriteCond %{REQUEST_URI} ^/webdesign/(.*)
+  RewriteRule ^webdesign/(.*) /work/$1 [L,R]
+  
+  # Add trailling slash for matching directory
+  # force trailing slashes on real directories
+  # Block Pico to inbterfere with DirectorzSlash On
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ $1/ [L]
+  
+  # If file doesn't exists process with pico
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/logs
+  RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+  <IfModule mod_env.c>
+      SetEnv PICO_URL_REWRITING 1
+  </IfModule>
 </IfModule>
 
 Options -Indexes

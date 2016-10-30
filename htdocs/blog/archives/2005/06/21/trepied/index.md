@@ -1,11 +1,12 @@
-/*
- Title: Trépied
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/21/trepied
- Date: 2005-06-21T16:50:20+00:00
- Categories: Photo du jour
-*/
+--- 
+Title: Trépied
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/21/trepied
+Date: 2005-06-21T16:50:20+00:00
+Categories: Photo du jour
+--- 
+
 Depuis peu, j&rsquo;ai un nouveau jouet&#8230;
 
 <!--more-->

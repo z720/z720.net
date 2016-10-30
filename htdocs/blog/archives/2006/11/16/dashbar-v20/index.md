@@ -1,13 +1,14 @@
-/*
- Title: DashBar v2.0
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/11/16/dashbar-v20
- Date: 2006-11-16T21:36:10+00:00
- Aktt_notify_twitter: yes
- Categories: DashBar, Développement, Goodies, Projets, Web, WordPress
- Tags: DashBar, WordPress
-*/
+--- 
+Title: DashBar v2.0
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/11/16/dashbar-v20
+Date: 2006-11-16T21:36:10+00:00
+Aktt_notify_twitter: yes
+Categories: DashBar, Développement, Goodies, Projets, Web, WordPress
+Tags: DashBar, WordPress
+--- 
+
 L&rsquo;accouchement a eu lieu dans la douleur mais la [version 2 du plugin DashBar][1] est enfin disponible. N&rsquo;hésitez pas la télécharger&#8230; 
 
 Concernant les fonctionnalités nouvelles, il y en a principalement deux :

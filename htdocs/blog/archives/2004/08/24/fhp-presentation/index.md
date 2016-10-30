@@ -1,13 +1,14 @@
-/*
- Title: F&eacute;d&eacute;ration Hospitali&egrave;re Priv&eacute;e (Rh&ocirc;ne-Alpes Auvergne)
- Author: Seb
- Excerpt: <p>Pr&eacute;sentation du projet de cr&eacute;ation du portail FHP-R2A.
-Il s'agit du projet sur lequel je travaille actuellement&nbsp;: refonte du site <a href="http://www.fhpauvergne.com" hreflang="fr" title="Site de la FHP Auvergne">FHP Auvergne</a> et cr&eacute;ation d'un portail mutualis&eacute; avec la d&eacute;l&eacute;gation Rh&ocirc;ne Alpes.</p>
- Template: post
- Permalink: /blog/archives/2004/08/24/fhp-presentation
- Date: 2004-08-24T20:00:00+00:00
- Categories: Projets
-*/
+--- 
+Title: F&eacute;d&eacute;ration Hospitali&egrave;re Priv&eacute;e (Rh&ocirc;ne-Alpes Auvergne)
+Author: Seb
+Excerpt: <p>Pr&eacute;sentation du projet de cr&eacute;ation du portail FHP-R2A.
+l s'agit du projet sur lequel je travaille actuellement&nbsp;: refonte du site <a href="http://www.fhpauvergne.com" hreflang="fr" title="Site de la FHP Auvergne">FHP Auvergne</a> et cr&eacute;ation d'un portail mutualis&eacute; avec la d&eacute;l&eacute;gation Rh&ocirc;ne Alpes.</p>
+Template: post
+Permalink: /blog/archives/2004/08/24/fhp-presentation
+Date: 2004-08-24T20:00:00+00:00
+Categories: Projets
+--- 
+
 Pr&eacute;sentation du projet de cr&eacute;ation du portail FHP-R2A.  
 Il s&rsquo;agit du projet sur lequel je travaille actuellement&nbsp;: refonte du site <a href="http://www.fhpauvergne.com" hreflang="fr" title="Site de la FHP Auvergne">FHP Auvergne</a> et cr&eacute;ation d&rsquo;un portail mutualis&eacute; avec la d&eacute;l&eacute;gation Rh&ocirc;ne Alpes.
 

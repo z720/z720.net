@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/fg/essence/lib/bootstrap.php',
+    '3963a7d8576a1379d8d3082852468d49' => $vendorDir . '/fg/essence/lib/bootstrap.php',
 );

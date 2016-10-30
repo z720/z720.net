@@ -1,13 +1,14 @@
-/*
- Title: WordPress 2.1 RC1 et Dashbar
- Author: Seb
- Template: post
- Permalink: /blog/archives/2007/01/18/wordpress-21-rc1-et-dashbar
- Date: 2007-01-18T08:30:11+00:00
- Aktt_notify_twitter: yes
- Categories: DashBar, Développement, Projets, Web, WordPress
- Tags: DashBar, WordPress
-*/
+--- 
+Title: WordPress 2.1 RC1 et Dashbar
+Author: Seb
+Template: post
+Permalink: /blog/archives/2007/01/18/wordpress-21-rc1-et-dashbar
+Date: 2007-01-18T08:30:11+00:00
+Aktt_notify_twitter: yes
+Categories: DashBar, Développement, Projets, Web, WordPress
+Tags: DashBar, WordPress
+--- 
+
 Rapidement : comme [Ryan a annoncé la sortie de la première release candidate][1] de [WordPress][2] 2.1. Je peux aussi vous annoncé que [DashBar][3] est compatible.
 
 <!--more-->

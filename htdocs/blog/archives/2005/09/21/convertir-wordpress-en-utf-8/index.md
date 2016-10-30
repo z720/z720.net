@@ -1,11 +1,12 @@
-/*
- Title: Convertir la base MySQL de WordPress en UTF-8
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/09/21/convertir-wordpress-en-utf-8
- Date: 2005-09-21T15:14:49+00:00
- Categories: Développement, Summer Refresh, Web, WordPress
-*/
+--- 
+Title: Convertir la base MySQL de WordPress en UTF-8
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/09/21/convertir-wordpress-en-utf-8
+Date: 2005-09-21T15:14:49+00:00
+Categories: Développement, Summer Refresh, Web, WordPress
+--- 
+
 Lors de la mise en place de WordPress sur ce site, j&rsquo;avais décidé de ne pas passer le site en UTF-8. A ce moment là, je passais de [ DotClear ][1] à [ WordPress ][2] et mon DotClear était en ISO-8859-1&#8230; 
 
 Aujourd&rsquo;hui dans le cadre de mon &laquo;&nbsp;Summer Refresh&nbsp;&raquo;, j&rsquo;en profite pour convertir ma base en UTF-8. 

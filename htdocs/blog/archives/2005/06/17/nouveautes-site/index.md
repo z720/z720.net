@@ -1,11 +1,12 @@
-/*
- Title: Nouveautés sur le site
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/17/nouveautes-site
- Date: 2005-06-17T11:49:35+00:00
- Categories: Design, Goodies, Projets, Web, WordPress
-*/
+--- 
+Title: Nouveautés sur le site
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/17/nouveautes-site
+Date: 2005-06-17T11:49:35+00:00
+Categories: Design, Goodies, Projets, Web, WordPress
+--- 
+
 J&rsquo;ai fait quelques modifications sur le site.
 
 <!--more-->

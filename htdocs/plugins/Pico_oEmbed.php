@@ -1,2 +1,2 @@
 <?php
-// Plugin loader from coposer's autoload
+// Plugin loader from composer's autoload

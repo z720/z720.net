@@ -1,11 +1,12 @@
-/*
- Title: Squidoo ouvre en beta
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/12/09/squidoo-ouvre-en-beta
- Date: 2005-12-09T16:24:11+00:00
- Categories: Web, WordPress
-*/
+--- 
+Title: Squidoo ouvre en beta
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/12/09/squidoo-ouvre-en-beta
+Date: 2005-12-09T16:24:11+00:00
+Categories: Web, WordPress
+--- 
+
 [Squidoo][1] vient d&rsquo;ouvrir sa beta publique
 
 <!--more-->

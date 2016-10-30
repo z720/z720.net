@@ -8,6 +8,7 @@ build
 
 #Development
 **.deactivated
+.xdebug
 #cloud 9 ide
 .c9revisions/
 .c9/

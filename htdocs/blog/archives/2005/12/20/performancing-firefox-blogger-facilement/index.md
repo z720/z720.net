@@ -1,11 +1,12 @@
-/*
- Title: Performancing Firefox : blogger facilement&#8230;
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/12/20/performancing-firefox-blogger-facilement
- Date: 2005-12-20T18:56:59+00:00
- Categories: Goodies, Web, WordPress
-*/
+--- 
+Title: Performancing Firefox : blogger facilement&#8230;
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/12/20/performancing-firefox-blogger-facilement
+Date: 2005-12-20T18:56:59+00:00
+Categories: Goodies, Web, WordPress
+--- 
+
 Un nouveau plugin pour fireFox 1.5 vient de voir le jour. Il s&rsquo;agit de [Performancing Firefox][1] : un simple client de weblog qui s&rsquo;intègre dans votre navigateur. Vous pouvez ainsi très facilement écrire et éditer vos articles sans avoir à passer par l&rsquo;interface d&rsquo;administration de votre site. (Cet article est écrit via cette extension) 
 
 <!--more-->

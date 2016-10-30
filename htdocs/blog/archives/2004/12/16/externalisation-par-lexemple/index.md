@@ -1,11 +1,12 @@
-/*
- Title: Externalisation par l&rsquo;exemple
- Author: Seb
- Template: post
- Permalink: /blog/archives/2004/12/16/externalisation-par-lexemple
- Date: 2004-12-16T15:17:02+00:00
- Categories: Goodies
-*/
+--- 
+Title: Externalisation par l&rsquo;exemple
+Author: Seb
+Template: post
+Permalink: /blog/archives/2004/12/16/externalisation-par-lexemple
+Date: 2004-12-16T15:17:02+00:00
+Categories: Goodies
+--- 
+
 Je trouve cette petite BD assez marrante, d&rsquo;autant plus qu&rsquo;elle est doublement d&rsquo;actualité&#8230;  
 (Le client chez qui je suis en mission externalise son informatique&#8230;)
 

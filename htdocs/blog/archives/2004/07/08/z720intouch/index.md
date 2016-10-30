@@ -1,12 +1,13 @@
-/*
- Title: z720.Intouch
- Author: Seb
- Excerpt:  <p>C'&eacute;tait un projet que j'avais un peu &agrave; coeur. Principalement parce qu'il &eacute;tait technologiquement int&eacute;ressant, ensuite parce qu'il &eacute;tait utile.</p>
- Template: post
- Permalink: /blog/archives/2004/07/08/z720intouch
- Date: 2004-07-08T22:39:08+00:00
- Categories: Projets
-*/
+--- 
+Title: z720.Intouch
+Author: Seb
+Excerpt:  <p>C'&eacute;tait un projet que j'avais un peu &agrave; coeur. Principalement parce qu'il &eacute;tait technologiquement int&eacute;ressant, ensuite parce qu'il &eacute;tait utile.</p>
+Template: post
+Permalink: /blog/archives/2004/07/08/z720intouch
+Date: 2004-07-08T22:39:08+00:00
+Categories: Projets
+--- 
+
 <p>C&rsquo;&eacute;tait un projet que j&rsquo;avais un peu &agrave; coeur. Principalement parce qu&rsquo;il &eacute;tait technologiquement int&eacute;ressant, ensuite parce qu&rsquo;il &eacute;tait utile.</p>
 <p><!--more-->
 <p>En tout cas moi &ccedil;a me sert pas mal. Il s&rsquo;agit d&rsquo;un portail pour la gestion de page d&rsquo;accueil personnalis&eacute;e.</p>

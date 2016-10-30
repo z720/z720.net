@@ -1,11 +1,12 @@
-/*
- Title: WordPress 2 en français
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/12/27/wordpress-2-en-francais
- Date: 2005-12-27T11:15:05+00:00
- Categories: Traductions, Web, WordPress
-*/
+--- 
+Title: WordPress 2 en français
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/12/27/wordpress-2-en-francais
+Date: 2005-12-27T11:15:05+00:00
+Categories: Traductions, Web, WordPress
+--- 
+
 La version 2.0 de WordPress vient de sortir.
 
 Je vous anonce donc la sortie de la version française. Le package, les thèmes et les messages sont maintenant disponibles au téléchargement.

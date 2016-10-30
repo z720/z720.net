@@ -1,11 +1,12 @@
-/*
- Title: Neige en novembre
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/11/25/neige-en-novembre
- Date: 2005-11-25T10:11:21+00:00
- Categories: Humeur
-*/
+--- 
+Title: Neige en novembre
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/11/25/neige-en-novembre
+Date: 2005-11-25T10:11:21+00:00
+Categories: Humeur
+--- 
+
 ça faisait longtemps que je n&rsquo;avais pas laissé de message&#8230; Principalement parce que je suis très occupé en ce moment : déménagement en prévision, [relookage de ce site][1]&#8230;
 
 Mais aujourd&rsquo;hui, il neige à Grenoble et ça fait bien plaisir. Bon je n&rsquo;ai pas pris mon appareil photo aujourd&rsquo;hui, donc pas de photo du jour !

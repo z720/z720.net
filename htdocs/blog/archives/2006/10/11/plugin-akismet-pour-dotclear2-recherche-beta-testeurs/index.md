@@ -1,11 +1,12 @@
-/*
- Title: Plugin Akismet pour DotClear2 : recherche beta testeurs
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/10/11/plugin-akismet-pour-dotclear2-recherche-beta-testeurs
- Date: 2006-10-11T11:32:27+00:00
- Categories: Développement, DotClear, Web
-*/
+--- 
+Title: Plugin Akismet pour DotClear2 : recherche beta testeurs
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/10/11/plugin-akismet-pour-dotclear2-recherche-beta-testeurs
+Date: 2006-10-11T11:32:27+00:00
+Categories: Développement, DotClear, Web
+--- 
+
 Je délaisse quelque peu [WordPress][1] en ce moment pour me pencher sur [DotClear2][2]. Je ne vais pas faire de comparatif ici entre ces 2 plateformes qui, à mon avis, ne se destinent pas du tout à la même utilisation. En étudiant DotClear2 j&rsquo;ai pu apprécier la façon dont la bête est admirablement bien codée : tout en objet en tirant profit de PHP5.
 
 <!--more-->

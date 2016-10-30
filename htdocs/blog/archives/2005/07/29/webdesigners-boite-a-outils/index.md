@@ -1,11 +1,12 @@
-/*
- Title: Webdesigners : Boite à outils
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/29/webdesigners-boite-a-outils
- Date: 2005-07-29T09:45:10+00:00
- Categories: Design, Développement, Divers, Goodies, Web
-*/
+--- 
+Title: Webdesigners : Boite à outils
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/29/webdesigners-boite-a-outils
+Date: 2005-07-29T09:45:10+00:00
+Categories: Design, Développement, Divers, Goodies, Web
+--- 
+
 Les outils gratuits du webdesigner. En réponse à l&rsquo;article du <a href="http://www.digital-web.com" hreflang="en" title="The web professional's online magazine of choice">Digital Web Magazine</a>&nbsp;: <a href="http://www.digital-web.com/articles/web_designers_freelance_toolbox_for_windows/" hreflang="en">Web Designer&rsquo;s FREElance Toolbox for Windows</a>. 
 
 <!--more-->

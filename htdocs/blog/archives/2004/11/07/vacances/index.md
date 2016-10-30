@@ -1,12 +1,13 @@
-/*
- Title: Vacances
- Author: Seb
- Excerpt: <p>Je m'offre une petite semaine de vacances. Cela va pouvoir me permettre de travailler sur plusieurs choses sur lesquels je n'avançais pas beaucoup&nbsp;:</p> 
- Template: post
- Permalink: /blog/archives/2004/11/07/vacances
- Date: 2004-11-07T18:18:43+00:00
- Categories: Humeur
-*/
+--- 
+Title: Vacances
+Author: Seb
+Excerpt: <p>Je m'offre une petite semaine de vacances. Cela va pouvoir me permettre de travailler sur plusieurs choses sur lesquels je n'avançais pas beaucoup&nbsp;:</p> 
+Template: post
+Permalink: /blog/archives/2004/11/07/vacances
+Date: 2004-11-07T18:18:43+00:00
+Categories: Humeur
+--- 
+
 Je m&rsquo;offre une petite semaine de vacances. Cela va pouvoir me permettre de travailler sur plusieurs choses sur lesquels je n&rsquo;avançais pas beaucoup&nbsp;:
 
 <!--more-->

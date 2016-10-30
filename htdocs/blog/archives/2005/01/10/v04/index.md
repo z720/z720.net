@@ -1,12 +1,13 @@
-/*
- Title: v04
- Author: Seb
- Excerpt: Cela fait quelques temps que je n'ai pas post&eacute; mais c'est pour la bonne cause. Je suis en pleine refonte du site. La v04 se profile.
- Template: post
- Permalink: /blog/archives/2005/01/10/v04
- Date: 2005-01-10T11:23:10+00:00
- Categories: Projets, Web
-*/
+--- 
+Title: v04
+Author: Seb
+Excerpt: Cela fait quelques temps que je n'ai pas post&eacute; mais c'est pour la bonne cause. Je suis en pleine refonte du site. La v04 se profile.
+Template: post
+Permalink: /blog/archives/2005/01/10/v04
+Date: 2005-01-10T11:23:10+00:00
+Categories: Projets, Web
+--- 
+
 Cela fait quelques temps que je n&rsquo;ai pas post&eacute; mais c&rsquo;est pour la bonne cause. Je suis en pleine refonte du site. La v04 se profile.<!--more-->
 
 Effectivement c&rsquo;est un peu un effet d&rsquo;annonce puisque pour le moment rien est pr&ecirc;t, m&ecirc;me pas une petite capture d&rsquo;&eacute;cran &agrave; vous pr&eacute;senter. Cependant le projet n&rsquo;est pas anodin.

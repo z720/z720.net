@@ -1,12 +1,13 @@
-/*
- Title: Coupe Icare
- Author: Seb
- Excerpt: <p>Cela fait une semaine que je dois mettre quelques photos de la Coupe Icare en ligne. Aujourd'hui c'est chose faite.</p>
- Template: post
- Permalink: /blog/archives/2004/09/24/coupe-icare
- Date: 2004-09-24T14:15:17+00:00
- Categories: Goodies
-*/
+--- 
+Title: Coupe Icare
+Author: Seb
+Excerpt: <p>Cela fait une semaine que je dois mettre quelques photos de la Coupe Icare en ligne. Aujourd'hui c'est chose faite.</p>
+Template: post
+Permalink: /blog/archives/2004/09/24/coupe-icare
+Date: 2004-09-24T14:15:17+00:00
+Categories: Goodies
+--- 
+
 Cela fait une semaine que je dois mettre quelques photos de la Coupe Icare en ligne. Aujourd&rsquo;hui c&rsquo;est chose faite.
 
 <!--more-->

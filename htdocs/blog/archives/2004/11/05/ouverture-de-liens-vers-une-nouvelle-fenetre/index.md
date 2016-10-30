@@ -1,11 +1,12 @@
-/*
- Title: Ouverture de liens vers une nouvelle fen&ecirc;tre
- Author: Seb
- Template: post
- Permalink: /blog/archives/2004/11/05/ouverture-de-liens-vers-une-nouvelle-fenetre
- Date: 2004-11-05T08:30:00+00:00
- Categories: Développement
-*/
+--- 
+Title: Ouverture de liens vers une nouvelle fen&ecirc;tre
+Author: Seb
+Template: post
+Permalink: /blog/archives/2004/11/05/ouverture-de-liens-vers-une-nouvelle-fenetre
+Date: 2004-11-05T08:30:00+00:00
+Categories: Développement
+--- 
+
 Retour sur l&rsquo;article de cybercodeur <a href="http://www.cybercodeur.net/weblog/commentaires/detailsCarnet.php?idmessage=1088" hreflang="fr">Liens et nouvelle fenêtre</a> que je trouve très intéressant et que tout le monde n&rsquo;a pas l&rsquo;air d&rsquo;avoir bien compris.
 
 <!--more-->

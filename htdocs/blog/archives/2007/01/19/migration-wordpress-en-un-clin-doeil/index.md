@@ -1,11 +1,12 @@
-/*
- Title: Migration WordPress en un clin d&rsquo;oeil
- Author: Seb
- Template: post
- Permalink: /blog/archives/2007/01/19/migration-wordpress-en-un-clin-doeil
- Date: 2007-01-19T18:43:30+00:00
- Categories: Développement, Web, WordPress
-*/
+--- 
+Title: Migration WordPress en un clin d&rsquo;oeil
+Author: Seb
+Template: post
+Permalink: /blog/archives/2007/01/19/migration-wordpress-en-un-clin-doeil
+Date: 2007-01-19T18:43:30+00:00
+Categories: Développement, Web, WordPress
+--- 
+
 Les versions de WordPress pleuvent en ce moment, la 2.0.7 pour des raisons de sécurité, la 2.1 en [Release Candidate][1]. Mais la question la plus importante c&rsquo;est comment déployer WordPress à chaque nouvelle version ? Quelle est la meilleur solution pour un site productif ? Par site productif, j&rsquo;entends bien évidement un site accessible à des utilisateurs, ça n&rsquo;a aucun rapport avec le contenu ou la fréquence de mise à jour&#8230;
 
 <!--more-->

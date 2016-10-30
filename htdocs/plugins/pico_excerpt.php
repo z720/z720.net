@@ -21,7 +21,9 @@ class Pico_Excerpt {
 	/// Pico Plugin hooks
 	public function get_page_data(&$data, $page_meta)
 	{
-			$data['excerpt'] = $this->build_excerpt($data['content'], $data['excerpt']);
+			if(!array_key_exists('excerpt', $data) && array_key_exists('content', $data)) {
+				$data['excerpt'] = $this->build_excerpt($data['content'], array_key_exists('excerpt', $data) ? $data['excerpt'] : '');
+			}
 	}
 
 }

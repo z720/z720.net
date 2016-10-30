@@ -1,11 +1,12 @@
-/*
- Title: Summer Refresh &#8211; Prélude
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/21/summer-refresh-prelude
- Date: 2005-06-21T07:24:56+00:00
- Categories: Design, Projets, Summer Refresh, Web
-*/
+--- 
+Title: Summer Refresh &#8211; Prélude
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/21/summer-refresh-prelude
+Date: 2005-06-21T07:24:56+00:00
+Categories: Design, Projets, Summer Refresh, Web
+--- 
+
 Pendant mes lectures journalières, je suis tombé sur le billet de [Maurice Svay][1] à propos [des tendances de design][2].
 
 <!--more-->

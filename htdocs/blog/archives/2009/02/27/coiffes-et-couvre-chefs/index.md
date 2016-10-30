@@ -1,14 +1,15 @@
-/*
- Title: Coiffes et Couvre-chefs
- Author: Seb
- Template: post
- Permalink: /blog/archives/2009/02/27/coiffes-et-couvre-chefs
- Date: 2009-02-27T21:23:53+00:00
- Aktt_notify_twitter: yes
- Aktt_tweeted: 1
- Categories: Photo du jour
- Tags: QuinzainePhoto
-*/
+--- 
+Title: Coiffes et Couvre-chefs
+Author: Seb
+Template: post
+Permalink: /blog/archives/2009/02/27/coiffes-et-couvre-chefs
+Date: 2009-02-27T21:23:53+00:00
+Aktt_notify_twitter: yes
+Aktt_tweeted: 1
+Categories: Photo du jour
+Tags: QuinzainePhoto
+--- 
+
 Pour la [Quinzaine Photo][1], le thème était Coiffes et Couvre-chefs. Voici mes propositions:
 
 [<img src="http://farm4.static.flickr.com/3408/3314012179_8768c01de6_m.jpg" alt="chapeau" width="240" height="160" />][2]

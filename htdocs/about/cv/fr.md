@@ -1,9 +1,10 @@
-/*
-	Title: CV: Sebastien Erard (FR)
-	Template: page
-	Description: Si vous cherchez quelqu'un qui soit hautement adaptable, méticuleux, curieux et enclins à la pédagogie, appelez-moi.
-	css: cv.css
-*/
+--- 
+Title: CV: Sebastien Erard (FR)
+Template: page
+Description: Si vous cherchez quelqu'un qui soit hautement adaptable, méticuleux, curieux et enclins à la pédagogie, appelez-moi.
+css: cv.css
+--- 
+
 
 [Télécharger en format PDF](fr.pdf)
 

@@ -1,12 +1,13 @@
-/*
- Title: Installer WordPress &#8211; Plugins indispensables
- Author: Seb
- Excerpt: Lors d'une installation de Wordpress 1.5.x, je considère ces plugins indispensables ou tout simplement très utiles..
- Template: post
- Permalink: /blog/archives/2005/10/24/installer-wordpress-plugins-indispensables
- Date: 2005-10-24T11:32:51+00:00
- Categories: Développement, Divers, Web, WordPress
-*/
+--- 
+Title: Installer WordPress &#8211; Plugins indispensables
+Author: Seb
+Excerpt: Lors d'une installation de Wordpress 1.5.x, je considère ces plugins indispensables ou tout simplement très utiles..
+Template: post
+Permalink: /blog/archives/2005/10/24/installer-wordpress-plugins-indispensables
+Date: 2005-10-24T11:32:51+00:00
+Categories: Développement, Divers, Web, WordPress
+--- 
+
 Lors d&rsquo;une installation de WordPress 1.5.x, je considère ces plugins indispensables ou tout simplement très utiles.. 
 
 <!--more-->

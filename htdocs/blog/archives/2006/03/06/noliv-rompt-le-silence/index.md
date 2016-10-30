@@ -1,11 +1,12 @@
-/*
- Title: Noliv rompt le silence
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/03/06/noliv-rompt-le-silence
- Date: 2006-03-06T10:14:15+00:00
- Categories: Divers, Humeur
-*/
+--- 
+Title: Noliv rompt le silence
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/03/06/noliv-rompt-le-silence
+Date: 2006-03-06T10:14:15+00:00
+Categories: Divers, Humeur
+--- 
+
 Alors que le compteur allait atteindre les 180 jours de silence. [Noliv][1] vient de poster.
 
 Câ€™est suffisamment exceptionnel pour que l&rsquo;on en parle : [Chez Hellgy][2], [Chez David NAM][3]). [Noliv][4] vient (hier) de poster sur son blog. En plus il sâ€™agit dâ€™[un billet plutôt long : les vacances, la jumpologie, une vidéo, Larcenetâ€¦][5]

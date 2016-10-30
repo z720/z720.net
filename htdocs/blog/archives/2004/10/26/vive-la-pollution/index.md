@@ -1,12 +1,13 @@
-/*
- Title: Vive la pollution
- Author: Seb
- Excerpt: <p>De belles couleurs naturelles</p>
- Template: post
- Permalink: /blog/archives/2004/10/26/vive-la-pollution
- Date: 2004-10-26T18:37:35+00:00
- Categories: Photo du jour
-*/
+--- 
+Title: Vive la pollution
+Author: Seb
+Excerpt: <p>De belles couleurs naturelles</p>
+Template: post
+Permalink: /blog/archives/2004/10/26/vive-la-pollution
+Date: 2004-10-26T18:37:35+00:00
+Categories: Photo du jour
+--- 
+
 De belles couleurs naturelles
 
 <!--more-->

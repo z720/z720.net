@@ -1,11 +1,12 @@
-/*
- Title: Fête de la musique
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/22/fete-de-la-musique
- Date: 2005-06-22T11:15:54+00:00
- Categories: Humeur, Photo du jour
-*/
+--- 
+Title: Fête de la musique
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/22/fete-de-la-musique
+Date: 2005-06-22T11:15:54+00:00
+Categories: Humeur, Photo du jour
+--- 
+
 Un petit tour à la fête de la musique. Et hop quelques photos&#8230;
 
 <!--more-->

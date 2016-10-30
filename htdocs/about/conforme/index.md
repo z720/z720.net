@@ -1,9 +1,5 @@
-/*
- Title: Pourquoi un site conforme aux standards du web?
- Author: Seb
- Template: page
- Permalink: /about/conforme
-*/
+--- 
+--- 
 <blockquote cite=" http://www.openweb.eu.org/openwebgroup/demarche_standard/">
   <p>
     Les Standards du W3C garantissent l&rsquo;interopérabilité des pages Web et leur restitution correcte dans tous les navigateurs, sans qu&rsquo;il faille recourir aux techniques périmées et périlleuses du développement cross-browsers.

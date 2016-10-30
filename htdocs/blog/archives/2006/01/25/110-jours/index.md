@@ -1,11 +1,12 @@
-/*
- Title: 110 jours !
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/01/25/110-jours
- Date: 2006-01-25T15:00:43+00:00
- Categories: Humeur
-*/
+--- 
+Title: 110 jours !
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/01/25/110-jours
+Date: 2006-01-25T15:00:43+00:00
+Categories: Humeur
+--- 
+
 Comme l&rsquo;indique judicieusement [hellgy][1] dans son billet, [110 jours soutenez Noliv][2], Noliv n&rsquo;a pas laissé un seul petit dessin sur son weblog depuis vraiment longtemps.
 
 N&rsquo;hésitez pas à [le sortir de sa torpeur en allant le motiver][3].

@@ -1,11 +1,12 @@
-/*
- Title: Je suis une statistique
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/06/22/je-suis-une-statistique
- Date: 2005-06-22T18:49:28+00:00
- Categories: Goodies, Web
-*/
+--- 
+Title: Je suis une statistique
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/06/22/je-suis-une-statistique
+Date: 2005-06-22T18:49:28+00:00
+Categories: Goodies, Web
+--- 
+
 [&Agrave; la demande d&rsquo;Hellgy][1], j&rsquo;ai participé à ce petit sondage en ligne.
 
 <!--more-->

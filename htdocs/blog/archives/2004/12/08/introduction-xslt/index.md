@@ -1,11 +1,12 @@
-/*
- Title: Introduction XSLT
- Author: Seb
- Template: post
- Permalink: /blog/archives/2004/12/08/introduction-xslt
- Date: 2004-12-08T12:05:17+00:00
- Categories: Développement, WebStandards
-*/
+--- 
+Title: Introduction XSLT
+Author: Seb
+Template: post
+Permalink: /blog/archives/2004/12/08/introduction-xslt
+Date: 2004-12-08T12:05:17+00:00
+Categories: Développement, WebStandards
+--- 
+
 Il y a quelques temps, j&rsquo;ai vu un article très intéressant sur <a href="http://www.digital-web.com" hreflang="en">Digital-Web</a> traitant d&rsquo;une <a href="http://www.digital-web.com/articles/client_side_xslt" hreflang="en">introduction à <acronym title="eXtensible Stylesheet Language Transformation">XSLT</acronym> côté client</a>.
 
 <!--more-->

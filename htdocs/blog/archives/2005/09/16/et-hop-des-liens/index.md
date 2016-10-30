@@ -1,11 +1,12 @@
-/*
- Title: Et hop des liens
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/09/16/et-hop-des-liens
- Date: 2005-09-16T15:33:00+00:00
- Categories: Goodies, Liens, Web
-*/
+--- 
+Title: Et hop des liens
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/09/16/et-hop-des-liens
+Date: 2005-09-16T15:33:00+00:00
+Categories: Goodies, Liens, Web
+--- 
+
 *   [Dictionnaire anglais/français et synonyme][1]
 *   [Polices pour code][2]([via][3])
 *   [Faire de beaux formulaires en ligne][4]

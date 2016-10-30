@@ -1,12 +1,13 @@
-/*
- Title: Objectifs WebStandards
- Author: Seb
- Excerpt:  <p>Le but de cette cat&eacute;gorie reprend principalement le concept de sites comme&nbsp;:</p>
- Template: post
- Permalink: /blog/archives/2004/07/19/objectifs-webstandards
- Date: 2004-07-19T19:14:35+00:00
- Categories: WebStandards
-*/
+--- 
+Title: Objectifs WebStandards
+Author: Seb
+Excerpt:  <p>Le but de cette cat&eacute;gorie reprend principalement le concept de sites comme&nbsp;:</p>
+Template: post
+Permalink: /blog/archives/2004/07/19/objectifs-webstandards
+Date: 2004-07-19T19:14:35+00:00
+Categories: WebStandards
+--- 
+
 Le but de cette cat&eacute;gorie reprend principalement le concept de sites comme&nbsp;:
 
 <!--more-->

@@ -1,11 +1,12 @@
-/*
- Title: WEL
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/04/25/wel
- Date: 2005-04-25T20:46:54+00:00
- Categories: Divers, Photo du jour
-*/
+--- 
+Title: WEL
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/04/25/wel
+Date: 2005-04-25T20:46:54+00:00
+Categories: Divers, Photo du jour
+--- 
+
 Quelques photos du WE à Lyon.
 
 <!--more-->

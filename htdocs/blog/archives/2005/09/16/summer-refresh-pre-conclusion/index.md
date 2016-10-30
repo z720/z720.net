@@ -1,11 +1,12 @@
-/*
- Title: Summer Refresh &#8211;  Pré-conclusion
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/09/16/summer-refresh-pre-conclusion
- Date: 2005-09-16T15:49:35+00:00
- Categories: Design, Développement, Projets, Summer Refresh, Web, WordPress
-*/
+--- 
+Title: Summer Refresh &#8211;  Pré-conclusion
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/09/16/summer-refresh-pre-conclusion
+Date: 2005-09-16T15:49:35+00:00
+Categories: Design, Développement, Projets, Summer Refresh, Web, WordPress
+--- 
+
 Les [résultats du Summer Refresh 2005][1] ont été publiés. C&rsquo;est [hellgy][2] qui a remporté la [premiére place][3]. Félicitations&#8230;
 
 Pour ma part vous avez pu remarqué que j&rsquo;avais brillé par mon absence, effectivement en raison d&rsquo;un autre projet, je n&rsquo;ai pas pu avancer suffisamment avec mes vacances pour m&rsquo;inscrire. Je poursuit cependant &laquo;&nbsp;mon summer refresh&nbsp;&raquo; mais j&rsquo;avance lentement&#8230;

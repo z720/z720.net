@@ -1,11 +1,12 @@
-/*
- Title: Toujours vivant
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/02/21/toujours-vivant
- Date: 2005-02-21T16:17:37+00:00
- Categories: Divers, Humeur
-*/
+--- 
+Title: Toujours vivant
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/02/21/toujours-vivant
+Date: 2005-02-21T16:17:37+00:00
+Categories: Divers, Humeur
+--- 
+
 Cela fait quelques temps que je n&rsquo;ai pas déposé de billet, mais j&rsquo;ai plein de trucs en cours&#8230;
 
 <!--more-->

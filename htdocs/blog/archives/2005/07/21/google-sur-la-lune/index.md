@@ -1,11 +1,12 @@
-/*
- Title: Google sur la lune
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/21/google-sur-la-lune
- Date: 2005-07-21T09:34:58+00:00
- Categories: Divers, Humeur, Photo du jour, Web
-*/
+--- 
+Title: Google sur la lune
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/21/google-sur-la-lune
+Date: 2005-07-21T09:34:58+00:00
+Categories: Divers, Humeur, Photo du jour, Web
+--- 
+
 Pour l&rsquo;aniversaire des premiers pas de l&rsquo;Homme sur la Lune, Google ouvre Google Moon&#8230;
 
 <!--more-->

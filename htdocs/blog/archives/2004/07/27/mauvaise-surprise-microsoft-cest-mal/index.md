@@ -1,13 +1,14 @@
-/*
- Title: Mauvaise surprise (Microsoft c&rsquo;est mal!)
- Author: Seb
- Excerpt:  <p>Je suis totalement d&eacute;pit&eacute;...</p>
+--- 
+Title: Mauvaise surprise (Microsoft c&rsquo;est mal!)
+Author: Seb
+Excerpt:  <p>Je suis totalement d&eacute;pit&eacute;...</p>
 
- Template: post
- Permalink: /blog/archives/2004/07/27/mauvaise-surprise-microsoft-cest-mal
- Date: 2004-07-27T12:05:55+00:00
- Categories: Humeur
-*/
+Template: post
+Permalink: /blog/archives/2004/07/27/mauvaise-surprise-microsoft-cest-mal
+Date: 2004-07-27T12:05:55+00:00
+Categories: Humeur
+--- 
+
 Je suis totalement d&eacute;pit&eacute;&#8230;
 
 <!--more-->

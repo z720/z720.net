@@ -1,12 +1,13 @@
-/*
- Title: Mise à jour WordPress
- Author: Seb
- Template: post
- Permalink: /blog/archives/2008/05/04/mise-a-jour-wordpress
- Date: 2008-05-04T14:04:04+00:00
- Categories: Web, WordPress
- Tags: WordPress
-*/
+--- 
+Title: Mise à jour WordPress
+Author: Seb
+Template: post
+Permalink: /blog/archives/2008/05/04/mise-a-jour-wordpress
+Date: 2008-05-04T14:04:04+00:00
+Categories: Web, WordPress
+Tags: WordPress
+--- 
+
 J&rsquo;ai rechigné pendant quelques temps à mettre à jour mon <a class="zem_slink" title="WordPress" rel="homepage" href="http://wordpress.org/" target="_blank">WordPress</a> pour la &laquo;&nbsp;brand new&nbsp;&raquo; version 2.5. Effectivement, vu la fréquence de mes posts, je trouvais cela abusé.
 
 [<img class="alignnone size-full wp-image-233" title="Mise à jour WordPress 2.5.1" src="http://v05.z720.net/v05/../share/upgrade-wp-251.png" alt="" />][1]

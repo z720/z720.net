@@ -1,12 +1,13 @@
-/*
- Title: FireFox
- Author: Seb
- Excerpt:  <p>Il est vrai que j'arrive un peu apr&egrave;s la bataille mais &ccedil;a ne fait pas de mal de soutenir un projet int&eacute;ressant...</p>
- Template: post
- Permalink: /blog/archives/2004/09/24/firefox
- Date: 2004-09-24T08:25:57+00:00
- Categories: WebStandards
-*/
+--- 
+Title: FireFox
+Author: Seb
+Excerpt:  <p>Il est vrai que j'arrive un peu apr&egrave;s la bataille mais &ccedil;a ne fait pas de mal de soutenir un projet int&eacute;ressant...</p>
+Template: post
+Permalink: /blog/archives/2004/09/24/firefox
+Date: 2004-09-24T08:25:57+00:00
+Categories: WebStandards
+--- 
+
 <p>Il est vrai que j&rsquo;arrive un peu apr&egrave;s la bataille mais &ccedil;a ne fait pas de mal de soutenir un projet int&eacute;ressant&#8230;</p>
 <p><!--more--></p>
 <p>Pour ceux qui ne connaissent pas FireFox : il s&rsquo;agit du navigateur de Mozilla bas&eacute; sur le moteur Gecko. A savoir que le moteur Gecko est le meilleur interpr&eacute;teur de document HTML dans la mesure o&ugrave; il respecte au mieux les sp&eacute;cifications des standards du web&#8230;</p>

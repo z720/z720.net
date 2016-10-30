@@ -1,12 +1,13 @@
-/*
- Title: Liens du jour
- Author: Seb
- Excerpt: Les liens intéressants de la journée
- Template: post
- Permalink: /blog/archives/2005/06/21/liens-du-jour
- Date: 2005-06-21T16:22:24+00:00
- Categories: Goodies, Web
-*/
+--- 
+Title: Liens du jour
+Author: Seb
+Excerpt: Les liens intéressants de la journée
+Template: post
+Permalink: /blog/archives/2005/06/21/liens-du-jour
+Date: 2005-06-21T16:22:24+00:00
+Categories: Goodies, Web
+--- 
+
 Les liens intéressants de la journée<!--more-->
 
 *   [BD La guerre des mondes][1] : En attendant la sortie ciné du film avec Tom Cruise (via [Boing Boing][2])

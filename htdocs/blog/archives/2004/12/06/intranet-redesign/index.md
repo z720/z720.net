@@ -1,13 +1,14 @@
-/*
- Title: Intranet redesign
- Author: Seb
- Excerpt:  <p>Je planche encore sur l'intranet mais ce coup-ci c'est pour la bonne cause&nbsp;: redesign full <acronym title="Cascading Style Sheets">CSS</acronym>.</p>
+--- 
+Title: Intranet redesign
+Author: Seb
+Excerpt:  <p>Je planche encore sur l'intranet mais ce coup-ci c'est pour la bonne cause&nbsp;: redesign full <acronym title="Cascading Style Sheets">CSS</acronym>.</p>
 
- Template: post
- Permalink: /blog/archives/2004/12/06/intranet-redesign
- Date: 2004-12-06T23:44:37+00:00
- Categories: Projets
-*/
+Template: post
+Permalink: /blog/archives/2004/12/06/intranet-redesign
+Date: 2004-12-06T23:44:37+00:00
+Categories: Projets
+--- 
+
 Je planche encore sur l&rsquo;intranet mais ce coup-ci c&rsquo;est pour la bonne cause&nbsp;: redesign full <acronym title="Cascading Style Sheets">CSS</acronym>.
 
 <!--more-->

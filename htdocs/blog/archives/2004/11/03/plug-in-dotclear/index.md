@@ -1,12 +1,13 @@
-/*
- Title: Plug-In DotClear
- Author: Seb
- Excerpt: <p>Je me suis encore lanc&eacute; dans une sorte de d&eacute;fi technologique. Pourquoi ne pourrais-je pas poster sur ce weblog de n'importe o&ugrave;? Et surtout, profiter de mon t&eacute;l&eacute;phone appreil photo pour envoyer r&eacute;guli&egrave;rement des photos du jours plus insolites...</p>
- Template: post
- Permalink: /blog/archives/2004/11/03/plug-in-dotclear
- Date: 2004-11-03T19:05:37+00:00
- Categories: Projets
-*/
+--- 
+Title: Plug-In DotClear
+Author: Seb
+Excerpt: <p>Je me suis encore lanc&eacute; dans une sorte de d&eacute;fi technologique. Pourquoi ne pourrais-je pas poster sur ce weblog de n'importe o&ugrave;? Et surtout, profiter de mon t&eacute;l&eacute;phone appreil photo pour envoyer r&eacute;guli&egrave;rement des photos du jours plus insolites...</p>
+Template: post
+Permalink: /blog/archives/2004/11/03/plug-in-dotclear
+Date: 2004-11-03T19:05:37+00:00
+Categories: Projets
+--- 
+
 Je me suis encore lanc&eacute; dans une sorte de d&eacute;fi technologique. Pourquoi ne pourrais-je pas poster sur ce weblog de n&rsquo;importe o&ugrave;? Et surtout, profiter de mon t&eacute;l&eacute;phone appreil photo pour envoyer r&eacute;guli&egrave;rement des photos du jours plus insolites&#8230;
 
 <!--more-->

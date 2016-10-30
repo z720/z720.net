@@ -1,11 +1,12 @@
-/*
-  Title: Nouvel habillage
-  Template: post
-  Date: 2014-04-16T20:00:00+02:00
-  Excerpt: À peine livré, le nouveau design change déjà !
-  Background: //farm4.staticflickr.com/3674/13851312753_9fd92bf084_h_d.jpg
-  Background-credit: https://www.flickr.com/photos/z720/13851312753/
-*/
+--- 
+Title: Nouvel habillage
+Template: post
+Date: 2014-04-16T20:00:00+02:00
+Excerpt: À peine livré, le nouveau design change déjà !
+Background: //farm4.staticflickr.com/3674/13851312753_9fd92bf084_h_d.jpg
+Background-credit: https://www.flickr.com/photos/z720/13851312753/
+--- 
+
 
 Ce blog n'est pas encore en ligne depuis un mois que l'habillage évolue déjà.
 Dès le départ, j'avais pour idée de donner la part belle à la photographie.

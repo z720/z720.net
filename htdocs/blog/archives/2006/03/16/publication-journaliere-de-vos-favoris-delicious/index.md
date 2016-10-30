@@ -1,11 +1,12 @@
-/*
- Title: Publication journalière de vos favoris del.icio.us
- Author: Seb
- Template: post
- Permalink: /blog/archives/2006/03/16/publication-journaliere-de-vos-favoris-delicious
- Date: 2006-03-16T15:39:32+00:00
- Categories: Liens, Web, WordPress
-*/
+--- 
+Title: Publication journalière de vos favoris del.icio.us
+Author: Seb
+Template: post
+Permalink: /blog/archives/2006/03/16/publication-journaliere-de-vos-favoris-delicious
+Date: 2006-03-16T15:39:32+00:00
+Categories: Liens, Web, WordPress
+--- 
+
 Comme vous l&rsquo;avez probablement constater [dans la rubrique lien][1], j&rsquo;ai testé pendant quelques jours un nouveau service [del.icio.us][2] : le daily blog posting
 
 Cette option est assez simple : tous les jours del.icio.us se propose de créer un article sur votre blog contenant les favoris que vous avez créés depuis la veille.

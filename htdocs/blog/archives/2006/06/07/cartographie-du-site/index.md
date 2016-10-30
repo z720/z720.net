@@ -1,11 +1,12 @@
-/*
- Title: Cartographie du site
- Author: Seb@Flickr
- Template: post
- Permalink: /blog/archives/2006/06/07/cartographie-du-site
- Date: 2006-06-07T05:33:13+00:00
- Categories: Photo du jour
-*/
+--- 
+Title: Cartographie du site
+Author: Seb@Flickr
+Template: post
+Permalink: /blog/archives/2006/06/07/cartographie-du-site
+Date: 2006-06-07T05:33:13+00:00
+Categories: Photo du jour
+--- 
+
 <p><a href="http://www.flickr.com/photos/z720/161553784/"><img src="http://static.flickr.com/45/161553784_73eced16f0_m.jpg" alt="Site Graph pour http://v05.z720.net/blog" /></a></p>
 <p>Signification des couleurs : <br />
 Bleu: les liens (balises A)<br />

@@ -1,11 +1,12 @@
-/*
- Title: Piano
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/10/26/piano
- Date: 2005-10-26T08:31:09+00:00
- Categories: Humeur
-*/
+--- 
+Title: Piano
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/10/26/piano
+Date: 2005-10-26T08:31:09+00:00
+Categories: Humeur
+--- 
+
 > Qui va piano, va sano
 
 Aujourd&rsquo;hui, en testant le [plugin WordPress ShortStat][1] qui devrait remplacer [bbclone pour les statistiques][2] d&rsquo;accès à ce site, je suis tombé sur un requête [Google sur mon nom][3]. Ma première surprise fut de voir apparaître ce site dans le top 10. Mais la seconde fut de voir apparaître [le site de piano Erard][4].

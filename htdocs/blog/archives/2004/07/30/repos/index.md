@@ -1,13 +1,14 @@
-/*
- Title: Repos
- Author: Seb
- Excerpt:  <p>J'ai enfin r&eacute;ussi &agrave; r&eacute;tablir mon syst&egrave;me. Globalement je n'ai rien perdu, mais je n'arrive plus &agrave; ouvrir mes archives mails. Ce probl&egrave;me devrait se r&eacute;soudre durant le WE.</p>
+--- 
+Title: Repos
+Author: Seb
+Excerpt:  <p>J'ai enfin r&eacute;ussi &agrave; r&eacute;tablir mon syst&egrave;me. Globalement je n'ai rien perdu, mais je n'arrive plus &agrave; ouvrir mes archives mails. Ce probl&egrave;me devrait se r&eacute;soudre durant le WE.</p>
 
- Template: post
- Permalink: /blog/archives/2004/07/30/repos
- Date: 2004-07-30T11:03:18+00:00
- Categories: Humeur
-*/
+Template: post
+Permalink: /blog/archives/2004/07/30/repos
+Date: 2004-07-30T11:03:18+00:00
+Categories: Humeur
+--- 
+
 J&rsquo;ai enfin r&eacute;ussi &agrave; r&eacute;tablir mon syst&egrave;me. Globalement je n&rsquo;ai rien perdu, mais je n&rsquo;arrive plus &agrave; ouvrir mes archives mails. Ce probl&egrave;me devrait se r&eacute;soudre durant le WE.
 
 <!--more-->

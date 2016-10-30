@@ -1,11 +1,12 @@
-/*
- Title: Statistiques
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/28/statistiques
- Date: 2005-07-28T09:40:14+00:00
- Categories: Humeur, Projets, Web, WordPress
-*/
+--- 
+Title: Statistiques
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/28/statistiques
+Date: 2005-07-28T09:40:14+00:00
+Categories: Humeur, Projets, Web, WordPress
+--- 
+
 Depuis une dizaine de jour, j&rsquo;ai mis en place sur ce site un outil de statistiques détaillées: premier bilan.
 
 <!--more-->

@@ -1,12 +1,13 @@
-/*
- Title: Kalitee.org
- Author: Seb
- Excerpt:  <p><a href="http://www.kalitee.org"><img src="/blog/images/kalitee.png" alt="Capture : accueil Kalitee.org" style="float:left; margin: 0 1em 1em 0;" /></a></p>
- Template: post
- Permalink: /blog/archives/2004/09/16/kalitee
- Date: 2004-09-16T20:10:00+00:00
- Categories: WebStandards
-*/
+--- 
+Title: Kalitee.org
+Author: Seb
+Excerpt:  <p><a href="http://www.kalitee.org"><img src="/blog/images/kalitee.png" alt="Capture : accueil Kalitee.org" style="float:left; margin: 0 1em 1em 0;" /></a></p>
+Template: post
+Permalink: /blog/archives/2004/09/16/kalitee
+Date: 2004-09-16T20:10:00+00:00
+Categories: WebStandards
+--- 
+
 [<img src="/blog/images/kalitee.png" alt="Capture : accueil Kalitee.org" style="float:left; margin: 0 1em 1em 0;" />][1]
 
 <!--more-->

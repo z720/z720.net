@@ -1,11 +1,12 @@
-/*
- Title: Poisson d&rsquo;avril
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/04/01/poisson-d-avril
- Date: 2005-04-01T21:59:52+00:00
- Categories: Développement, Humeur, Photo du jour, Web
-*/
+--- 
+Title: Poisson d&rsquo;avril
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/04/01/poisson-d-avril
+Date: 2005-04-01T21:59:52+00:00
+Categories: Développement, Humeur, Photo du jour, Web
+--- 
+
 Poisson d&rsquo;avril
 
 <!--more-->

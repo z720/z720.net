@@ -1,11 +1,12 @@
-/*
- Title: Contribution à la communauté française de WordPress
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/28/contribution-a-la-communaute-francaise-de-wordpress
- Date: 2005-07-28T06:26:35+00:00
- Categories: Divers, Traductions, Web, WordPress
-*/
+--- 
+Title: Contribution à la communauté française de WordPress
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/28/contribution-a-la-communaute-francaise-de-wordpress
+Date: 2005-07-28T06:26:35+00:00
+Categories: Divers, Traductions, Web, WordPress
+--- 
+
 Version française de WordPress 1.5. Avec un train de retard.
 
 <!--more-->

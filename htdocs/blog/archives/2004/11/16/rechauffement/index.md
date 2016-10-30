@@ -1,12 +1,13 @@
-/*
- Title: R&eacute;chauffement
- Author: Seb
- Excerpt: <p>Aujourd'hui il faisait vraiment pas tr&egrave;s chaud... D'autant plus, que j'ai &eacute;t&eacute; oblig&eacute; d'attendre presque une heure dans le froid ce matin pour savoir o&ugrave; j'allais travailler...</p>
- Template: post
- Permalink: /blog/archives/2004/11/16/rechauffement
- Date: 2004-11-16T19:30:27+00:00
- Categories: Photo du jour
-*/
+--- 
+Title: R&eacute;chauffement
+Author: Seb
+Excerpt: <p>Aujourd'hui il faisait vraiment pas tr&egrave;s chaud... D'autant plus, que j'ai &eacute;t&eacute; oblig&eacute; d'attendre presque une heure dans le froid ce matin pour savoir o&ugrave; j'allais travailler...</p>
+Template: post
+Permalink: /blog/archives/2004/11/16/rechauffement
+Date: 2004-11-16T19:30:27+00:00
+Categories: Photo du jour
+--- 
+
 Aujourd&rsquo;hui il faisait vraiment pas tr&egrave;s chaud&#8230; D&rsquo;autant plus, que j&rsquo;ai &eacute;t&eacute; oblig&eacute; d&rsquo;attendre presque une heure dans le froid ce matin pour savoir o&ugrave; j&rsquo;allais travailler&#8230;
 
 <!--more-->

@@ -1,4 +1,4 @@
 /*
- Title: Flux RSS
- Template: rss
- */
+Title: Flux RSS
+Template: rss
+*/

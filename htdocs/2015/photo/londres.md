@@ -1,9 +1,10 @@
-/*
- title: Londres
- template: post
- date: 2015-02-01T19:30:00
- background: https://farm8.staticflickr.com/7318/16365100135_a6c9c1ab3d_k_d.jpg
-*/
+--- 
+title: Londres
+template: post
+date: 2015-02-01T19:30:00
+background: https://farm8.staticflickr.com/7318/16365100135_a6c9c1ab3d_k_d.jpg
+--- 
+
 
 Quelques clichés de notre dernière virée à Londres.
 

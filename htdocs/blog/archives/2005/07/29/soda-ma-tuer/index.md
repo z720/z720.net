@@ -1,11 +1,12 @@
-/*
- Title: Soda m&rsquo;a tuer
- Author: Seb
- Template: post
- Permalink: /blog/archives/2005/07/29/soda-ma-tuer
- Date: 2005-07-29T10:38:00+00:00
- Categories: Goodies, Humeur
-*/
+--- 
+Title: Soda m&rsquo;a tuer
+Author: Seb
+Template: post
+Permalink: /blog/archives/2005/07/29/soda-ma-tuer
+Date: 2005-07-29T10:38:00+00:00
+Categories: Goodies, Humeur
+--- 
+
 Lien aussi inutile qu&rsquo;indispensable. [Combien de canette de soda avant de mourrir.][1]
 
 <!--more-->
