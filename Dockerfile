@@ -1,6 +1,6 @@
 FROM php:7.0-apache
 
-RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
+RUN echo "ServerName z720.net" | tee /etc/apache2/conf-available/fqdn.conf
 RUN a2enconf fqdn
 RUN a2enmod rewrite
 RUN a2enmod headers
