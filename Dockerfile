@@ -1,4 +1,4 @@
-FROM php:7.0-apache
+FROM php:5-apache
 
 RUN echo "ServerName z720.net" | tee /etc/apache2/conf-available/fqdn.conf
 RUN a2enconf fqdn
