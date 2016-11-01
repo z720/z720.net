@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4f47db675316d9c2079d928248b301e5",
     "content-hash": "05cc9e2e51f76a9daf5698307e525379",
     "packages": [
         {
@@ -44,7 +43,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-10-04 16:44:32"
+            "time": "2015-10-04T16:44:32+00:00"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -88,7 +87,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-11-01 10:19:22"
+            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "fg/essence",
@@ -138,7 +137,7 @@
                 "opengraph"
             ],
             "abandoned": "essence/essence",
-            "time": "2014-03-29 12:35:10"
+            "time": "2014-03-29T12:35:10+00:00"
         },
         {
             "name": "picocms/pico",
@@ -201,7 +200,7 @@
                 "issues": "https://github.com/picocms/Pico/issues",
                 "source": "https://github.com/picocms/Pico"
             },
-            "time": "2016-10-04 11:16:02"
+            "time": "2016-10-04T11:16:02+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -348,7 +347,7 @@
             ],
             "description": "oEmbed Pico Plugin",
             "homepage": "http://z720.net/pico/oembed",
-            "time": "2014-04-27 14:44:25"
+            "time": "2014-04-27T14:44:25+00:00"
         },
         {
             "name": "z720/pico_scheduled_post",
@@ -384,7 +383,7 @@
                 }
             ],
             "description": "Post/Page scheduling in PicoCMS",
-            "time": "2014-04-27 16:00:08"
+            "time": "2014-04-27T16:00:08+00:00"
         }
     ],
     "packages-dev": [],
