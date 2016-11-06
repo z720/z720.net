@@ -4,10 +4,13 @@ DirectorySlash On
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+ 
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ http://z720.net/$1 [R=301,L]
   
   # Skip
   RewriteRule ^/stats/(.*) - [L]
-  
+ 
   # Shortcuts
   RewriteCond %{REQUEST_URI} ^/linkedin
   RewriteRule .* https://lu.linkedin.com/in/seberard/ [L,R]
