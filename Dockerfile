@@ -19,5 +19,3 @@ COPY config /var/www/config
 RUN chown -R www-data:www-data /var/www/*
 
 RUN ls -la /var/www
-
-VOLUME /var/www
