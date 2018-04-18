@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+			<h1><a href="{{ meta.url }}">{{ meta.title }}</a></h1>
+			{{ content }}
+			<section class="wishlist-items">
+			{% for item in meta.wishlist %}{% if not item.hide %}
+			<div class="product-card">
+			  <div class="product-card-thumbnail">
+			    <a href="{{ item.buy|first }}"><img src="{{ item.image }}"/></a>
+			  </div>
+			  <h2 class="product-card-title"><a href="{{ item.buy|first }}">{{ item.title }}{% if item.type %} <small>({{ item.type }})</small>{% endif %}</a></h2>
+			  <span class="product-card-desc">{{ item.comment }}</span>
+			  <span class="product-card-price">{{item.price}} -
+					{#
+					<a href="{{ item.buy|first }}">{{ item.buy|replace({'https://': "", 'http://': ""})|split("/", 2)|first|replace({'www.':''}) }}</a>
+					#}
+					{% for name,url in item.buy %}<a href="{{url}}">{{name}}</a> {% if not loop.last %}-{%endif%} {% endfor %}
+				</span>
+			</div>
+			{% endif %}{% endfor %}
+		</section>
+{% endblock %}
+
+{% block head %}
+<style>
+.wishlist .inner {
+  max-width: none;
+}
+.wishlist-items {
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: space-evenly; */
+	justify-content: center;
+}
+.product-card {
+  background-color: #fefefe;
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+  margin: 0 0.5rem 1.5rem;
+	flex: 0 1 300px;
+	max-width: 350px;
+}
+
+.product-card-thumbnail {
+  display: block;
+  position: relative;
+}
+
+.product-card-title {
+  /* font-family: 'Open sans', sans-serif; */
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.product-card a {
+	color: #505050;
+}
+
+.product-card-title small {
+	font-size: 0.8rem
+}
+
+.product-card-desc {
+  color: #8a8a8a;
+  display: block;
+  /* font-family: 'Open sans', sans-serif; */
+  font-size: 0.85rem;
+}
+
+.product-card-price {
+  color: #3e3e3e;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+</style>
+{% endblock %}
