@@ -4,6 +4,14 @@ Template: wishlist
 background: https://farm8.staticflickr.com/7364/16323204398_53281612a5_k.jpg
 background-credit: https://www.flickr.com/photos/77108378@N06/
 wishlist:
+- title: BD - Ceux qui restent
+  type: Livre
+  image: https://www.bedetheque.com/media/Couvertures/Couv_325578.jpg?_ga=2.261378829.1898479248.1524202831-1635882462.1524202831
+  comment: Vu sur <a href="https://www.bdgest.com/chronique-8510-BD-Ceux-qui-restent-Ceux-qui-restent.html">BDGest</a>
+  buy:
+    BD fugue: https://www.bedetheque.com/achat/bdfugue?IdBDFugue=9782756052625&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
+    Amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=325578&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
+    price: 20€
 - title: Canon EF 24mm f/2.8 IS USM
   comment: Un objectif pour voyager: grand angle léger, stabilisé et lumineux
   buy:
@@ -25,7 +33,7 @@ wishlist:
   buy:
     Nature et Découvertes: https://www.natureetdecouvertes.com/deco-maison/meteo-appareils-mesure/station-meteo/station-meteo-connectee-hector-53144720
   image: https://cache.natureetdecouvertes.com/Medias/Images/Articles/53144720/53144720-2-53144720-7.jpg?frz-v=125&width=650&height=650
-  price: 50€
+  price: 50€    
 - title: Les Crados
   comment: Madeleine de Proust de notre enfance
   type: livre
