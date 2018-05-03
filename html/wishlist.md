@@ -11,7 +11,14 @@ wishlist:
   buy:
     BD fugue: https://www.bedetheque.com/achat/bdfugue?IdBDFugue=9782756052625&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
     Amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=325578&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
-    price: 20€
+  price: 20€
+- image: https://www.libratone.com/sites/default/files/product_packs_new_1440x1440_zipp_8/zipp-mini-victory-red-1.png
+  title: Libratone mini
+  buy:
+    Libratone: https://www.libratone.com/fr/products/zipp-speakers/zipp-mini
+    Amazon: https://www.amazon.fr/gp/aw/d/B0150DTE4O/ref=mp_s_a_1_6?__mk_fr_FR=ÅMÅZÕÑ&qid=1524406590&sr=8-6&pi=AC_SX236_SY340_QL65&keywords=zipp&dpPl=1&dpID=41RopMsJ46L&ref=plSrch
+  price: 179-199€
+  comment: Enceinte Bluetooth et AirPlay. 
 - title: Canon EF 24mm f/2.8 IS USM
   comment: Un objectif pour voyager: grand angle léger, stabilisé et lumineux
   buy:
@@ -57,4 +64,27 @@ wishlist:
   price: 16€
   comment: Un livre pour enfants (et grands) très <a href="http://jessicahische.is/writing#brave">joliment illustré par Jessica Hische</a> - Pour Noël 2018
   hide: true
+collections:
+- title: Tramp
+  type: BD
+  price: 14€
+  image: https://images-eu.ssl-images-amazon.com/images/I/61hocDnIk5L._SY346_.jpg
+  comment: Dernier reçu: TOME 10
+- title: Reality Show
+  type: BD
+  price: 8€
+  image: https://images-eu.ssl-images-amazon.com/images/I/616bg62dnDL._SX260_.jpg
+  comment: Il me manque le tome 5, le dernier.
+  buy:
+    amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=83078&s=bedetheque&r=serie
+- title: Black Op
+  type: BD
+  comment: Dernier reçu le tome 6, manque le 7 et le 8.
+  price: 14€
+  image: https://images-eu.ssl-images-amazon.com/images/I/515YqpMzfgL.jpg
+- title: Adele Blanc-sec
+  type: BD
+  image: https://images-na.ssl-images-amazon.com/images/I/51Jwtseln3L._SX371_BO1,204,203,200_.jpg
+  comment: Je n'ai que les 2 premiers tomes de cette série.
+  price: 10€
 ---
