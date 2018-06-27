@@ -34,13 +34,6 @@ wishlist:
     Mirgain Luxembourg: https://www.photo-mirgain.lu/objectifs/canon-ef-24mm-f-2-8-is-usm
   image: https://boulanger.scene7.com/is/image/Boulanger/4960999845753_h_f_l_0?qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&id=Xdjpj2&fmt=jpg&fit=constrain,1&wid=383&hei=350&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0
   price: 500€
-- title: Bellroy - Key Cover
-  type: Porte-Clé
-  buy:
-    Bellroy: https://bellroy.com/products/key-cover/plus/black#image-2
-  image: https://bellroy.imgix.net/dynamic-assets/W1siZnUiLCJodHRwczovL3MzLmFtYXpvbmF3cy5jb20vcHJvZHVjdC5pbWFnZXMuYmVsbHJveS5jb20vcHJvZHVjdF9pbWFnZXMvaW1hZ2VzLzAwMC8wMDEvMTg3L29yaWdpbmFsLzk1MmY2ZDkyOGMzODg4M2UwNmE4NTk2MTgxOGZhNmNjOGY4YzQ0OWY0YzRiM2QzZDc3NjhlNThiMDIxMzEyN2YuanBnIl1d/1bfe2d669f651bf8/952f6d928c38883e06a85961818fa6cc8f8c449f4c4b3d3d7768e58b0213127f.jpg?ixlib=rails-2.1.4&w=750&h=500&widths=%5B320%2C%20640%5D&auto=format&class=lazyload&fit=max&auto=format&dpr=1&crop=clamp&fit=crop&w=750&h=500
-  price: 49€
-  comment: Model Plus Noir ou Bleu
 - title: Station Météo connectée
   type: Gadget
   comment: Petit cube disponible chez Nature et Découverte
