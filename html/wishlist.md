@@ -19,21 +19,12 @@ wishlist:
     BD fugue: https://www.bedetheque.com/achat/bdfugue?IdBDFugue=9782756052625&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
     Amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=325578&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
   price: 20€
-- image: https://www.libratone.com/sites/default/files/product_packs_new_1440x1440_zipp_8/zipp-mini-victory-red-1.png
-  title: Libratone mini
+- image: https://prod-libratonesite-cdnendpoint.azureedge.net/cache/e/0/1/9/c/3/e019c3aa9e8cf7bf9702b918d3cb9aeeb5d196e4.png
+  title: Libratone Zipp mini 2
   buy:
-    Libratone: https://www.libratone.com/fr/products/zipp-speakers/zipp-mini
-    Amazon: https://www.amazon.fr/gp/aw/d/B0150DTE4O/ref=mp_s_a_1_6?__mk_fr_FR=ÅMÅZÕÑ&qid=1524406590&sr=8-6&pi=AC_SX236_SY340_QL65&keywords=zipp&dpPl=1&dpID=41RopMsJ46L&ref=plSrch
-  price: 179-199€
+    Amazon: https://www.amazon.fr/Libratone-Zipp-Mini-Intégration-dautonomie/dp/B07H54TJ2M/ref=sr_1_6?ie=UTF8&qid=1541763538&sr=8-6&keywords=libratone+zipp+2
+  price: 249€
   comment: Enceinte Bluetooth et AirPlay.
-- title: Canon EF 24mm f/2.8 IS USM
-  comment: Un objectif pour voyager: grand angle léger, stabilisé et lumineux
-  buy:
-    Amazon: https://www.amazon.fr/Canon-5345B005-Objectif-optique-EF-24/dp/B0077NPEEA/ref=sr_1_2?ie=UTF8&qid=1524055640&sr=8-2&keywords=ef%2B24mm%2B2%2C8&th=1
-    Boulanger: https://www.boulanger.com/ref/1003451?xtor=AL-6875-[4]-[1395041582]-[deeplink]
-    Mirgain Luxembourg: https://www.photo-mirgain.lu/objectifs/canon-ef-24mm-f-2-8-is-usm
-  image: https://boulanger.scene7.com/is/image/Boulanger/4960999845753_h_f_l_0?qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&id=Xdjpj2&fmt=jpg&fit=constrain,1&wid=383&hei=350&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0
-  price: 500€
 - title: Station Météo connectée
   type: Gadget
   comment: Petit cube disponible chez Nature et Découverte
