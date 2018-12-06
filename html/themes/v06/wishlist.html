@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% import "includes/products.twig" as product %}
+{% block content %}
+		<h1><a href="{{ meta.url }}">{{ meta.title }}</a></h1>
+			{{ content }}
+		<h2>Les tops</h2>
+		<section class="wishlist-items">
+			{% for item in meta.wishlist %}{% if not item.hide %}
+			{{ product.card(item) }}
+			{% endif %}{% endfor %}
+		</section>
+		<h2>Collections incomplètes</h2>
+		<section class="wishlist-items">
+			{% for item in meta.collections %}{% if not item.hide %}
+			{{ product.card(item) }}
+			{% endif %}{% endfor %}
+		</section>
+{% endblock %}
+
+{% block head %}
+<style>
+.wishlist .inner {
+  max-width: none;
+}
+.wishlist-items {
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: space-evenly; */
+	justify-content: center;
+}
+.product-card {
+  background-color: #fefefe;
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+  margin: 0 0.5rem 1.5rem;
+	flex: 0 1 300px;
+	max-width: 350px;
+}
+
+.product-card-thumbnail {
+  display: block;
+  position: relative;
+}
+
+.product-card-title {
+  /* font-family: 'Open sans', sans-serif; */
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.product-card a {
+	color: #505050;
+}
+
+.product-card-title small {
+	font-size: 0.8rem
+}
+
+.product-card-desc {
+  color: #8a8a8a;
+  display: block;
+  /* font-family: 'Open sans', sans-serif; */
+  font-size: 0.85rem;
+}
+
+.product-card-price {
+  color: #3e3e3e;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+</style>
+{% endblock %}

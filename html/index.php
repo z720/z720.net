@@ -1,4 +1,5 @@
 <?php
+
 include(__DIR__ . '/../config/pico.bootstrap.php');
 
 // override configuration?

@@ -13,7 +13,7 @@ if (is_file(__DIR__ . '/../vendor/autoload.php')) {
 
 // instance Pico
 $pico = new Pico(
-    __DIR__ . '/../htdocs/',    // root dir
+    __DIR__ . '/../html/',    // root dir
     __DIR__,  // config dir
     'plugins/', // plugins dir
     'themes/'   // themes dir
