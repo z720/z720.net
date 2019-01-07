@@ -68,11 +68,6 @@ collections:
   comment: Il me manque le tome 5, le dernier.
   buy:
     amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=83078&s=bedetheque&r=serie
-- title: Black Op
-  type: BD
-  comment: Dernier reçu le tome 6, manque le 7 et le 8.
-  price: 14€
-  image: https://images-eu.ssl-images-amazon.com/images/I/515YqpMzfgL.jpg
 - title: Adele Blanc-sec
   type: BD
   image: https://images-na.ssl-images-amazon.com/images/I/51Jwtseln3L._SX371_BO1,204,203,200_.jpg
