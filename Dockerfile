@@ -1,4 +1,5 @@
 FROM php:5-apache
+ARG SOURCE_BRANCH=dev
 
 WORKDIR /var/www
 
@@ -16,6 +17,6 @@ COPY html /var/www/html
 COPY deploy.sh /var/www
 COPY config /var/www/config
 
-RUN chown -R www-data:www-data /var/www/*
+RUN echo "$SOURCE_BRANCH" | tee /var/www/build
 
-RUN ls -la /var/www
+RUN chown -R www-data:www-data /var/www/*
