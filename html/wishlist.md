@@ -19,12 +19,6 @@ wishlist:
     BD fugue: https://www.bedetheque.com/achat/bdfugue?IdBDFugue=9782756052625&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
     Amazon: https://www.bedetheque.com/achat/amazon?IdAlbum=325578&s=bdgest&r=chronique&_ga=2.198645679.1898479248.1524202831-1635882462.1524202831
   price: 20€
-- image: https://prod-libratonesite-cdnendpoint.azureedge.net/cache/e/0/1/9/c/3/e019c3aa9e8cf7bf9702b918d3cb9aeeb5d196e4.png
-  title: Libratone Zipp mini 2
-  buy:
-    Amazon: https://www.amazon.fr/Libratone-Zipp-Mini-Intégration-dautonomie/dp/B07H54TJ2M/ref=sr_1_6?ie=UTF8&qid=1541763538&sr=8-6&keywords=libratone+zipp+2
-  price: 249€
-  comment: Enceinte Bluetooth et AirPlay.
 - title: Station Météo connectée
   type: Gadget
   comment: Petit cube disponible chez Nature et Découverte
@@ -39,7 +33,6 @@ wishlist:
     Huginn & Muninn: http://huginnmuninn.fr/fr/book/les-crados-version-collector-avec-cartes?
   image: http://huginnmuninn.fr/www/hm/cache/media/thumbnail_w800_h0/3d-les-crados-hd-2017.png
   price: 20€
-  hide: true
 - title: Kit Reveil DIY
   type: Gadget
   comment: Construire son propre réveil (et le re-programmer!)
@@ -53,8 +46,7 @@ wishlist:
     Amazon: https://www.amazon.fr/Tomorrow-Ill-Brave-Jessica-Hische/dp/1524787019/ref=sr_1_1?ie=UTF8&qid=1524034531&sr=8-1&keywords=Tomorrow+I%27ll+Be+Brave
   image: https://images-na.ssl-images-amazon.com/images/I/81%2BvteBkMUL.jpg
   price: 16€
-  comment: Un livre pour enfants (et grands) très <a href="http://jessicahische.is/writing#brave">joliment illustré par Jessica Hische</a> - Pour Noël 2018
-  hide: true
+  comment: Un livre pour enfants (et grands) très <a href="http://jessicahische.is/writing#brave">joliment illustré par Jessica Hische</a>
 collections:
 - title: Tramp
   type: BD
