@@ -1,12 +1,30 @@
 image: docker:stable
 
 stages:
-  - Build image
+  - build
+  - publish
+  - deploy
 
 docker build:
-  stage: Build image
+  stage: build
   script:
   - docker info
   - docker build -t registry.gitlab.com/z720/z720.net .
+
+Push to gitlab container registry:
+  stage: publish
+  script:
   - docker push registry.gitlab.com/z720/z720.net
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://z720.net
+  when: manual
+  only:
+  - master
+
   
