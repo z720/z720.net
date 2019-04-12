@@ -7,14 +7,25 @@ stages:
 
 docker build:
   stage: build
+  before_script:
+  - docker version
+  - "docker info"
   script:
-  - docker info
-  - docker build -t registry.gitlab.com/z720/z720.net .
+  - docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH} --pull .
 
 Push to gitlab container registry:
   stage: publish
+  before_script:
+    - docker version
+    - "docker info"
+    - "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
   script:
-  - docker push registry.gitlab.com/z720/z720.net
+    - "docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest --pull ."
+    - "docker push ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest"
+  after_script:
+    - "docker logout ${CI_REGISTRY}"
+  script:
+  - "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
 
 deploy_prod:
   stage: deploy
