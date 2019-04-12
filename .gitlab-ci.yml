@@ -19,7 +19,7 @@ Push to gitlab container registry:
 deploy_prod:
   stage: deploy
   script:
-    - echo "Deploy to production server"
+    - echo "Deploy to production server using ansible"
   environment:
     name: production
     url: https://z720.net
