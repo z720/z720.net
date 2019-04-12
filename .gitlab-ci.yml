@@ -1,0 +1,12 @@
+image: docker:stable
+
+stages:
+  - Build image
+
+docker build:
+  stage: Build image
+  script:
+  - docker info
+  - docker build -t registry.gitlab.com/z720/z720.net .
+  - docker push registry.gitlab.com/z720/z720.net
+  
