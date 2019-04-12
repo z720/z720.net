@@ -35,7 +35,6 @@ deploy_prod:
     name: production
     url: https://z720.net
   when: manual
-  only:
-  - master
+
 
   
