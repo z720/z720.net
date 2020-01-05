@@ -7,6 +7,8 @@ wishlist:
 - title: Cowboy
   type: Velo
   image: https://cdn.shopify.com/s/files/1/1772/1703/t/14/assets/cowboy-bike.png?2879203
+  buy:
+    Cowboy: https://cowboy.com
   price: 2000€
 - title: Collection SODA
   type: BD
