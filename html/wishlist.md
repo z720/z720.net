@@ -14,7 +14,7 @@ wishlist:
   type: Vélo
   image: https://www.cyclable.com/36384-large_default_new/sonnette-knog-oi-bell-luxe.jpg
   buy:
-    Cyclable: https://www.cyclable.com/16000-sonnette-knog-oi-bell-luxe.html
+    Cyclable: https://www.cyclable.com/16000-sonnette-knog-oi-bell-luxe.html#/couleur-noir
   price: 40€
 - title: Support Recharge "Mac"
   type: Apple Watch
