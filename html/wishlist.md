@@ -40,6 +40,12 @@ wishlist:
   buy: 
     le-couteau.com: https://www.le-couteau.com/couteaux-multifonctions/couteau-multifonction-gerber-armbar-cork-onyx-p-4942.html?search_query=armbar&results=3
   price: 40€
+- title: Marker COPIC Ciao (12 couleurs)
+  image: https://copicfrance.files.wordpress.com/2013/03/set12copicciao.jpg?w=1000&h=
+  type: Crayon
+  buy:
+    cultura: https://www.cultura.com/set-12-copic-ciao-set-12-copic-ciao-4511338008249.html
+  price: 60€
 - title: Ceux qui restent
   type: BD
   image: https://www.bedetheque.com/media/Couvertures/Couv_325578.jpg?_ga=2.261378829.1898479248.1524202831-1635882462.1524202831
