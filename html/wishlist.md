@@ -40,6 +40,14 @@ wishlist:
   buy: 
     le-couteau.com: https://www.le-couteau.com/couteaux-multifonctions/couteau-multifonction-gerber-armbar-cork-onyx-p-4942.html?search_query=armbar&results=3
   price: 40€
+- title: Pilot Parallel Pen Rouge 1.5mm et/ou Jaune 2.4mm
+  image: https://www.pilotpen.fr/pub/media/catalog/product/cache/image/1080x810/beff4985b56e3afdbeabfc89641a4582/4/9/4902505192364j1-4902505192364j1_zoom_01.jpg
+  type: Crayon
+  price: 15-20€
+  buy:
+    "Amazon Rouge": https://www.amazon.fr/Pilot-Parallel-Stylo-Plume-Rouge/dp/B003L1USQQ/ref=sr_1_1?__mk_fr_FR=ÅMÅŽÕÑ&dchild=1&keywords=parallel+pen+rouge&m=A1X6FK5RDHNB96&qid=1606211351&refinements=p_89%3APilot%2Cp_6%3AA1X6FK5RDHNB96&rnid=193648031&s=officeproduct&sr=1-1
+    "Amzon Jaune": https://www.amazon.fr/Pilot-Parallel-Stylo-Orange-moyenne/dp/B003L24532/ref=sr_1_2?__mk_fr_FR=ÅMÅŽÕÑ&dchild=1&keywords=parallel+pen+jaune&m=A1X6FK5RDHNB96&qid=1606211412&refinements=p_89%3APilot%2Cp_6%3AA1X6FK5RDHNB96&rnid=193648031&s=officeproduct&sr=1-2
+    "Le Caligraphe": https://www.lecalligraphe.com/parallel-pen-pilot-xml-360-1017.html
 - title: Marker COPIC Ciao (12 couleurs)
   image: https://copicfrance.files.wordpress.com/2013/03/set12copicciao.jpg?w=1000&h=
   type: Crayon
