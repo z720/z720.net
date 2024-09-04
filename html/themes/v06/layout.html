@@ -43,7 +43,7 @@
 			<nav id="navigation" class="nav-opened">
 			<ul>
 				{{ m.menu('About', '/about/') }}
-				{% for media in ['Twitter', 'Flickr', 'LinkedIn'] %}
+				{% for media in ['Flickr', 'LinkedIn'] %}
 				{# url for menuimage: "http://files.z720.net/icons/social/%s.png"|format( media | lower) #}
 				{{ m.menu( media, "/%s/"|format(media | lower)) }}
 				{% endfor %}
