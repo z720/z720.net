@@ -20,6 +20,8 @@ DirectorySlash On
   RewriteRule .* https://www.flickr.com/photos/z720/ [L,R]
   RewriteCond %{REQUEST_URI} ^/instagram
   RewriteRule .* http://instagram.com/z720 [L,R]
+  RewriteCond %{REQUEST_URI} ^/wishlist
+  RewriteRule .* https://raindrop.io/z720/wishlist-51247000 [L,R]
   
   # Redirect old assets to cdn files.z720.net
   RewriteCond %{REQUEST_URI} ^/blog/images [OR]
